@@ -24,6 +24,8 @@
 		207CD6C71832EAAF007C4228 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A21832EAAF007C4228 /* UIKit.framework */; };
 		207CD6CF1832EAAF007C4228 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6CD1832EAAF007C4228 /* InfoPlist.strings */; };
 		207CD6D11832EAAF007C4228 /* LinEqGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6D01832EAAF007C4228 /* LinEqGameTests.m */; };
+		93FB11C21832EC2300B1C074 /* LevelRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB11C11832EC2300B1C074 /* LevelRecord.m */; };
+		93FB11C51832EC3F00B1C074 /* LevelRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB11C41832EC3F00B1C074 /* LevelRecordView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		207CD6CC1832EAAF007C4228 /* LinEqGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LinEqGameTests-Info.plist"; sourceTree = "<group>"; };
 		207CD6CE1832EAAF007C4228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		207CD6D01832EAAF007C4228 /* LinEqGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinEqGameTests.m; sourceTree = "<group>"; };
+		93FB11C01832EC2300B1C074 /* LevelRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelRecord.h; sourceTree = "<group>"; };
+		93FB11C11832EC2300B1C074 /* LevelRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelRecord.m; sourceTree = "<group>"; };
+		93FB11C31832EC3F00B1C074 /* LevelRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelRecordView.h; sourceTree = "<group>"; };
+		93FB11C41832EC3F00B1C074 /* LevelRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelRecordView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,10 @@
 				207CD6BB1832EAAF007C4228 /* Spaceship.png */,
 				207CD6BD1832EAAF007C4228 /* Images.xcassets */,
 				207CD6A71832EAAF007C4228 /* Supporting Files */,
+				93FB11C01832EC2300B1C074 /* LevelRecord.h */,
+				93FB11C11832EC2300B1C074 /* LevelRecord.m */,
+				93FB11C31832EC3F00B1C074 /* LevelRecordView.h */,
+				93FB11C41832EC3F00B1C074 /* LevelRecordView.m */,
 			);
 			path = LinEqGame;
 			sourceTree = "<group>";
@@ -266,6 +276,8 @@
 				207CD6B71832EAAF007C4228 /* ViewController.m in Sources */,
 				207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */,
 				207CD6AD1832EAAF007C4228 /* main.m in Sources */,
+				93FB11C21832EC2300B1C074 /* LevelRecord.m in Sources */,
+				93FB11C51832EC3F00B1C074 /* LevelRecordView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +490,7 @@
 				207CD6D61832EAAF007C4228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		207CD6D71832EAAF007C4228 /* Build configuration list for PBXNativeTarget "LinEqGameTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +499,7 @@
 				207CD6D91832EAAF007C4228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
