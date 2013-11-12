@@ -13,10 +13,10 @@
 /* Members */
 
 // Keeps track of the user's score for the level
-int scoreCounter;
+NSObject scoreCounter;
 
 // Keeps track of the time remaining to complete the level
-double timeCounter;
+NSObject timeCounter;
 
 // An array where each index corresponds to a section of the health bar.
 // The value is true if the section remains and false if it has been depleted

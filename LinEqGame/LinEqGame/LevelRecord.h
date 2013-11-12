@@ -24,7 +24,7 @@ int health;
 // The amount of time the user took to finish the levels
 int time;
 
-//Added
+// Added
 // The user's score for the level
 int levelScore;
 
