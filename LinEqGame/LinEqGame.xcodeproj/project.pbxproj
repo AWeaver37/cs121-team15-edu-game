@@ -1,0 +1,493 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		207CD69F1832EAAE007C4228 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD69E1832EAAE007C4228 /* Foundation.framework */; };
+		207CD6A11832EAAF007C4228 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A01832EAAF007C4228 /* CoreGraphics.framework */; };
+		207CD6A31832EAAF007C4228 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A21832EAAF007C4228 /* UIKit.framework */; };
+		207CD6A51832EAAF007C4228 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A41832EAAF007C4228 /* SpriteKit.framework */; };
+		207CD6AB1832EAAF007C4228 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6A91832EAAF007C4228 /* InfoPlist.strings */; };
+		207CD6AD1832EAAF007C4228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6AC1832EAAF007C4228 /* main.m */; };
+		207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6B01832EAAF007C4228 /* AppDelegate.m */; };
+		207CD6B41832EAAF007C4228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6B21832EAAF007C4228 /* Main.storyboard */; };
+		207CD6B71832EAAF007C4228 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6B61832EAAF007C4228 /* ViewController.m */; };
+		207CD6BA1832EAAF007C4228 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6B91832EAAF007C4228 /* MyScene.m */; };
+		207CD6BC1832EAAF007C4228 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6BB1832EAAF007C4228 /* Spaceship.png */; };
+		207CD6BE1832EAAF007C4228 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6BD1832EAAF007C4228 /* Images.xcassets */; };
+		207CD6C51832EAAF007C4228 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6C41832EAAF007C4228 /* XCTest.framework */; };
+		207CD6C61832EAAF007C4228 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD69E1832EAAE007C4228 /* Foundation.framework */; };
+		207CD6C71832EAAF007C4228 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A21832EAAF007C4228 /* UIKit.framework */; };
+		207CD6CF1832EAAF007C4228 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6CD1832EAAF007C4228 /* InfoPlist.strings */; };
+		207CD6D11832EAAF007C4228 /* LinEqGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6D01832EAAF007C4228 /* LinEqGameTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		207CD6C81832EAAF007C4228 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 207CD6931832EAAE007C4228 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 207CD69A1832EAAE007C4228;
+			remoteInfo = LinEqGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		207CD69B1832EAAE007C4228 /* LinEqGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinEqGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		207CD69E1832EAAE007C4228 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		207CD6A01832EAAF007C4228 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		207CD6A21832EAAF007C4228 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		207CD6A41832EAAF007C4228 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		207CD6A81832EAAF007C4228 /* LinEqGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LinEqGame-Info.plist"; sourceTree = "<group>"; };
+		207CD6AA1832EAAF007C4228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		207CD6AC1832EAAF007C4228 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		207CD6AE1832EAAF007C4228 /* LinEqGame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LinEqGame-Prefix.pch"; sourceTree = "<group>"; };
+		207CD6AF1832EAAF007C4228 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		207CD6B01832EAAF007C4228 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		207CD6B31832EAAF007C4228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		207CD6B51832EAAF007C4228 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		207CD6B61832EAAF007C4228 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		207CD6B81832EAAF007C4228 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		207CD6B91832EAAF007C4228 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		207CD6BB1832EAAF007C4228 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		207CD6BD1832EAAF007C4228 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		207CD6C31832EAAF007C4228 /* LinEqGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinEqGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		207CD6C41832EAAF007C4228 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		207CD6CC1832EAAF007C4228 /* LinEqGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LinEqGameTests-Info.plist"; sourceTree = "<group>"; };
+		207CD6CE1832EAAF007C4228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		207CD6D01832EAAF007C4228 /* LinEqGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinEqGameTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		207CD6981832EAAE007C4228 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207CD6A11832EAAF007C4228 /* CoreGraphics.framework in Frameworks */,
+				207CD6A31832EAAF007C4228 /* UIKit.framework in Frameworks */,
+				207CD6A51832EAAF007C4228 /* SpriteKit.framework in Frameworks */,
+				207CD69F1832EAAE007C4228 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207CD6C01832EAAF007C4228 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207CD6C51832EAAF007C4228 /* XCTest.framework in Frameworks */,
+				207CD6C71832EAAF007C4228 /* UIKit.framework in Frameworks */,
+				207CD6C61832EAAF007C4228 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		207CD6921832EAAE007C4228 = {
+			isa = PBXGroup;
+			children = (
+				207CD6A61832EAAF007C4228 /* LinEqGame */,
+				207CD6CA1832EAAF007C4228 /* LinEqGameTests */,
+				207CD69D1832EAAE007C4228 /* Frameworks */,
+				207CD69C1832EAAE007C4228 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		207CD69C1832EAAE007C4228 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				207CD69B1832EAAE007C4228 /* LinEqGame.app */,
+				207CD6C31832EAAF007C4228 /* LinEqGameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		207CD69D1832EAAE007C4228 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				207CD69E1832EAAE007C4228 /* Foundation.framework */,
+				207CD6A01832EAAF007C4228 /* CoreGraphics.framework */,
+				207CD6A21832EAAF007C4228 /* UIKit.framework */,
+				207CD6A41832EAAF007C4228 /* SpriteKit.framework */,
+				207CD6C41832EAAF007C4228 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		207CD6A61832EAAF007C4228 /* LinEqGame */ = {
+			isa = PBXGroup;
+			children = (
+				207CD6AF1832EAAF007C4228 /* AppDelegate.h */,
+				207CD6B01832EAAF007C4228 /* AppDelegate.m */,
+				207CD6B21832EAAF007C4228 /* Main.storyboard */,
+				207CD6B51832EAAF007C4228 /* ViewController.h */,
+				207CD6B61832EAAF007C4228 /* ViewController.m */,
+				207CD6B81832EAAF007C4228 /* MyScene.h */,
+				207CD6B91832EAAF007C4228 /* MyScene.m */,
+				207CD6BB1832EAAF007C4228 /* Spaceship.png */,
+				207CD6BD1832EAAF007C4228 /* Images.xcassets */,
+				207CD6A71832EAAF007C4228 /* Supporting Files */,
+			);
+			path = LinEqGame;
+			sourceTree = "<group>";
+		};
+		207CD6A71832EAAF007C4228 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				207CD6A81832EAAF007C4228 /* LinEqGame-Info.plist */,
+				207CD6A91832EAAF007C4228 /* InfoPlist.strings */,
+				207CD6AC1832EAAF007C4228 /* main.m */,
+				207CD6AE1832EAAF007C4228 /* LinEqGame-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		207CD6CA1832EAAF007C4228 /* LinEqGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				207CD6D01832EAAF007C4228 /* LinEqGameTests.m */,
+				207CD6CB1832EAAF007C4228 /* Supporting Files */,
+			);
+			path = LinEqGameTests;
+			sourceTree = "<group>";
+		};
+		207CD6CB1832EAAF007C4228 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				207CD6CC1832EAAF007C4228 /* LinEqGameTests-Info.plist */,
+				207CD6CD1832EAAF007C4228 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		207CD69A1832EAAE007C4228 /* LinEqGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 207CD6D41832EAAF007C4228 /* Build configuration list for PBXNativeTarget "LinEqGame" */;
+			buildPhases = (
+				207CD6971832EAAE007C4228 /* Sources */,
+				207CD6981832EAAE007C4228 /* Frameworks */,
+				207CD6991832EAAE007C4228 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LinEqGame;
+			productName = LinEqGame;
+			productReference = 207CD69B1832EAAE007C4228 /* LinEqGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		207CD6C21832EAAF007C4228 /* LinEqGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 207CD6D71832EAAF007C4228 /* Build configuration list for PBXNativeTarget "LinEqGameTests" */;
+			buildPhases = (
+				207CD6BF1832EAAF007C4228 /* Sources */,
+				207CD6C01832EAAF007C4228 /* Frameworks */,
+				207CD6C11832EAAF007C4228 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				207CD6C91832EAAF007C4228 /* PBXTargetDependency */,
+			);
+			name = LinEqGameTests;
+			productName = LinEqGameTests;
+			productReference = 207CD6C31832EAAF007C4228 /* LinEqGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		207CD6931832EAAE007C4228 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Team15;
+				TargetAttributes = {
+					207CD6C21832EAAF007C4228 = {
+						TestTargetID = 207CD69A1832EAAE007C4228;
+					};
+				};
+			};
+			buildConfigurationList = 207CD6961832EAAE007C4228 /* Build configuration list for PBXProject "LinEqGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 207CD6921832EAAE007C4228;
+			productRefGroup = 207CD69C1832EAAE007C4228 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				207CD69A1832EAAE007C4228 /* LinEqGame */,
+				207CD6C21832EAAF007C4228 /* LinEqGameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		207CD6991832EAAE007C4228 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207CD6AB1832EAAF007C4228 /* InfoPlist.strings in Resources */,
+				207CD6BE1832EAAF007C4228 /* Images.xcassets in Resources */,
+				207CD6BC1832EAAF007C4228 /* Spaceship.png in Resources */,
+				207CD6B41832EAAF007C4228 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207CD6C11832EAAF007C4228 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207CD6CF1832EAAF007C4228 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		207CD6971832EAAE007C4228 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207CD6BA1832EAAF007C4228 /* MyScene.m in Sources */,
+				207CD6B71832EAAF007C4228 /* ViewController.m in Sources */,
+				207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */,
+				207CD6AD1832EAAF007C4228 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207CD6BF1832EAAF007C4228 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207CD6D11832EAAF007C4228 /* LinEqGameTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		207CD6C91832EAAF007C4228 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 207CD69A1832EAAE007C4228 /* LinEqGame */;
+			targetProxy = 207CD6C81832EAAF007C4228 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		207CD6A91832EAAF007C4228 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				207CD6AA1832EAAF007C4228 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		207CD6B21832EAAF007C4228 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				207CD6B31832EAAF007C4228 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		207CD6CD1832EAAF007C4228 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				207CD6CE1832EAAF007C4228 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		207CD6D21832EAAF007C4228 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		207CD6D31832EAAF007C4228 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		207CD6D51832EAAF007C4228 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LinEqGame/LinEqGame-Prefix.pch";
+				INFOPLIST_FILE = "LinEqGame/LinEqGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		207CD6D61832EAAF007C4228 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LinEqGame/LinEqGame-Prefix.pch";
+				INFOPLIST_FILE = "LinEqGame/LinEqGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		207CD6D81832EAAF007C4228 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LinEqGame.app/LinEqGame";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LinEqGame/LinEqGame-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LinEqGameTests/LinEqGameTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		207CD6D91832EAAF007C4228 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LinEqGame.app/LinEqGame";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LinEqGame/LinEqGame-Prefix.pch";
+				INFOPLIST_FILE = "LinEqGameTests/LinEqGameTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		207CD6961832EAAE007C4228 /* Build configuration list for PBXProject "LinEqGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				207CD6D21832EAAF007C4228 /* Debug */,
+				207CD6D31832EAAF007C4228 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		207CD6D41832EAAF007C4228 /* Build configuration list for PBXNativeTarget "LinEqGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				207CD6D51832EAAF007C4228 /* Debug */,
+				207CD6D61832EAAF007C4228 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		207CD6D71832EAAF007C4228 /* Build configuration list for PBXNativeTarget "LinEqGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				207CD6D81832EAAF007C4228 /* Debug */,
+				207CD6D91832EAAF007C4228 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 207CD6931832EAAE007C4228 /* Project object */;
+}
