@@ -22,5 +22,10 @@ NSObject timeCounter;
 // The value is true if the section remains and false if it has been depleted
 boolean[] healthBar;
 
+// Added
+// Displays instructions to the viewer in a bar located
+// on the bottom of the game screen
+NSObject consoleBar;
+
 
 @end
