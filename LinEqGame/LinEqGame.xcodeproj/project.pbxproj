@@ -24,6 +24,7 @@
 		207CD6C71832EAAF007C4228 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A21832EAAF007C4228 /* UIKit.framework */; };
 		207CD6CF1832EAAF007C4228 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6CD1832EAAF007C4228 /* InfoPlist.strings */; };
 		207CD6D11832EAAF007C4228 /* LinEqGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6D01832EAAF007C4228 /* LinEqGameTests.m */; };
+		935092AD18397BA800E20887 /* LevelRecordApplication.xib in Resources */ = {isa = PBXBuildFile; fileRef = 935092AC18397BA800E20887 /* LevelRecordApplication.xib */; };
 		93FB11C21832EC2300B1C074 /* LevelRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB11C11832EC2300B1C074 /* LevelRecord.m */; };
 		93FB11C51832EC3F00B1C074 /* LevelRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB11C41832EC3F00B1C074 /* LevelRecordView.m */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		207CD6CC1832EAAF007C4228 /* LinEqGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LinEqGameTests-Info.plist"; sourceTree = "<group>"; };
 		207CD6CE1832EAAF007C4228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		207CD6D01832EAAF007C4228 /* LinEqGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinEqGameTests.m; sourceTree = "<group>"; };
+		935092AC18397BA800E20887 /* LevelRecordApplication.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelRecordApplication.xib; sourceTree = "<group>"; };
 		93FB11C01832EC2300B1C074 /* LevelRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelRecord.h; sourceTree = "<group>"; };
 		93FB11C11832EC2300B1C074 /* LevelRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelRecord.m; sourceTree = "<group>"; };
 		93FB11C31832EC3F00B1C074 /* LevelRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelRecordView.h; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				207CD6AF1832EAAF007C4228 /* AppDelegate.h */,
 				207CD6B01832EAAF007C4228 /* AppDelegate.m */,
 				207CD6B21832EAAF007C4228 /* Main.storyboard */,
+				935092AC18397BA800E20887 /* LevelRecordApplication.xib */,
 				207CD6B51832EAAF007C4228 /* ViewController.h */,
 				207CD6B61832EAAF007C4228 /* ViewController.m */,
 				207CD6B81832EAAF007C4228 /* MyScene.h */,
@@ -254,6 +257,7 @@
 				207CD6BE1832EAAF007C4228 /* Images.xcassets in Resources */,
 				207CD6BC1832EAAF007C4228 /* Spaceship.png in Resources */,
 				207CD6B41832EAAF007C4228 /* Main.storyboard in Resources */,
+				935092AD18397BA800E20887 /* LevelRecordApplication.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

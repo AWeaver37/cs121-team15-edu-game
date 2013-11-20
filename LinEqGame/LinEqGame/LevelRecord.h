@@ -82,7 +82,7 @@ LevelRecordView* view;
 
 // Calculates a user's score when the main controller tells
 // the LevelRecord object a shot has been fired
-- (int)calculateScore:(boolean)shotSuccessful
+- (int)calculateNewScore:(boolean)shotSuccessful
 
 // Updates a user's score for the current level
 - (int)updateScore:(int)pointsToAdd;

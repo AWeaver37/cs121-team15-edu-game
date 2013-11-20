@@ -79,18 +79,22 @@
 
 /* Other Methods */
 
-// Calculates a user's score when the main controller tells
-// the LevelRecord object a shot has been fired
-- (int)calculateScore:(boolean)shotSuccessful {
+// Calculates a user's score and health when the main controller tells
+// the LevelRecord object a shot has been fired, then calls updateScore()
+// and updateHealth() to update them.
+- (int)calculateStats:(boolean)shotSuccessful {
     
     // If the shot is successful, give the player points
+    // and do not change their health level
     if (shotSuccessful) {
         updateScore(100); // TO DO: change, not magic number
     }
     
     // If the shot is not successful, do not give the player points
+    // and subtract from their health level
     else {
         updateScore(0);
+        updateHealth(-1);
     }
 }
 
@@ -103,6 +107,29 @@
 // Updates a user's health for the current level
 - (int)updateHealth:(int)amountToChange {
     health = health + amountToChange;
+    
+    // Reflect the health change on the LevelRecordView's health bar array:
+    
+    // If the user's health is being depleted, change the health bar to 
+    if (amountToChange < 0) {
+        for(int i = 0; i >= amountToChange; --i) {
+            LevelRecordView.healthBar[LevelRecordView.currentHealth + i] = false;
+            --LevelRecordView.currentHealth;
+        }
+    }
+    
+    // If the user's health is increasing, 
+    // Note: In our current version, we are only subtracting from the user's
+    // health when they get a question wrong and not adding to the user's health
+    // if they get the question correct. However, this case was added for extensibility
+    // and to ensure the function will work with both negative and positive inputs.
+    else {
+        for(int j = 0; j =< amountToChange; ++j) {
+            LevelRecordView.healthBar[LevelRecordView.currentHealth + j] = true;
+            ++LevelRecordView.currentHealth;
+        }
+    }
+    
     return health;
 }
 
