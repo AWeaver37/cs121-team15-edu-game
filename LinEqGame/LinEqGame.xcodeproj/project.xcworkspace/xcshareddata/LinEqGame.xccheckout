@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
+	<string>9058534F-2CBD-461D-91F9-6B2CEFF147A4</string>
+=======
+	<string>740AEE09-3D16-4720-8FA4-EE8D326C1A6E</string>
+>>>>>>> 7b23efa4e15cdee999642f68dd7fc511e448878a
+	<key>IDESourceControlProjectName</key>
+	<string>LinEqGame</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+<<<<<<< HEAD
+		<key>295CFBBC-7FF0-4F43-945F-0A5F613A2666</key>
+=======
+		<key>D3D390D1-29C6-4A98-8C1C-298C4DADA26C</key>
+>>>>>>> 7b23efa4e15cdee999642f68dd7fc511e448878a
+		<string>https://github.com/AWeaver37/cs121-team15-edu-game.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LinEqGame/LinEqGame.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+<<<<<<< HEAD
+		<key>295CFBBC-7FF0-4F43-945F-0A5F613A2666</key>
+=======
+		<key>D3D390D1-29C6-4A98-8C1C-298C4DADA26C</key>
+>>>>>>> 7b23efa4e15cdee999642f68dd7fc511e448878a
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AWeaver37/cs121-team15-edu-game.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+<<<<<<< HEAD
+	<string>295CFBBC-7FF0-4F43-945F-0A5F613A2666</string>
+=======
+	<string>D3D390D1-29C6-4A98-8C1C-298C4DADA26C</string>
+>>>>>>> 7b23efa4e15cdee999642f68dd7fc511e448878a
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+<<<<<<< HEAD
+			<string>295CFBBC-7FF0-4F43-945F-0A5F613A2666</string>
+=======
+			<string>D3D390D1-29C6-4A98-8C1C-298C4DADA26C</string>
+>>>>>>> 7b23efa4e15cdee999642f68dd7fc511e448878a
+			<key>IDESourceControlWCCName</key>
+			<string>cs121-team15-edu-game</string>
+		</dict>
+	</array>
+</dict>
+</plist>

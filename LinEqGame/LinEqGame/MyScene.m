@@ -7,6 +7,7 @@
 //
 
 #import "MyScene.h"
+#import "QuestionMaster.h"
 #define kaxisLength 600
 #define kratio 12
 
@@ -29,6 +30,8 @@
         
         [self moveSprite:pikachu ToCoordinateWithX:0 Y:30];
         
+//        [self addChild:myLabel];
+//        qm = [[QuestionMaster alloc] init];
     }
     return self;
 }
@@ -128,7 +131,12 @@
         coordLabel.text = [NSString stringWithFormat:@"%1.0f", gameY];
         coordLabel.position = CGPointMake(currentPosition.x - offset, currentPosition.y);
         [self addChild:coordLabel];
+        //[self addChild:sprite];
     }
+    
+    
+    NSLog(@"%@", [qm generateQuestion]);
+    
 }
 
 -(void) moveSprite:(SKSpriteNode *)sprite ToCoordinateWithX:(float)x Y:(float)y
