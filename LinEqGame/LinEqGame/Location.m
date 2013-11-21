@@ -11,7 +11,9 @@
 @implementation Location
 
 
-
+- (NSString*) description{
+    return [NSString stringWithFormat:@"{%d,%d}",_x,_y];
+}
 
 
 @end

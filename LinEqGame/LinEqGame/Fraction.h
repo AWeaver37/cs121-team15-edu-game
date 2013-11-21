@@ -14,6 +14,8 @@
 
 - (double) decimalValue;
 
+- (void) simplify;
+
 @property int numerator;
 
 @property int denominator;

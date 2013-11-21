@@ -16,6 +16,6 @@
 
 @property AnswerChoice* interceptAnswer;
 
-@property NSMutableArray* alienLocations;
+@property NSMutableArray* enemyLocations;
 
 @end

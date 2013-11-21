@@ -12,8 +12,10 @@
 @implementation QuestionObject
 
 
-
-
+- (NSString*) description{
+    NSString* string = [NSString stringWithFormat:@"Slope %@\nIntercept %@\nEnemies %@", _slopeAnswer, _interceptAnswer,_enemyLocations];
+    return [string stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+}
 
 
 

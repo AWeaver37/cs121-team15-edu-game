@@ -14,10 +14,13 @@
     if (self == [super init]){
         srandom(time(NULL));
         _minX = 0;
-        _maxX = 100;
+        _maxX = 80;
         
-        _minY = -40;
-        _maxY = 40;
+        _minY = -30;
+        _maxY = 30;
+        
+        _maxSlopeNum = 19;
+        _maxSlopeDen = 19;
     }
     return self;
 }
@@ -37,8 +40,8 @@
 - (void) setSlope:(Fraction*) slope boundedBy: (double) maxSlope{
     
     do {
-        slope.numerator = [self randomBetween: -9 And: 9];
-        slope.denominator = [self randomBetween: 1 And: 20];
+        slope.numerator = [self randomBetween: -_maxSlopeNum And: _maxSlopeNum];
+        slope.denominator = [self randomBetween: 1 And: _maxSlopeDen];
     } while (!([self isValue:slope.decimalValue between:-maxSlope and:maxSlope] && slope.numerator!=0));
 }
 
@@ -88,18 +91,22 @@
 - (void) setCorrectIndex: (int*) indexAddress
           setChoiceArray: (NSMutableArray*) choices
                forAnswer: (Fraction*) answer{
-    int offsetAmount = 2;
+    
+    int offsetLevel = 2;
+    
+    assert(offsetLevel>0);
+    
     NSMutableArray* offsets = [[NSMutableArray alloc] initWithCapacity:3];
     do {
         for (int i = 0; i < 2; ++i) {
-            NSNumber* offset = [[NSNumber alloc] initWithInt: [self randomBetween:-offsetAmount And:offsetAmount]];
+            NSNumber* offset = [[NSNumber alloc] initWithInt: [self randomBetween:0 And:1 + offsetLevel]];
             [offsets setObject:offset atIndexedSubscript: i];
         }
     } while ([[offsets objectAtIndex:0] integerValue]==[[offsets objectAtIndex:1] integerValue]);
     
     NSNumber* centerValue;
     do {
-        centerValue = [[NSNumber alloc] initWithInt:[self randomBetween:-offsetAmount And:offsetAmount]];
+        centerValue = [[NSNumber alloc] initWithInt:[self randomBetween:0 And:1 + offsetLevel]];
     } while (
              [centerValue integerValue]==[[offsets objectAtIndex:1] integerValue]
              ||
@@ -110,11 +117,11 @@
         Fraction* wrongChoice = [[Fraction alloc]
                                  initWithNum:answer.numerator + totalOffset
                                  AndDen:answer.denominator];
+        
         [choices setObject:wrongChoice atIndexedSubscript:i];
     }
     
     *indexAddress = [self randomBetween:0 And:2];
-    
     [choices insertObject: answer atIndex:*indexAddress];
     
     
@@ -168,28 +175,22 @@
     
     
     
-    
-    
-    NSLog(@"\n slope = %d/%d \n intercept = %d/%d \n alien1: {%d,%d} \n alien2: {%d,%d}",
-          slope.numerator, slope.denominator,
-          intercept.numerator, intercept.denominator,
-          alien1.x, alien1.y, alien2.x, alien2.y);
-    
-    NSLog(@"\n interceptChoices:\n %d/%d \n %d/%d \n %d/%d",
-          ((Fraction*)[interceptChoices objectAtIndex:0]).numerator,
-          ((Fraction*)[interceptChoices objectAtIndex:0]).denominator,
-          ((Fraction*)[interceptChoices objectAtIndex:1]).numerator,
-          ((Fraction*)[interceptChoices objectAtIndex:1]).denominator,
-          ((Fraction*)[interceptChoices objectAtIndex:2]).numerator,
-          ((Fraction*)[interceptChoices objectAtIndex:2]).denominator);
-    
-    NSLog(@"\n slopeChoices:\n %d/%d \n %d/%d \n %d/%d",
-          ((Fraction*)[slopeChoices objectAtIndex:0]).numerator,
-          ((Fraction*)[slopeChoices objectAtIndex:0]).denominator,
-          ((Fraction*)[slopeChoices objectAtIndex:1]).numerator,
-          ((Fraction*)[slopeChoices objectAtIndex:1]).denominator,
-          ((Fraction*)[slopeChoices objectAtIndex:2]).numerator,
-          ((Fraction*)[slopeChoices objectAtIndex:2]).denominator);
+//    
+//    
+//    NSLog(@"\n slope = %@ \n intercept = %@ \n alien1: %@ \n alien2: %@",
+//          slope,
+//          intercept,
+//          alien1, alien2);
+//    
+//    NSLog(@"\n interceptChoices:\n %@ \n %@ \n %@",
+//          [interceptChoices objectAtIndex:0],
+//          [interceptChoices objectAtIndex:1],
+//          [interceptChoices objectAtIndex:2]);
+//    
+//    NSLog(@"\n slopeChoices:\n %@ \n %@ \n %@",
+//          [slopeChoices objectAtIndex:0],
+//          [slopeChoices objectAtIndex:1],
+//          [slopeChoices objectAtIndex:2]);
     
     
     
@@ -201,9 +202,11 @@
     newQuestion.interceptAnswer = [[AnswerChoice alloc]
                                    initWithChoices: interceptChoices
                                    withAnswerIndex: interceptIndex];
+    newQuestion.enemyLocations = [[NSMutableArray alloc] init];
     
-    [newQuestion.alienLocations addObject: alien1];
-    [newQuestion.alienLocations addObject: alien2];
+    [newQuestion.enemyLocations addObject: alien1];
+    [newQuestion.enemyLocations addObject: alien2];
+    
     
     return newQuestion;
 }

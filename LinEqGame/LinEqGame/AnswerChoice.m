@@ -20,6 +20,11 @@
     return self;
 }
 
+- (NSString*) description{
+    NSString* string = [NSString stringWithFormat:@"%@[%d]", _answerChoices, _answerIndex];
+    return [string stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+}
+
 
 
 @end

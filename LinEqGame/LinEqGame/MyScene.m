@@ -49,7 +49,8 @@
         //[self addChild:sprite];
     }
     
-    [qm generateQuestion];
+    
+    NSLog(@"%@", [qm generateQuestion]);
     
 }
 

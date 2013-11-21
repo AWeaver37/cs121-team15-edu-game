@@ -20,5 +20,7 @@
 @property int maxX;
 @property int minY;
 @property int maxY;
+@property int maxSlopeNum;
+@property int maxSlopeDen;
 
 @end
