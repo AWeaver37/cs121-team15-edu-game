@@ -8,6 +8,7 @@
 
 #import "MyScene.h"
 #define kaxisLength 600
+#define kratio 12
 
 @interface MyScene ()
 @property CGPoint origin;
@@ -21,6 +22,12 @@
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         [self drawGrid];
+        SKSpriteNode *pikachu = [SKSpriteNode spriteNodeWithImageNamed:@"pikachu"];
+        pikachu.position = [self convertToRealCoordinatesGameX:0 y:0];
+//        pikachu.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        [self addChild:pikachu];
+        
+        [self moveSprite:pikachu ToCoordinateWithX:0 Y:30];
         
     }
     return self;
@@ -101,6 +108,7 @@
     for (; realY <= self.origin.y + kaxisLength; realY += realTickMarkSpacing, gameY += tickMarkSpacing)
     {
         CGPoint currentPosition = CGPointMake(self.origin.x, realY);
+        NSLog(@"Added tick at %@", NSStringFromCGPoint(currentPosition));
         //tick
         if (gameY != 0) {
             SKShapeNode *tick = [SKShapeNode node];
@@ -123,12 +131,22 @@
     }
 }
 
+-(void) moveSprite:(SKSpriteNode *)sprite ToCoordinateWithX:(float)x Y:(float)y
+{
+    CGPoint destination = [self convertToRealCoordinatesGameX:x y:y];
+    SKAction *actionMove = [SKAction moveTo:destination duration:1];
+    
+    [sprite runAction:actionMove];
+}
 
 
-//-(Pair *)convertToDrawingCoordinatesGameX:(float)x y:(float)y
-//{
-//    
-//}
+-(CGPoint)convertToRealCoordinatesGameX:(float)x y:(float)y
+{
+    CGPoint point = CGPointMake(self.origin.x + x * kratio, self.origin.y + y * kratio);
+    NSLog(@"moved sprite to %@", NSStringFromCGPoint(point));
+    
+    return point;
+}
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */

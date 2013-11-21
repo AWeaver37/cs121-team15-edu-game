@@ -7,7 +7,6 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "Pair.h"
 
 @interface MyScene : SKScene
 

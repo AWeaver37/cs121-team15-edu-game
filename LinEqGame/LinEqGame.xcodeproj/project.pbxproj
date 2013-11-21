@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20427841183D900900A3BBE9 /* pikachu.png in Resources */ = {isa = PBXBuildFile; fileRef = 20427840183D900900A3BBE9 /* pikachu.png */; };
-		2073C326183BFFC200B8267F /* Pair.m in Sources */ = {isa = PBXBuildFile; fileRef = 2073C325183BFFC200B8267F /* Pair.m */; };
+		20427844183D985D00A3BBE9 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20427843183D985C00A3BBE9 /* Media.xcassets */; };
 		207CD69F1832EAAE007C4228 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD69E1832EAAE007C4228 /* Foundation.framework */; };
 		207CD6A11832EAAF007C4228 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A01832EAAF007C4228 /* CoreGraphics.framework */; };
 		207CD6A31832EAAF007C4228 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A21832EAAF007C4228 /* UIKit.framework */; };
@@ -40,8 +40,7 @@
 
 /* Begin PBXFileReference section */
 		20427840183D900900A3BBE9 /* pikachu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pikachu.png; sourceTree = "<group>"; };
-		2073C324183BFFC200B8267F /* Pair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pair.h; sourceTree = "<group>"; };
-		2073C325183BFFC200B8267F /* Pair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pair.m; sourceTree = "<group>"; };
+		20427843183D985C00A3BBE9 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		207CD69B1832EAAE007C4228 /* LinEqGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinEqGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		207CD69E1832EAAE007C4228 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		207CD6A01832EAAF007C4228 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				20427840183D900900A3BBE9 /* pikachu.png */,
+				20427843183D985C00A3BBE9 /* Media.xcassets */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -142,8 +142,6 @@
 				207CD6B61832EAAF007C4228 /* ViewController.m */,
 				207CD6B81832EAAF007C4228 /* MyScene.h */,
 				207CD6B91832EAAF007C4228 /* MyScene.m */,
-				2073C324183BFFC200B8267F /* Pair.h */,
-				2073C325183BFFC200B8267F /* Pair.m */,
 				207CD6BB1832EAAF007C4228 /* Spaceship.png */,
 				207CD6BD1832EAAF007C4228 /* Images.xcassets */,
 				207CD6A71832EAAF007C4228 /* Supporting Files */,
@@ -260,6 +258,7 @@
 				207CD6BE1832EAAF007C4228 /* Images.xcassets in Resources */,
 				207CD6BC1832EAAF007C4228 /* Spaceship.png in Resources */,
 				207CD6B41832EAAF007C4228 /* Main.storyboard in Resources */,
+				20427844183D985D00A3BBE9 /* Media.xcassets in Resources */,
 				20427841183D900900A3BBE9 /* pikachu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2073C326183BFFC200B8267F /* Pair.m in Sources */,
 				207CD6BA1832EAAF007C4228 /* MyScene.m in Sources */,
 				207CD6B71832EAAF007C4228 /* ViewController.m in Sources */,
 				207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */,
