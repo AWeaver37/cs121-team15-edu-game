@@ -7,8 +7,11 @@
 //
 
 #import "MyScene.h"
+#import "QuestionMaster.h"
 
-@implementation MyScene
+@implementation MyScene{
+    QuestionMaster* qm;
+}
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
@@ -24,6 +27,7 @@
                                        CGRectGetMidY(self.frame));
         
         [self addChild:myLabel];
+        qm = [[QuestionMaster alloc] init];
     }
     return self;
 }
@@ -42,8 +46,12 @@
         
         [sprite runAction:[SKAction repeatActionForever:action]];
         
-        [self addChild:sprite];
+        //[self addChild:sprite];
     }
+    
+    
+    NSLog(@"%@", [qm generateQuestion]);
+    
 }
 
 -(void)update:(CFTimeInterval)currentTime {

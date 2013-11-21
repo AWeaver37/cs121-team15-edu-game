@@ -27,6 +27,11 @@
 		935092AD18397BA800E20887 /* LevelRecordApplication.xib in Resources */ = {isa = PBXBuildFile; fileRef = 935092AC18397BA800E20887 /* LevelRecordApplication.xib */; };
 		93FB11C21832EC2300B1C074 /* LevelRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB11C11832EC2300B1C074 /* LevelRecord.m */; };
 		93FB11C51832EC3F00B1C074 /* LevelRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB11C41832EC3F00B1C074 /* LevelRecordView.m */; };
+		939425B91836CAD700A411D3 /* QuestionMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425B81836CAD700A411D3 /* QuestionMaster.m */; };
+		939425BC1836CB0700A411D3 /* QuestionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425BB1836CB0700A411D3 /* QuestionObject.m */; };
+		939425BF1836CDD000A411D3 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425BE1836CDD000A411D3 /* Location.m */; };
+		939425C218396B8F00A411D3 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425C118396B8F00A411D3 /* Fraction.m */; };
+		939425C5183997B600A411D3 /* AnswerChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425C4183997B600A411D3 /* AnswerChoice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,16 @@
 		93FB11C11832EC2300B1C074 /* LevelRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelRecord.m; sourceTree = "<group>"; };
 		93FB11C31832EC3F00B1C074 /* LevelRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelRecordView.h; sourceTree = "<group>"; };
 		93FB11C41832EC3F00B1C074 /* LevelRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelRecordView.m; sourceTree = "<group>"; };
+		939425B71836CAD700A411D3 /* QuestionMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionMaster.h; sourceTree = "<group>"; };
+		939425B81836CAD700A411D3 /* QuestionMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionMaster.m; sourceTree = "<group>"; };
+		939425BA1836CB0700A411D3 /* QuestionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionObject.h; sourceTree = "<group>"; };
+		939425BB1836CB0700A411D3 /* QuestionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionObject.m; sourceTree = "<group>"; };
+		939425BD1836CDD000A411D3 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		939425BE1836CDD000A411D3 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		939425C018396B8F00A411D3 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
+		939425C118396B8F00A411D3 /* Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
+		939425C3183997B600A411D3 /* AnswerChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerChoice.h; sourceTree = "<group>"; };
+		939425C4183997B600A411D3 /* AnswerChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerChoice.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +159,16 @@
 				93FB11C11832EC2300B1C074 /* LevelRecord.m */,
 				93FB11C31832EC3F00B1C074 /* LevelRecordView.h */,
 				93FB11C41832EC3F00B1C074 /* LevelRecordView.m */,
+				939425B71836CAD700A411D3 /* QuestionMaster.h */,
+				939425B81836CAD700A411D3 /* QuestionMaster.m */,
+				939425BA1836CB0700A411D3 /* QuestionObject.h */,
+				939425BB1836CB0700A411D3 /* QuestionObject.m */,
+				939425C3183997B600A411D3 /* AnswerChoice.h */,
+				939425C4183997B600A411D3 /* AnswerChoice.m */,
+				939425C018396B8F00A411D3 /* Fraction.h */,
+				939425C118396B8F00A411D3 /* Fraction.m */,
+				939425BD1836CDD000A411D3 /* Location.h */,
+				939425BE1836CDD000A411D3 /* Location.m */,
 			);
 			path = LinEqGame;
 			sourceTree = "<group>";
@@ -276,9 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939425C5183997B600A411D3 /* AnswerChoice.m in Sources */,
+				939425BC1836CB0700A411D3 /* QuestionObject.m in Sources */,
+				939425B91836CAD700A411D3 /* QuestionMaster.m in Sources */,
 				207CD6BA1832EAAF007C4228 /* MyScene.m in Sources */,
+				939425C218396B8F00A411D3 /* Fraction.m in Sources */,
 				207CD6B71832EAAF007C4228 /* ViewController.m in Sources */,
 				207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */,
+				939425BF1836CDD000A411D3 /* Location.m in Sources */,
 				207CD6AD1832EAAF007C4228 /* main.m in Sources */,
 				93FB11C21832EC2300B1C074 /* LevelRecord.m in Sources */,
 				93FB11C51832EC3F00B1C074 /* LevelRecordView.m in Sources */,
