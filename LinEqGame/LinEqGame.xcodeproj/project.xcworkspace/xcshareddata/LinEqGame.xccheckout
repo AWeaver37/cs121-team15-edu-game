@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>079948C2-0275-4972-9DE8-237A80211831</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LinEqGame</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2B5A9A83-1000-47D6-A2C3-B2B7A421DF93</key>
+		<string>ssh://github.com/AWeaver37/cs121-team15-edu-game.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LinEqGame/LinEqGame.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2B5A9A83-1000-47D6-A2C3-B2B7A421DF93</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/AWeaver37/cs121-team15-edu-game.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2B5A9A83-1000-47D6-A2C3-B2B7A421DF93</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2B5A9A83-1000-47D6-A2C3-B2B7A421DF93</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cs121-team15-edu-game</string>
+		</dict>
+	</array>
+</dict>
+</plist>
