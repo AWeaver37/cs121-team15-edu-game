@@ -25,7 +25,10 @@ float axisLength;
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         axisLength = axisGameLength * kratio;
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+//        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"underwater-background.jpg"];
+        background.anchorPoint = CGPointZero;
+        [self addChild:background];
         
         [self drawGrid];
         
@@ -38,7 +41,7 @@ float axisLength;
         pikachu.position = [self convertToRealCoordinatesGameX:0 y:0];
         [self addChild:pikachu];
         
-        
+        NSLog(NSStringFromCGSize(self.frame.size));
     }
     return self;
 }

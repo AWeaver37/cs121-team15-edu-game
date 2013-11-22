@@ -26,6 +26,9 @@
 		207CD6CF1832EAAF007C4228 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6CD1832EAAF007C4228 /* InfoPlist.strings */; };
 		207CD6D11832EAAF007C4228 /* LinEqGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6D01832EAAF007C4228 /* LinEqGameTests.m */; };
 		20B4BCE1183FBCAD008976B6 /* shark.png in Resources */ = {isa = PBXBuildFile; fileRef = 20B4BCE0183FBCAD008976B6 /* shark.png */; };
+		20B4BCE3183FC347008976B6 /* underwater.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B4BCE2183FC347008976B6 /* underwater.jpg */; };
+		20B4BCE5183FC45E008976B6 /* shark-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B4BCE4183FC45E008976B6 /* shark-background.jpg */; };
+		20B4BCE7183FC4A5008976B6 /* underwater-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B4BCE6183FC4A5008976B6 /* underwater-background.jpg */; };
 		939425B91836CAD700A411D3 /* QuestionMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425B81836CAD700A411D3 /* QuestionMaster.m */; };
 		939425BC1836CB0700A411D3 /* QuestionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425BB1836CB0700A411D3 /* QuestionObject.m */; };
 		939425BF1836CDD000A411D3 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425BE1836CDD000A411D3 /* Location.m */; };
@@ -69,6 +72,9 @@
 		207CD6CE1832EAAF007C4228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		207CD6D01832EAAF007C4228 /* LinEqGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinEqGameTests.m; sourceTree = "<group>"; };
 		20B4BCE0183FBCAD008976B6 /* shark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shark.png; sourceTree = "<group>"; };
+		20B4BCE2183FC347008976B6 /* underwater.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater.jpg; sourceTree = "<group>"; };
+		20B4BCE4183FC45E008976B6 /* shark-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shark-background.jpg"; sourceTree = "<group>"; };
+		20B4BCE6183FC4A5008976B6 /* underwater-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "underwater-background.jpg"; sourceTree = "<group>"; };
 		939425B71836CAD700A411D3 /* QuestionMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionMaster.h; sourceTree = "<group>"; };
 		939425B81836CAD700A411D3 /* QuestionMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionMaster.m; sourceTree = "<group>"; };
 		939425BA1836CB0700A411D3 /* QuestionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionObject.h; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 		20427842183D901600A3BBE9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				20B4BCE6183FC4A5008976B6 /* underwater-background.jpg */,
+				20B4BCE4183FC45E008976B6 /* shark-background.jpg */,
+				20B4BCE2183FC347008976B6 /* underwater.jpg */,
 				20B4BCE0183FBCAD008976B6 /* shark.png */,
 				20427840183D900900A3BBE9 /* pikachu.png */,
 			);
@@ -289,8 +298,11 @@
 			files = (
 				20B4BCE1183FBCAD008976B6 /* shark.png in Resources */,
 				207CD6AB1832EAAF007C4228 /* InfoPlist.strings in Resources */,
+				20B4BCE7183FC4A5008976B6 /* underwater-background.jpg in Resources */,
 				207CD6BE1832EAAF007C4228 /* Images.xcassets in Resources */,
 				207CD6BC1832EAAF007C4228 /* Spaceship.png in Resources */,
+				20B4BCE3183FC347008976B6 /* underwater.jpg in Resources */,
+				20B4BCE5183FC45E008976B6 /* shark-background.jpg in Resources */,
 				207CD6B41832EAAF007C4228 /* Main.storyboard in Resources */,
 				20427841183D900900A3BBE9 /* pikachu.png in Resources */,
 			);
