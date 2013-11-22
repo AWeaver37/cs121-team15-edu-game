@@ -25,6 +25,7 @@
 		93A3CD25183D39B300FA5F42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93A3CD23183D39B300FA5F42 /* InfoPlist.strings */; };
 		93A3CD27183D39B300FA5F42 /* LinEqGame_LevelRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A3CD26183D39B300FA5F42 /* LinEqGame_LevelRecordTests.m */; };
 		93A3CD32183D3A1E00FA5F42 /* LevelRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A3CD31183D3A1E00FA5F42 /* LevelRecord.m */; };
+		93A3CD35183DAC4100FA5F42 /* LevelRecordNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A3CD34183DAC4100FA5F42 /* LevelRecordNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		93A3CD26183D39B300FA5F42 /* LinEqGame_LevelRecordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinEqGame_LevelRecordTests.m; sourceTree = "<group>"; };
 		93A3CD30183D3A1E00FA5F42 /* LevelRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelRecord.h; sourceTree = "<group>"; };
 		93A3CD31183D3A1E00FA5F42 /* LevelRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelRecord.m; sourceTree = "<group>"; };
+		93A3CD33183DAC4100FA5F42 /* LevelRecordNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelRecordNode.h; sourceTree = "<group>"; };
+		93A3CD34183DAC4100FA5F42 /* LevelRecordNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelRecordNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,18 +127,20 @@
 		93A3CCFC183D39B200FA5F42 /* LinEqGame.LevelRecord */ = {
 			isa = PBXGroup;
 			children = (
+				93A3CD30183D3A1E00FA5F42 /* LevelRecord.h */,
+				93A3CD31183D3A1E00FA5F42 /* LevelRecord.m */,
+				93A3CD0E183D39B300FA5F42 /* LevelRecordScene.h */,
+				93A3CD0F183D39B300FA5F42 /* LevelRecordScene.m */,
+				93A3CD33183DAC4100FA5F42 /* LevelRecordNode.h */,
+				93A3CD34183DAC4100FA5F42 /* LevelRecordNode.m */,
 				93A3CD05183D39B200FA5F42 /* AppDelegate.h */,
 				93A3CD06183D39B200FA5F42 /* AppDelegate.m */,
 				93A3CD08183D39B200FA5F42 /* Main.storyboard */,
 				93A3CD0B183D39B200FA5F42 /* ViewController.h */,
 				93A3CD0C183D39B300FA5F42 /* ViewController.m */,
-				93A3CD0E183D39B300FA5F42 /* LevelRecordScene.h */,
-				93A3CD0F183D39B300FA5F42 /* LevelRecordScene.m */,
 				93A3CD11183D39B300FA5F42 /* Spaceship.png */,
 				93A3CD13183D39B300FA5F42 /* Images.xcassets */,
 				93A3CCFD183D39B200FA5F42 /* Supporting Files */,
-				93A3CD30183D3A1E00FA5F42 /* LevelRecord.h */,
-				93A3CD31183D3A1E00FA5F42 /* LevelRecord.m */,
 			);
 			path = LinEqGame.LevelRecord;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93A3CD10183D39B300FA5F42 /* LevelRecordScene.m in Sources */,
+				93A3CD35183DAC4100FA5F42 /* LevelRecordNode.m in Sources */,
 				93A3CD0D183D39B300FA5F42 /* ViewController.m in Sources */,
 				93A3CD07183D39B200FA5F42 /* AppDelegate.m in Sources */,
 				93A3CD32183D3A1E00FA5F42 /* LevelRecord.m in Sources */,

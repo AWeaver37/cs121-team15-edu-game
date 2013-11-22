@@ -17,50 +17,64 @@
 @implementation LevelRecordScene
 
 // Set the length of the health bar
-static const int HEALTH_BAR_LENGTH = 20;
+// This is equivalent to the number of questions in the level
+static const int HEALTH_BAR_LENGTH = 10;
 
-// Initialize the SKCropNode healthBarNode
-// Some of following comments and code have been modified from Apple's SpriteKit Programming Guide
-// "When the crop node is rendered, the mask is rendered before the descendants are drawn.
-// Only the alpha component of the resulting mask is relevant.
-// Any pixel in the mask with an alpha value of 0.05 or higher is rendered. All other pixels are cropped."
+// Generate the int array where 1 represents true and 0 represents false
+// Admitted temporary hard coding hack
+- (NSInteger*) createHealthBarInts {
+    NSInteger health0 = 1;
+    NSInteger health1 = 1;
+    NSInteger health2 = 1;
+    NSInteger health3 = 1;
+    NSInteger health4 = 1;
+    NSInteger health5 = 1;
+    NSInteger health6 = 1;
+    NSInteger health7 = 1;
+    NSInteger health8 = 1;
+    NSInteger health9 = 1;
+    
+    _healthBarInts[0] = health0;
+    _healthBarInts[1] = health1;
+    _healthBarInts[2] = health2;
+    _healthBarInts[3] = health3;
+    _healthBarInts[4] = health4;
+    _healthBarInts[5] = health5;
+    _healthBarInts[6] = health6;
+    _healthBarInts[7] = health7;
+    _healthBarInts[8] = health8;
+    _healthBarInts[9] = health9;
+
+    return _healthBarInts;
+}
+
+// Initialize the SKShapeNode healthBarNode
 - (void)inithealthBar {
     
-    // Apple's SpriteKit Programming Guide code
-    SKCropNode *healthBarNode = [[SKCropNode alloc] init];
-    healthBarNode.position = CGPointMake(CGRectGetMidX(_bounds),
-                                  CGRectGetMidY(_bounds));
-
-    healthBarNode.maskNode = [[SKSpriteNode alloc] initWithImageNamed:@"healthBarMask"]; // TODO
-    [healthBarNode addChild:_gamePlayNode];
-    [self addChild:healthBarNode];
-    [self addChild:_gameControlNodes];
-    // End Apple's SpriteKit Programming Guide code
-    
-    
     // Initialize the numeric representation of the health bar
-    _healthBar = [[NSArray alloc] init];
-    
+    [self createHealthBarInts];
+       
 
 }
 
 /* Methods */
 
-// Calculates the currentHealth based on the first true index in healthBar
+// Calculates the currentHealth based on the first index that's
+// represented by a 1 (true) in healthBarInts
 // Note: does not update currentHealth, but can easily be changed to if desired.
 // Use: currentHealth = calcCurrentHealth();
 - (int)calcCurrentHealth {
-//    for (int top = _healthBar.count; top >= 0; --top) {
-//        if (_healthBar objectAtIndex:top == true){
-//            return top;
-//        }
-//    
-//        // If none of the values in healthBar are true, return a -1 to indicate
-//        // that the healthBar is empty
-//        else {
-//            return -1;
-//        }
-//    }
+    for (int top = HEALTH_BAR_LENGTH; top >= 0; --top) {
+        if ([_healthBar objectAtIndex:top = 1]) {
+            return top;
+        }
+    
+        // If none of the values in healthBar are true, return a -1 to indicate
+        // that the healthBar is empty
+        else {
+            return -1;
+        }
+    }
     return 1;
 }
 
@@ -88,7 +102,10 @@ static const int HEALTH_BAR_LENGTH = 20;
         myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                        CGRectGetMidY(self.frame));
         
+        LevelRecordNode * levelRecordNode = [[LevelRecordNode alloc] init];
+        [levelRecordNode createAllBars];
         [self addChild:myLabel];
+        [self addChild:levelRecordNode];
     }
     return self;
 }

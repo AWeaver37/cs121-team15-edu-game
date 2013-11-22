@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "LevelRecordNode.h"
 
 
 @interface LevelRecordScene : SKScene
@@ -27,6 +28,8 @@
 // The value is true if the section remains and false if it has been depleted.
 // This is the numerical representation of how much of the healthBarNode to show.
 @property (nonatomic) NSArray *healthBar;
+
+@property (nonatomic) NSInteger *healthBarInts;
 
 // Keeps track of which index of the healthBar currently represents the top
 // of the user's health level
