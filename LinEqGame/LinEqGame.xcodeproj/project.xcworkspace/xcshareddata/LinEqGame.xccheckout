@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>445A0572-D259-470C-94F9-B28725376119</string>
+	<string>DC25D462-9574-46E0-87D3-626D5B10EC4B</string>
 	<key>IDESourceControlProjectName</key>
 	<string>LinEqGame</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>FCE962A7-E571-4901-9406-BA6E1FF8E4E1</key>
+		<key>68762D72-53C0-4093-B523-2515B44082CA</key>
 		<string>https://github.com/AWeaver37/cs121-team15-edu-game.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>LinEqGame/LinEqGame.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>FCE962A7-E571-4901-9406-BA6E1FF8E4E1</key>
+		<key>68762D72-53C0-4093-B523-2515B44082CA</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FCE962A7-E571-4901-9406-BA6E1FF8E4E1</string>
+	<string>68762D72-53C0-4093-B523-2515B44082CA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>FCE962A7-E571-4901-9406-BA6E1FF8E4E1</string>
+			<string>68762D72-53C0-4093-B523-2515B44082CA</string>
 			<key>IDESourceControlWCCName</key>
 			<string>linear_equations</string>
 		</dict>

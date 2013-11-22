@@ -15,6 +15,7 @@
     float selectorXPos = 850.0;
 //    float selectorYPos = 30.0*10.24;
     float selectorYPos = 280;
+    
     self.name = @"SelectorFrame";
     CGRect selectorRect = CGRectMake(0, 0, 150, 450);
     CGPathRef selectorPath =  CGPathCreateWithRect(selectorRect, NULL);
@@ -67,4 +68,24 @@
     
 }
 
+-(void)setButtons: (QuestionObject *) question
+{
+    NSArray * slopeChoices = [[NSArray alloc] initWithArray: question.slopeAnswer.answerChoices];
+    NSArray * postionChoices = [[NSArray alloc] initWithArray: question.interceptAnswer.answerChoices];
+    
+    
+    
+    for( int i = 0; i<3; i++)
+    {
+        NSString * currentSlope = [[slopeChoices objectAtIndex:i] description];
+        NSString * currentPostion = [[postionChoices objectAtIndex:i] description];
+        NSLog(currentPostion);
+        NSLog(currentSlope);
+        
+        ((SKLabelNode *)[[[self childNodeWithName:@"SlopeSelector"] childNodeWithName:[NSString stringWithFormat:@"SlopeButton%d", i ]]childNodeWithName:[NSString stringWithFormat:@"Button%dText", i ]]).text = currentSlope;
+
+        ((SKLabelNode *)[[[self childNodeWithName:@"PositionSelector"] childNodeWithName:[NSString stringWithFormat:@"PosButton%d", i ]]childNodeWithName:[NSString stringWithFormat:@"Button%dText", i ]]).text = currentPostion;
+    }
+
+}
 @end

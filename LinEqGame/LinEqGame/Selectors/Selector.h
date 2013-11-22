@@ -9,12 +9,15 @@
 #import <SpriteKit/SpriteKit.h>
 #import "PositionSelector.h"
 #import "SlopeSelector.h"
+#import "QuestionObject.h"
+#import "AnswerChoice.h"
 
 @interface Selector : SKShapeNode
 
 
 -(void)setupWithPresets;
 -(void)createSelectorsFromDimensions: (CGRect) rect;
+-(void)setButtons: (QuestionObject *) question;
 
 
 @end

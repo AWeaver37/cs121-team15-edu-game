@@ -19,8 +19,8 @@
         _minY = 0;
         _maxY = 50;
         
-        _maxSlopeNum = 19;
-        _maxSlopeDen = 19;
+        _maxSlopeNum = 9;
+        _maxSlopeDen = 9;
     }
     return self;
 }
