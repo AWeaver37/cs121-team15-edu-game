@@ -10,6 +10,9 @@
 #import "QuestionMaster.h"
 #define kratio 12
 
+static const uint32_t projectileCategory     =  0x1 << 0;
+static const uint32_t enemyCategory          =  0x1 << 1;
+
 @interface MyScene ()
 @property CGPoint origin;
 @property QuestionMaster *qm;
@@ -43,8 +46,8 @@ float yAxisLength;
         SKSpriteNode *pikachu = [SKSpriteNode spriteNodeWithImageNamed:@"pikachu"];
         pikachu.position = [self convertToRealCoordinatesGameX:0 y:0];
         [self addChild:pikachu];
-        
-        NSLog(NSStringFromCGSize(self.frame.size));
+        Location *location = [question.enemyLocations objectAtIndex:0];
+        [self attackCoordinateWithX:location.x Y:location.y];
     }
     return self;
 }
@@ -54,6 +57,12 @@ float yAxisLength;
 {
     SKSpriteNode *shark = [SKSpriteNode spriteNodeWithImageNamed:@"shark"];
     shark.position = [self convertToRealCoordinatesGameX:x y:y];
+    shark.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:shark.size];
+    shark.physicsBody.dynamic = YES;
+    shark.physicsBody.categoryBitMask = enemyCategory;
+    shark.physicsBody.contactTestBitMask = projectileCategory;
+    shark.physicsBody.collisionBitMask = 0;
+
     [self addChild:shark];
     
     float below = 75;
@@ -61,7 +70,58 @@ float yAxisLength;
     coordinates.text = [NSString stringWithFormat:@"(%1.0f, %1.0f)", x, y];
     coordinates.position = CGPointMake(shark.position.x, shark.position.y - below);
     [self addChild:coordinates];
+    
+    self.physicsWorld.gravity = CGVectorMake(0, 0);
+    self.physicsWorld.contactDelegate = self;
+}
 
+- (void)attackCoordinateWithX:(float)x Y:(float)y
+{
+    SKSpriteNode *lightning = [SKSpriteNode spriteNodeWithImageNamed:@"lightning"];
+    lightning.position = self.origin;
+    lightning.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:lightning.size.width/2];
+    lightning.physicsBody.dynamic = YES;
+    lightning.physicsBody.categoryBitMask = projectileCategory;
+    lightning.physicsBody.contactTestBitMask = enemyCategory;
+    lightning.physicsBody.collisionBitMask = 0;
+    lightning.physicsBody.usesPreciseCollisionDetection = YES;
+    [self addChild:lightning];
+    
+    SKAction *move = [SKAction
+                      moveTo:[self convertToRealCoordinatesGameX:x y:y]
+                      duration:2];
+    [lightning runAction:move];
+    
+}
+
+- (void)projectile:(SKSpriteNode *)projectile didCollideWithMonster:(SKSpriteNode *)monster {
+    NSLog(@"Hit");
+    [projectile removeFromParent];
+    [monster removeFromParent];
+}
+
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    // 1
+    SKPhysicsBody *firstBody, *secondBody;
+    
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
+    {
+        firstBody = contact.bodyA;
+        secondBody = contact.bodyB;
+    }
+    else
+    {
+        firstBody = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
+    
+    // 2
+    if ((firstBody.categoryBitMask & projectileCategory) != 0 &&
+        (secondBody.categoryBitMask & enemyCategory) != 0)
+    {
+        [self projectile:(SKSpriteNode *) firstBody.node didCollideWithMonster:(SKSpriteNode *) secondBody.node];
+    }
 }
 
 - (void)drawGrid {
