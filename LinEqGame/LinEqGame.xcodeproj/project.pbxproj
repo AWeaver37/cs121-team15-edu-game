@@ -25,7 +25,6 @@
 		207CD6C71832EAAF007C4228 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A21832EAAF007C4228 /* UIKit.framework */; };
 		207CD6CF1832EAAF007C4228 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6CD1832EAAF007C4228 /* InfoPlist.strings */; };
 		207CD6D11832EAAF007C4228 /* LinEqGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6D01832EAAF007C4228 /* LinEqGameTests.m */; };
-<<<<<<< HEAD
 		20B4BCE1183FBCAD008976B6 /* shark.png in Resources */ = {isa = PBXBuildFile; fileRef = 20B4BCE0183FBCAD008976B6 /* shark.png */; };
 		20B4BCE3183FC347008976B6 /* underwater.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B4BCE2183FC347008976B6 /* underwater.jpg */; };
 		20B4BCE5183FC45E008976B6 /* shark-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20B4BCE4183FC45E008976B6 /* shark-background.jpg */; };
@@ -36,12 +35,10 @@
 		939425BF1836CDD000A411D3 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425BE1836CDD000A411D3 /* Location.m */; };
 		939425C218396B8F00A411D3 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425C118396B8F00A411D3 /* Fraction.m */; };
 		939425C5183997B600A411D3 /* AnswerChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425C4183997B600A411D3 /* AnswerChoice.m */; };
-=======
 		AE99E5111834BD7300A26276 /* Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = AE99E5101834BD7300A26276 /* Selector.m */; };
 		AE99E51718354CD900A26276 /* PositionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = AE99E51618354CD900A26276 /* PositionSelector.m */; };
 		AE99E51A18354CE900A26276 /* SelectorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE99E51918354CE900A26276 /* SelectorButton.m */; };
 		AE99E51D1835529300A26276 /* SlopeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = AE99E51C1835529300A26276 /* SlopeSelector.m */; };
->>>>>>> 84c18a7... Adding Selector Button Files
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +76,6 @@
 		207CD6CC1832EAAF007C4228 /* LinEqGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LinEqGameTests-Info.plist"; sourceTree = "<group>"; };
 		207CD6CE1832EAAF007C4228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		207CD6D01832EAAF007C4228 /* LinEqGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinEqGameTests.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		20B4BCE0183FBCAD008976B6 /* shark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shark.png; sourceTree = "<group>"; };
 		20B4BCE2183FC347008976B6 /* underwater.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater.jpg; sourceTree = "<group>"; };
 		20B4BCE4183FC45E008976B6 /* shark-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "shark-background.jpg"; sourceTree = "<group>"; };
@@ -95,7 +91,6 @@
 		939425C118396B8F00A411D3 /* Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
 		939425C3183997B600A411D3 /* AnswerChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerChoice.h; sourceTree = "<group>"; };
 		939425C4183997B600A411D3 /* AnswerChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerChoice.m; sourceTree = "<group>"; };
-=======
 		AE99E50F1834BD7300A26276 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
 		AE99E5101834BD7300A26276 /* Selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Selector.m; sourceTree = "<group>"; };
 		AE99E51518354CD900A26276 /* PositionSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionSelector.h; sourceTree = "<group>"; };
@@ -104,7 +99,6 @@
 		AE99E51918354CE900A26276 /* SelectorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorButton.m; sourceTree = "<group>"; };
 		AE99E51B1835529300A26276 /* SlopeSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlopeSelector.h; sourceTree = "<group>"; };
 		AE99E51C1835529300A26276 /* SlopeSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlopeSelector.m; sourceTree = "<group>"; };
->>>>>>> 84c18a7... Adding Selector Button Files
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,18 +198,12 @@
 				207CD6B21832EAAF007C4228 /* Main.storyboard */,
 				207CD6B51832EAAF007C4228 /* ViewController.h */,
 				207CD6B61832EAAF007C4228 /* ViewController.m */,
-<<<<<<< HEAD
-<<<<<<< HEAD
 				207CD6B81832EAAF007C4228 /* GridScene.h */,
 				207CD6B91832EAAF007C4228 /* GridScene.m */,
-=======
 				AE99E50E1832F0ED00A26276 /* Selectors */,
 				207CD6B81832EAAF007C4228 /* MyScene.h */,
 				207CD6B91832EAAF007C4228 /* MyScene.m */,
->>>>>>> 84c18a7... Adding Selector Button Files
-=======
 				AE99E50E1832F0ED00A26276 /* Selectors */,
->>>>>>> 14f9dc2... Forgotten commits.
 				207CD6BB1832EAAF007C4228 /* Spaceship.png */,
 				207CD6BD1832EAAF007C4228 /* Images.xcassets */,
 				207CD6A71832EAAF007C4228 /* Supporting Files */,
@@ -372,24 +360,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				939425C5183997B600A411D3 /* AnswerChoice.m in Sources */,
 				939425BC1836CB0700A411D3 /* QuestionObject.m in Sources */,
 				939425B91836CAD700A411D3 /* QuestionMaster.m in Sources */,
 				939425C218396B8F00A411D3 /* Fraction.m in Sources */,
-=======
 				AE99E51A18354CE900A26276 /* SelectorButton.m in Sources */,
 				2027AE36183FE7DE009C48FB /* GridScene.m in Sources */,
 				AE99E51718354CD900A26276 /* PositionSelector.m in Sources */,
->>>>>>> 84c18a7... Adding Selector Button Files
 				207CD6B71832EAAF007C4228 /* ViewController.m in Sources */,
 				AE99E5111834BD7300A26276 /* Selector.m in Sources */,
 				207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */,
-<<<<<<< HEAD
 				939425BF1836CDD000A411D3 /* Location.m in Sources */,
-=======
 				AE99E51D1835529300A26276 /* SlopeSelector.m in Sources */,
->>>>>>> 84c18a7... Adding Selector Button Files
 				207CD6AD1832EAAF007C4228 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
