@@ -6,19 +6,19 @@
 //  Copyright (c) 2013 Team15. All rights reserved.
 //
 
-#import "MyScene.h"
+#import "GridScene.h"
 #import "QuestionMaster.h"
 #define kratio 12
 
 static const uint32_t projectileCategory     =  0x1 << 0;
 static const uint32_t enemyCategory          =  0x1 << 1;
 
-@interface MyScene ()
+@interface GridScene ()
 @property CGPoint origin;
 @property QuestionMaster *qm;
 @end
 
-@implementation MyScene
+@implementation GridScene
 float tickMarkSpacing = 5;
 float xAxisGameLength = 50;
 float yAxisGameLength = 40;
@@ -47,7 +47,7 @@ float yAxisLength;
         pikachu.position = [self convertToRealCoordinatesGameX:0 y:0];
         [self addChild:pikachu];
         Location *location = [question.enemyLocations objectAtIndex:0];
-        [self attackCoordinateWithX:location.x Y:location.y];
+//        [self attackCoordinateWithX:location.x Y:location.y];
     }
     return self;
 }

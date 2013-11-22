@@ -17,7 +17,7 @@
 		207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6B01832EAAF007C4228 /* AppDelegate.m */; };
 		207CD6B41832EAAF007C4228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6B21832EAAF007C4228 /* Main.storyboard */; };
 		207CD6B71832EAAF007C4228 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6B61832EAAF007C4228 /* ViewController.m */; };
-		207CD6BA1832EAAF007C4228 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6B91832EAAF007C4228 /* MyScene.m */; };
+		207CD6BA1832EAAF007C4228 /* GridScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6B91832EAAF007C4228 /* GridScene.m */; };
 		207CD6BC1832EAAF007C4228 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6BB1832EAAF007C4228 /* Spaceship.png */; };
 		207CD6BE1832EAAF007C4228 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6BD1832EAAF007C4228 /* Images.xcassets */; };
 		207CD6C51832EAAF007C4228 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6C41832EAAF007C4228 /* XCTest.framework */; };
@@ -63,8 +63,8 @@
 		207CD6B31832EAAF007C4228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		207CD6B51832EAAF007C4228 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		207CD6B61832EAAF007C4228 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		207CD6B81832EAAF007C4228 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		207CD6B91832EAAF007C4228 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		207CD6B81832EAAF007C4228 /* GridScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridScene.h; sourceTree = "<group>"; };
+		207CD6B91832EAAF007C4228 /* GridScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridScene.m; sourceTree = "<group>"; };
 		207CD6BB1832EAAF007C4228 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		207CD6BD1832EAAF007C4228 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		207CD6C31832EAAF007C4228 /* LinEqGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinEqGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,8 +184,8 @@
 				207CD6B21832EAAF007C4228 /* Main.storyboard */,
 				207CD6B51832EAAF007C4228 /* ViewController.h */,
 				207CD6B61832EAAF007C4228 /* ViewController.m */,
-				207CD6B81832EAAF007C4228 /* MyScene.h */,
-				207CD6B91832EAAF007C4228 /* MyScene.m */,
+				207CD6B81832EAAF007C4228 /* GridScene.h */,
+				207CD6B91832EAAF007C4228 /* GridScene.m */,
 				207CD6BB1832EAAF007C4228 /* Spaceship.png */,
 				207CD6BD1832EAAF007C4228 /* Images.xcassets */,
 				207CD6A71832EAAF007C4228 /* Supporting Files */,
@@ -330,7 +330,7 @@
 				939425C5183997B600A411D3 /* AnswerChoice.m in Sources */,
 				939425BC1836CB0700A411D3 /* QuestionObject.m in Sources */,
 				939425B91836CAD700A411D3 /* QuestionMaster.m in Sources */,
-				207CD6BA1832EAAF007C4228 /* MyScene.m in Sources */,
+				207CD6BA1832EAAF007C4228 /* GridScene.m in Sources */,
 				939425C218396B8F00A411D3 /* Fraction.m in Sources */,
 				207CD6B71832EAAF007C4228 /* ViewController.m in Sources */,
 				207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */,
