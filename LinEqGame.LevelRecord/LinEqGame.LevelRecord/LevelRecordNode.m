@@ -29,17 +29,18 @@
 - (void)createMessageBar {
     // Set the dimensions
     int messageX = 800;
-    int messageY = 100;
+    int messageY = 75;
     
     // Create the shape node
     SKShapeNode *messageBar = [[SKShapeNode alloc] init];
     CGRect tempRect1 = CGRectMake(0, 0, messageX, messageY);
     CGPathRef messageBarPath = CGPathCreateWithRect(tempRect1, NULL);
     messageBar.path = messageBarPath;
-    messageBar.fillColor = [SKColor blueColor];
+    messageBar.fillColor = [SKColor orangeColor];
+    messageBar.lineWidth = 0.25;
     
     // Tell the node where it should go
-    int messagePosX = 50;
+    int messagePosX = 112;
     int messagePosY = 20;
     messageBar.position = CGPointMake(messagePosX, messagePosY);
     
@@ -60,21 +61,22 @@
     int healthY = 600;
     
     // Create the shape node
-    SKShapeNode *healthBar = [[SKShapeNode alloc] init];
+    _healthBar = [[HealthBarNode alloc] init];
     CGRect tempRect2 = CGRectMake(0, 0, healthX, healthY);
     CGPathRef healthBarPath = CGPathCreateWithRect(tempRect2, NULL);
-    healthBar.path = healthBarPath;
-    healthBar.fillColor = [SKColor blueColor];
+    _healthBar.path = healthBarPath;
+    _healthBar.fillColor = [SKColor greenColor];
+    _healthBar.lineWidth = 0.25;
     
     // Tell the node where it should go
     int healthPosX = 10;
-    int healthPosY = 128;
-    healthBar.position = CGPointMake(healthPosX, healthPosY);
+    int healthPosY = 115;
+    _healthBar.position = CGPointMake(healthPosX, healthPosY);
     
     // Update the healthBar
     
     // Add the healthBar to the main parent node
-    [self addChild:healthBar];
+    [self addChild:_healthBar];
     
 }
 
@@ -84,27 +86,28 @@
     int statsY = 30;
     
     // Create the shape node
-    SKShapeNode *statsBar = [[SKShapeNode alloc] init];
+    _statsBar = [[SKShapeNode alloc] init];
     CGRect tempRect3 = CGRectMake(0, 0, statsX, statsY);
     CGPathRef statsBarPath = CGPathCreateWithRect(tempRect3, NULL);
-    statsBar.path = statsBarPath;
-    statsBar.fillColor = [SKColor blueColor];
+    _statsBar.path = statsBarPath;
+    _statsBar.fillColor = [SKColor yellowColor];
+    _statsBar.lineWidth = 0.25;
     
     // Tell the node where it should go
     int statsPosX = 0;
     int statsPosY = 738;
-    statsBar.position = CGPointMake(statsPosX, statsPosY);
+    _statsBar.position = CGPointMake(statsPosX, statsPosY);
     
     // Add the statsBar to the main parent node
-    [self addChild:statsBar];
+    [self addChild:_statsBar];
     
     // Create the labels for the score and time
     [self createScoreLabel];
     [self createTimeLabel];
     
     // Add score and time labels to the statsBar node
-    [statsBar addChild:_scoreLabel];
-    [statsBar addChild:_timeLabel];
+    [_statsBar addChild:_scoreLabel];
+    [_statsBar addChild:_timeLabel];
     
 }
 
@@ -112,9 +115,11 @@
     // Create the label node
     _consoleMessageLabel = [[SKLabelNode alloc] initWithFontNamed:@"Times New Roman"];
     _consoleMessageLabel.fontColor = [SKColor blackColor];
-    _consoleMessageLabel.fontSize = 5;
-    _consoleMessageLabel.text = @"CONSOLE";
+    _consoleMessageLabel.fontSize = 20;
+    _consoleMessageLabel.text = @"Choose an intercept and slope to fire at the enemies along the correct path.";
     _consoleMessageLabel.name = @"Console Message Label";
+    _consoleMessageLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter + 500;
+    _consoleMessageLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter + 500;
     
 }
 
@@ -124,8 +129,10 @@
     // Create the label node
     _scoreLabel = [[SKLabelNode alloc] initWithFontNamed:@"Times New Roman"];
     _scoreLabel.fontColor = [SKColor blackColor];
-    _scoreLabel.fontSize = 3;
-    _consoleMessageLabel.text = @"SCORE";
+    _scoreLabel.fontSize = 15;
+    _scoreLabel.text = @"SCORE";
+    _scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft + 10;
+    _scoreLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter + 10;
 
 }
 
@@ -134,8 +141,10 @@
     // Create the label node
     _timeLabel = [[SKLabelNode alloc] initWithFontNamed:@"Times New Roman"];
     _timeLabel.fontColor = [SKColor blackColor];
-    _timeLabel.fontSize = 3;
-    _consoleMessageLabel.text = @"TIME";
+    _timeLabel.fontSize = 15;
+    _timeLabel.text = @"TIME";
+    _timeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight + 50;
+    _timeLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter + 50;
 
 }
 

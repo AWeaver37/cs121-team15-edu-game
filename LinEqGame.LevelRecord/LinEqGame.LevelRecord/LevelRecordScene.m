@@ -52,7 +52,6 @@ static const int HEALTH_BAR_LENGTH = 10;
 // Generate the int array where 1 represents true and 0 represents false
 // Admitted temporary hard coding hack
 - (HealthBarNode*)createHealthBarNodes {
-    
     _healthBar = [[HealthBarNode alloc] init];
     
     // Initialize each node
@@ -94,6 +93,7 @@ static const int HEALTH_BAR_LENGTH = 10;
     // and do not change their health level
     if (shotSuccessful) {
         [self updateScore:100]; // TO DO: change, not magic number
+        _levelRecordNode.consoleMessageLabel.text = @"HIT! Well done!";
     }
     
     // If the shot is not successful, do not give the player points
@@ -101,6 +101,7 @@ static const int HEALTH_BAR_LENGTH = 10;
     else {
         [self updateScore:0];
         [self updateHealth:-1];
+        _levelRecordNode.consoleMessageLabel.text = @"MISS! Try a new question!";
     }
 }
 

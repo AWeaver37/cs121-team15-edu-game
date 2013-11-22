@@ -9,8 +9,8 @@
 // LOGIC (Controller)
 
 #import <SpriteKit/SpriteKit.h>
+#import "HealthBarNode.h"
 
-@class HealthBarNode;
 @class LevelRecordNode;
 @interface LevelRecordScene : SKScene
 

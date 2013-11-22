@@ -10,11 +10,12 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "LevelRecordScene.h"
+#import "HealthBarNode.h"
 
 @interface LevelRecordNode : SKNode
 
 @property SKShapeNode *messageBar;
-@property SKShapeNode *healthBar;
+@property HealthBarNode *healthBar;
 @property SKShapeNode *statsBar;
 
 @property SKLabelNode *consoleMessageLabel;
@@ -31,6 +32,15 @@
 //@property(copy, nonatomic) NSString *timeFontName;
 //@property(retain, nonatomic) SKColor *timeFontColor;
 //@property(nonatomic) CGFloat timeFontSize;
+
+@property (nonatomic) SKLabelHorizontalAlignmentMode horizAlignMessage;
+@property (nonatomic) SKLabelHorizontalAlignmentMode horizAlignScore;
+@property (nonatomic) SKLabelHorizontalAlignmentMode horizAlignTime;
+
+@property (nonatomic) SKLabelVerticalAlignmentMode vertAlignMessage;
+@property (nonatomic) SKLabelVerticalAlignmentMode vertAlignScore;
+@property (nonatomic) SKLabelVerticalAlignmentMode vertAlignTime;
+
 
 - (void)createAllBars;
 - (void)createMessageBar;

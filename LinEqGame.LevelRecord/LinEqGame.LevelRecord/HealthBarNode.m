@@ -10,7 +10,12 @@
 
 @implementation HealthBarNode
 
-// Default Constructor
+// Constructor
+- (id)init {
+    return [super init];
+}
+
+
 - (void)initHealthBarNode {
     super.fillColor = [SKColor greenColor];
     _positionX = 0;
