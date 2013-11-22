@@ -60,6 +60,7 @@
         [button addChild:buttonText];
         [self addChild:button];
     }
+    
 }
 
 -(void) changeCurrentSelection: (int) newSelection

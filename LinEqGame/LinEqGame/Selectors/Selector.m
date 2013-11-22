@@ -22,6 +22,7 @@
     self.strokeColor = [SKColor clearColor];
     self.position = CGPointMake(selectorXPos, selectorYPos);
     
+    
     [self createSelectorsFromDimensions:selectorRect];
    
 }
@@ -72,6 +73,11 @@
     NSArray * postionChoices = [[NSArray alloc] initWithArray: question.interceptAnswer.answerChoices];
     
     
+    int correctSlope = question.slopeAnswer.answerIndex;
+    int correctPos = question.interceptAnswer.answerIndex;
+    
+    ((SlopeSelector*)[self childNodeWithName:@"SlopeSelector"]).correctAnswer = correctSlope + 1;
+    ((PositionSelector*)[self childNodeWithName:@"PosSelector"]).correctAnswer = correctSlope + 1;
     
     for( int i = 0; i<3; i++)
     {
@@ -85,5 +91,19 @@
         ((SKLabelNode *)[[[self childNodeWithName:@"PositionSelector"] childNodeWithName:[NSString stringWithFormat:@"PosButton%d", i ]]childNodeWithName:[NSString stringWithFormat:@"Button%dText", i ]]).text = currentPostion;
     }
 
+}
+
+-(BOOL) isSelectionCorrect
+{
+    if( ((SlopeSelector*)[self childNodeWithName:@"SlopeSelector"]).currentSelection ==
+        ((SlopeSelector*)[self childNodeWithName:@"SlopeSelector"]).correctAnswer
+       &&
+        ((PositionSelector*)[self childNodeWithName:@"PosSelector"]).currentSelection ==
+        ((PositionSelector*)[self childNodeWithName:@"PosSelector"]).correctAnswer)
+    {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
 }
 @end
