@@ -16,10 +16,14 @@
 
 - (QuestionObject*) generateQuestion;
 
+//Bounds on where enemies can appear
 @property int minX;
 @property int maxX;
 @property int minY;
 @property int maxY;
+
+//Bounds on the slope of form numerator/denominator
+//Denominator should be significantly less than maxX-minX
 @property int maxSlopeNum;
 @property int maxSlopeDen;
 

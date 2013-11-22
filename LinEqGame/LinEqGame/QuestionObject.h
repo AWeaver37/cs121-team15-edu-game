@@ -12,10 +12,13 @@
 
 @interface QuestionObject : NSObject
 
+//Slope answer choices
 @property AnswerChoice* slopeAnswer;
 
+//Intercept answer choices
 @property AnswerChoice* interceptAnswer;
 
+//Array of Location variables
 @property NSMutableArray* enemyLocations;
 
 @end
