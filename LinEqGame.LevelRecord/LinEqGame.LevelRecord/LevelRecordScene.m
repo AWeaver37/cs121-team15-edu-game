@@ -190,6 +190,7 @@ static const int HEALTH_BAR_LENGTH = 10;
         [levelRecordNode createAllBars];
         [self addChild:myLabel];
         [self addChild:levelRecordNode];
+
     }
     return self;
 }

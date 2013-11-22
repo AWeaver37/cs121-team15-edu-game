@@ -43,17 +43,14 @@
     int messagePosY = 20;
     messageBar.position = CGPointMake(messagePosX, messagePosY);
     
-    // Add the messageBar to the main parent node
-    [self addChild:messageBar];
+    // Create the label for the consoleMessage
+    [self createMessageLabel];
     
     // Add the consoleMessage to the messageBar node
     [messageBar addChild:_consoleMessageLabel];
     
-    // Create the label for the consoleMessage
-    [self createMessageLabel];
-    
-    // Add the consoleMessage label to the statsBar node
-    [messageBar addChild:_consoleMessageLabel];
+    // Add the messageBar to the main parent node
+    [self addChild:messageBar];
 
 }
 
@@ -78,6 +75,7 @@
     
     // Add the healthBar to the main parent node
     [self addChild:healthBar];
+    
 }
 
 - (void)createStatsBar {
@@ -107,14 +105,16 @@
     // Add score and time labels to the statsBar node
     [statsBar addChild:_scoreLabel];
     [statsBar addChild:_timeLabel];
+    
 }
 
 - (void)createMessageLabel {
-    
     // Create the label node
     _consoleMessageLabel = [[SKLabelNode alloc] initWithFontNamed:@"Times New Roman"];
     _consoleMessageLabel.fontColor = [SKColor blackColor];
     _consoleMessageLabel.fontSize = 5;
+    _consoleMessageLabel.text = @"CONSOLE";
+    _consoleMessageLabel.name = @"Console Message Label";
     
 }
 
@@ -125,6 +125,7 @@
     _scoreLabel = [[SKLabelNode alloc] initWithFontNamed:@"Times New Roman"];
     _scoreLabel.fontColor = [SKColor blackColor];
     _scoreLabel.fontSize = 3;
+    _consoleMessageLabel.text = @"SCORE";
 
 }
 
@@ -134,6 +135,7 @@
     _timeLabel = [[SKLabelNode alloc] initWithFontNamed:@"Times New Roman"];
     _timeLabel.fontColor = [SKColor blackColor];
     _timeLabel.fontSize = 3;
+    _consoleMessageLabel.text = @"TIME";
 
 }
 
