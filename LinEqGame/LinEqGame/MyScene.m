@@ -52,6 +52,13 @@ float axisLength;
     SKSpriteNode *shark = [SKSpriteNode spriteNodeWithImageNamed:@"shark"];
     shark.position = [self convertToRealCoordinatesGameX:x y:y];
     [self addChild:shark];
+    
+    float below = 75;
+    SKLabelNode *coordinates = [[SKLabelNode alloc] initWithFontNamed:@"Marker"];
+    coordinates.text = [NSString stringWithFormat:@"(%1.0f, %1.0f)", x, y];
+    coordinates.position = CGPointMake(shark.position.x, shark.position.y - below);
+    [self addChild:coordinates];
+
 }
 
 - (void)drawGrid {
