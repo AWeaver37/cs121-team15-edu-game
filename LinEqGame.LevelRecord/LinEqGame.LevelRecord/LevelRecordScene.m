@@ -94,6 +94,7 @@ static const int HEALTH_BAR_LENGTH = 10;
     if (shotSuccessful) {
         [self updateScore:100]; // TO DO: change, not magic number
         _levelRecordNode.consoleMessageLabel.text = @"HIT! Well done!";
+        _levelRecordNode.scoreLabel.text = [NSString stringWithFormat:@"%d", _currentScore];
     }
     
     // If the shot is not successful, do not give the player points

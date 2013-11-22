@@ -117,7 +117,7 @@
     _consoleMessageLabel.fontColor = [SKColor blackColor];
     _consoleMessageLabel.fontSize = 20;
     _consoleMessageLabel.text = @"Choose an intercept and slope to fire at the enemies along the correct path.";
-    _consoleMessageLabel.name = @"Console Message Label";
+    _consoleMessageLabel.position = CGPointMake(125, 25);
     _consoleMessageLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeCenter + 500;
     _consoleMessageLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter + 500;
     
@@ -129,8 +129,9 @@
     // Create the label node
     _scoreLabel = [[SKLabelNode alloc] initWithFontNamed:@"Times New Roman"];
     _scoreLabel.fontColor = [SKColor blackColor];
-    _scoreLabel.fontSize = 15;
+    _scoreLabel.fontSize = 20;
     _scoreLabel.text = @"SCORE";
+    _scoreLabel.position = CGPointMake(175, 5);
     _scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft + 10;
     _scoreLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter + 10;
 
@@ -141,8 +142,9 @@
     // Create the label node
     _timeLabel = [[SKLabelNode alloc] initWithFontNamed:@"Times New Roman"];
     _timeLabel.fontColor = [SKColor blackColor];
-    _timeLabel.fontSize = 15;
+    _timeLabel.fontSize = 20;
     _timeLabel.text = @"TIME";
+    _timeLabel.position = CGPointMake(775, 5);
     _timeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight + 50;
     _timeLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter + 50;
 
