@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LinEqGame/Fraction.m"
-            timestampString = "406462471.458593"
+            timestampString = "406837484.725813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "@implementation Fraction"
             landmarkType = "3">
          </BreakpointContent>

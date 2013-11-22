@@ -19,8 +19,8 @@
         _minY = -30;
         _maxY = 30;
         
-        _maxSlopeNum = 19;
-        _maxSlopeDen = 19;
+        _maxSlopeNum = 9;
+        _maxSlopeDen = 9;
     }
     return self;
 }
@@ -90,9 +90,8 @@
 
 - (void) setCorrectIndex: (int*) indexAddress
           setChoiceArray: (NSMutableArray*) choices
-               forAnswer: (Fraction*) answer{
-    
-    int offsetLevel = 2;
+               forAnswer: (Fraction*) answer
+         withOffsetLevel: (int) offsetLevel{
     
     assert(offsetLevel>0);
     
@@ -117,10 +116,10 @@
         Fraction* wrongChoice = [[Fraction alloc]
                                  initWithNum:answer.numerator + totalOffset
                                  AndDen:answer.denominator];
-        
+        [wrongChoice simplify];
         [choices setObject:wrongChoice atIndexedSubscript:i];
     }
-    
+    [answer simplify];
     *indexAddress = [self randomBetween:0 And:2];
     [choices insertObject: answer atIndex:*indexAddress];
     
@@ -163,36 +162,14 @@
     
     [self setCorrectIndex: &slopeIndex
            setChoiceArray: slopeChoices
-                forAnswer: slope];
+                forAnswer: slope
+          withOffsetLevel: 2];
     
     [self setCorrectIndex: &interceptIndex
            setChoiceArray: interceptChoices
-                forAnswer: intercept];
+                forAnswer: intercept
+          withOffsetLevel: 10];
 
-    
-
-
-    
-    
-    
-//    
-//    
-//    NSLog(@"\n slope = %@ \n intercept = %@ \n alien1: %@ \n alien2: %@",
-//          slope,
-//          intercept,
-//          alien1, alien2);
-//    
-//    NSLog(@"\n interceptChoices:\n %@ \n %@ \n %@",
-//          [interceptChoices objectAtIndex:0],
-//          [interceptChoices objectAtIndex:1],
-//          [interceptChoices objectAtIndex:2]);
-//    
-//    NSLog(@"\n slopeChoices:\n %@ \n %@ \n %@",
-//          [slopeChoices objectAtIndex:0],
-//          [slopeChoices objectAtIndex:1],
-//          [slopeChoices objectAtIndex:2]);
-    
-    
     
     
     QuestionObject* newQuestion = [[QuestionObject alloc] init];

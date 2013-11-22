@@ -19,7 +19,6 @@
 }
 
 - (NSString*) description{
-    [self simplify];
     if (_denominator == 1) {
         return [NSString stringWithFormat:@"%d",_numerator];
     } else {
@@ -48,5 +47,16 @@
         }
     }
 }
+
+- (int) integerPart{
+    return _numerator/_denominator;
+};
+
+- (Fraction*) fractionPart{
+    Fraction* fractionPart = [[Fraction alloc] init];
+    fractionPart.numerator = ABS( _numerator%_denominator);
+    fractionPart.denominator = _denominator;
+    return fractionPart;
+};
 
 @end

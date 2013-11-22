@@ -52,6 +52,11 @@
     
     NSLog(@"%@", [qm generateQuestion]);
     
+    Fraction* blah = [[Fraction alloc] init];
+    blah.numerator = -7;
+    blah.denominator = 4;
+    NSLog(@"%d(%@)", blah.integerPart, blah.fractionPart);
+    
 }
 
 -(void)update:(CFTimeInterval)currentTime {
