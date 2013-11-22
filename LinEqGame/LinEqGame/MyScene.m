@@ -8,7 +8,6 @@
 
 #import "MyScene.h"
 #import "QuestionMaster.h"
-#define kaxisLength 600
 #define kratio 12
 
 @interface MyScene ()
@@ -17,10 +16,15 @@
 @end
 
 @implementation MyScene
+float tickMarkSpacing = 10;
+float axisGameLength = 50;
+float tickLength = 30;
+float axisLength;
+
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        
+        axisLength = axisGameLength * kratio;
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         [self drawGrid];
@@ -52,9 +56,7 @@
     self.origin = CGPointMake(CGRectGetMinX(self.frame) + 100, CGRectGetMinY(self.frame) + 100);
     
     //The axes go from 0 to axisGameLength, with ticks appearing every tickMarkSpacing units
-    float tickMarkSpacing = 10;
-    float axisGameLength = 50;
-    float tickLength = 30;
+
     UIColor *tickColor = [UIColor blueColor];
     
     /* Axes */
@@ -63,7 +65,7 @@
     xAxis.position = self.origin;
     CGMutablePathRef xPath = CGPathCreateMutable();
     CGPathMoveToPoint(xPath, NULL, 0, 0);
-    CGPathAddLineToPoint(xPath, NULL, kaxisLength, 0);
+    CGPathAddLineToPoint(xPath, NULL, axisLength, 0);
     xAxis.path = xPath;
     [xAxis setStrokeColor:[UIColor redColor]];
     [self addChild:xAxis];
@@ -74,7 +76,7 @@
     yAxis.position = self.origin;
     CGMutablePathRef yPath = CGPathCreateMutable();
     CGPathMoveToPoint(yPath, NULL, 0, 0);
-    CGPathAddLineToPoint(yPath, NULL, 0, kaxisLength);
+    CGPathAddLineToPoint(yPath, NULL, 0, axisLength);
     yAxis.path = yPath;
     [yAxis setStrokeColor:[UIColor redColor]];
     [self addChild:yAxis];
@@ -84,12 +86,13 @@
     /* Ticks */
     //offset of coordinate number from tick mark
     float offset = 50;
-    float realTickMarkSpacing = (tickMarkSpacing/axisGameLength)*kaxisLength;
+//    float realTickMarkSpacing = (tickMarkSpacing/axisGameLength)*kaxisLength;
+    float realTickMarkSpacing = tickMarkSpacing * kratio;
     
     //x-axis
     float realX = self.origin.x;
     float gameX = 0;
-    for (; realX <= self.origin.x + kaxisLength; realX += realTickMarkSpacing, gameX += tickMarkSpacing)
+    for (; realX <= self.origin.x + axisLength; realX += realTickMarkSpacing, gameX += tickMarkSpacing)
     {
         CGPoint currentPosition = CGPointMake(realX, self.origin.y);
         
@@ -119,7 +122,7 @@
     //y-axis
     float realY = self.origin.y;
     float gameY = 0;
-    for (; realY <= self.origin.y + kaxisLength; realY += realTickMarkSpacing, gameY += tickMarkSpacing)
+    for (; realY <= self.origin.y + axisLength; realY += realTickMarkSpacing, gameY += tickMarkSpacing)
     {
         CGPoint currentPosition = CGPointMake(self.origin.x, realY);
         NSLog(@"Added tick at %@", NSStringFromCGPoint(currentPosition));
