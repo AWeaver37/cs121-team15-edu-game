@@ -16,15 +16,18 @@
 @end
 
 @implementation MyScene
-float tickMarkSpacing = 10;
-float axisGameLength = 50;
+float tickMarkSpacing = 5;
+float xAxisGameLength = 50;
+float yAxisGameLength = 40;
 float tickLength = 30;
-float axisLength;
+float xAxisLength;
+float yAxisLength;
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        axisLength = axisGameLength * kratio;
+        xAxisLength = xAxisGameLength * kratio;
+        yAxisLength = yAxisGameLength * kratio;
 //        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"underwater-background.jpg"];
         background.anchorPoint = CGPointZero;
@@ -63,7 +66,7 @@ float axisLength;
 
 - (void)drawGrid {
     //(0, 0) for the game
-    self.origin = CGPointMake(CGRectGetMinX(self.frame) + 100, CGRectGetMinY(self.frame) + 100);
+    self.origin = CGPointMake(CGRectGetMinX(self.frame) + 15 * kratio, CGRectGetMinY(self.frame) + 15 * kratio);
     
     //The axes go from 0 to axisGameLength, with ticks appearing every tickMarkSpacing units
 
@@ -75,7 +78,7 @@ float axisLength;
     xAxis.position = self.origin;
     CGMutablePathRef xPath = CGPathCreateMutable();
     CGPathMoveToPoint(xPath, NULL, 0, 0);
-    CGPathAddLineToPoint(xPath, NULL, axisLength, 0);
+    CGPathAddLineToPoint(xPath, NULL, xAxisLength, 0);
     xAxis.path = xPath;
     [xAxis setStrokeColor:[UIColor redColor]];
     [self addChild:xAxis];
@@ -86,7 +89,7 @@ float axisLength;
     yAxis.position = self.origin;
     CGMutablePathRef yPath = CGPathCreateMutable();
     CGPathMoveToPoint(yPath, NULL, 0, 0);
-    CGPathAddLineToPoint(yPath, NULL, 0, axisLength);
+    CGPathAddLineToPoint(yPath, NULL, 0, yAxisLength);
     yAxis.path = yPath;
     [yAxis setStrokeColor:[UIColor redColor]];
     [self addChild:yAxis];
@@ -102,7 +105,7 @@ float axisLength;
     //x-axis
     float realX = self.origin.x;
     float gameX = 0;
-    for (; realX <= self.origin.x + axisLength; realX += realTickMarkSpacing, gameX += tickMarkSpacing)
+    for (; realX <= self.origin.x + xAxisLength; realX += realTickMarkSpacing, gameX += tickMarkSpacing)
     {
         CGPoint currentPosition = CGPointMake(realX, self.origin.y);
         
@@ -132,7 +135,7 @@ float axisLength;
     //y-axis
     float realY = self.origin.y;
     float gameY = 0;
-    for (; realY <= self.origin.y + axisLength; realY += realTickMarkSpacing, gameY += tickMarkSpacing)
+    for (; realY <= self.origin.y + yAxisLength; realY += realTickMarkSpacing, gameY += tickMarkSpacing)
     {
         CGPoint currentPosition = CGPointMake(self.origin.x, realY);
         NSLog(@"Added tick at %@", NSStringFromCGPoint(currentPosition));
