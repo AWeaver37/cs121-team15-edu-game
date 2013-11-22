@@ -7,6 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "QuestionMaster.h"
+#import "QuestionObject.h"
 #import "Selector.h"
 
 @interface MyScene : SKScene

@@ -46,7 +46,12 @@
 
         [self addChild:selectorFrame];
         
-        ((SKLabelNode *)[[[[self childNodeWithName:@"SelectorFrame"] childNodeWithName:@"SlopeSelector"] childNodeWithName:@"SlopeButton1"]childNodeWithName:@"Button1Text"]).text = @"ASDF";
+        
+        QuestionMaster *master = [[QuestionMaster alloc] init];
+        QuestionObject *currentQuestion = [master generateQuestion];
+        
+        [selectorFrame setButtons:currentQuestion];
+        //((SKLabelNode *)[[[[self childNodeWithName:@"SelectorFrame"] childNodeWithName:@"SlopeSelector"] childNodeWithName:@"SlopeButton1"]childNodeWithName:@"Button1Text"]).text = @"ASDF";
 
     }
     return self;

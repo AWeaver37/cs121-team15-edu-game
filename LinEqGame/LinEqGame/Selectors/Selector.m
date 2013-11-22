@@ -66,4 +66,24 @@
     
 }
 
+-(void)setButtons: (QuestionObject *) question
+{
+    NSArray * slopeChoices = [[NSArray alloc] initWithArray: question.slopeAnswer.answerChoices];
+    NSArray * postionChoices = [[NSArray alloc] initWithArray: question.interceptAnswer.answerChoices];
+    
+    
+    
+    for( int i = 0; i<3; i++)
+    {
+        NSString * currentSlope = [[slopeChoices objectAtIndex:i] description];
+        NSString * currentPostion = [[postionChoices objectAtIndex:i] description];
+        NSLog(currentPostion);
+        NSLog(currentSlope);
+        
+        ((SKLabelNode *)[[[self childNodeWithName:@"SlopeSelector"] childNodeWithName:[NSString stringWithFormat:@"SlopeButton%d", i ]]childNodeWithName:[NSString stringWithFormat:@"Button%dText", i ]]).text = currentSlope;
+
+        ((SKLabelNode *)[[[self childNodeWithName:@"PositionSelector"] childNodeWithName:[NSString stringWithFormat:@"PosButton%d", i ]]childNodeWithName:[NSString stringWithFormat:@"Button%dText", i ]]).text = currentPostion;
+    }
+
+}
 @end

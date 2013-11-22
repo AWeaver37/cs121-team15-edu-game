@@ -24,6 +24,11 @@
 		207CD6C71832EAAF007C4228 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A21832EAAF007C4228 /* UIKit.framework */; };
 		207CD6CF1832EAAF007C4228 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6CD1832EAAF007C4228 /* InfoPlist.strings */; };
 		207CD6D11832EAAF007C4228 /* LinEqGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6D01832EAAF007C4228 /* LinEqGameTests.m */; };
+		AE460894183FE1CF00DF26E1 /* AnswerChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088B183FE1CF00DF26E1 /* AnswerChoice.m */; };
+		AE460895183FE1CF00DF26E1 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088D183FE1CF00DF26E1 /* Fraction.m */; };
+		AE460896183FE1CF00DF26E1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088F183FE1CF00DF26E1 /* Location.m */; };
+		AE460897183FE1CF00DF26E1 /* QuestionMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = AE460891183FE1CF00DF26E1 /* QuestionMaster.m */; };
+		AE460898183FE1CF00DF26E1 /* QuestionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AE460893183FE1CF00DF26E1 /* QuestionObject.m */; };
 		AE99E5111834BD7300A26276 /* Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = AE99E5101834BD7300A26276 /* Selector.m */; };
 		AE99E51718354CD900A26276 /* PositionSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = AE99E51618354CD900A26276 /* PositionSelector.m */; };
 		AE99E51A18354CE900A26276 /* SelectorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE99E51918354CE900A26276 /* SelectorButton.m */; };
@@ -64,6 +69,16 @@
 		207CD6CC1832EAAF007C4228 /* LinEqGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LinEqGameTests-Info.plist"; sourceTree = "<group>"; };
 		207CD6CE1832EAAF007C4228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		207CD6D01832EAAF007C4228 /* LinEqGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinEqGameTests.m; sourceTree = "<group>"; };
+		AE46088A183FE1CF00DF26E1 /* AnswerChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerChoice.h; sourceTree = "<group>"; };
+		AE46088B183FE1CF00DF26E1 /* AnswerChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerChoice.m; sourceTree = "<group>"; };
+		AE46088C183FE1CF00DF26E1 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
+		AE46088D183FE1CF00DF26E1 /* Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
+		AE46088E183FE1CF00DF26E1 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		AE46088F183FE1CF00DF26E1 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		AE460890183FE1CF00DF26E1 /* QuestionMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionMaster.h; sourceTree = "<group>"; };
+		AE460891183FE1CF00DF26E1 /* QuestionMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionMaster.m; sourceTree = "<group>"; };
+		AE460892183FE1CF00DF26E1 /* QuestionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionObject.h; sourceTree = "<group>"; };
+		AE460893183FE1CF00DF26E1 /* QuestionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionObject.m; sourceTree = "<group>"; };
 		AE99E50F1834BD7300A26276 /* Selector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selector.h; sourceTree = "<group>"; };
 		AE99E5101834BD7300A26276 /* Selector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Selector.m; sourceTree = "<group>"; };
 		AE99E51518354CD900A26276 /* PositionSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionSelector.h; sourceTree = "<group>"; };
@@ -138,6 +153,7 @@
 				207CD6B21832EAAF007C4228 /* Main.storyboard */,
 				207CD6B51832EAAF007C4228 /* ViewController.h */,
 				207CD6B61832EAAF007C4228 /* ViewController.m */,
+				AE460889183FE1CF00DF26E1 /* henrys files */,
 				AE99E50E1832F0ED00A26276 /* Selectors */,
 				207CD6B81832EAAF007C4228 /* MyScene.h */,
 				207CD6B91832EAAF007C4228 /* MyScene.m */,
@@ -175,6 +191,23 @@
 				207CD6CD1832EAAF007C4228 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE460889183FE1CF00DF26E1 /* henrys files */ = {
+			isa = PBXGroup;
+			children = (
+				AE46088A183FE1CF00DF26E1 /* AnswerChoice.h */,
+				AE46088B183FE1CF00DF26E1 /* AnswerChoice.m */,
+				AE46088C183FE1CF00DF26E1 /* Fraction.h */,
+				AE46088D183FE1CF00DF26E1 /* Fraction.m */,
+				AE46088E183FE1CF00DF26E1 /* Location.h */,
+				AE46088F183FE1CF00DF26E1 /* Location.m */,
+				AE460890183FE1CF00DF26E1 /* QuestionMaster.h */,
+				AE460891183FE1CF00DF26E1 /* QuestionMaster.m */,
+				AE460892183FE1CF00DF26E1 /* QuestionObject.h */,
+				AE460893183FE1CF00DF26E1 /* QuestionObject.m */,
+			);
+			path = "henrys files";
 			sourceTree = "<group>";
 		};
 		AE99E50E1832F0ED00A26276 /* Selectors */ = {
@@ -290,14 +323,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE460894183FE1CF00DF26E1 /* AnswerChoice.m in Sources */,
 				AE99E51A18354CE900A26276 /* SelectorButton.m in Sources */,
 				207CD6BA1832EAAF007C4228 /* MyScene.m in Sources */,
+				AE460897183FE1CF00DF26E1 /* QuestionMaster.m in Sources */,
 				AE99E51718354CD900A26276 /* PositionSelector.m in Sources */,
+				AE460898183FE1CF00DF26E1 /* QuestionObject.m in Sources */,
+				AE460896183FE1CF00DF26E1 /* Location.m in Sources */,
 				207CD6B71832EAAF007C4228 /* ViewController.m in Sources */,
 				AE99E5111834BD7300A26276 /* Selector.m in Sources */,
 				207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */,
 				AE99E51D1835529300A26276 /* SlopeSelector.m in Sources */,
 				207CD6AD1832EAAF007C4228 /* main.m in Sources */,
+				AE460895183FE1CF00DF26E1 /* Fraction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
