@@ -13,6 +13,7 @@
 
 @interface MyScene ()
 @property CGPoint origin;
+@property QuestionMaster *qm;
 @end
 
 @implementation MyScene
@@ -23,17 +24,27 @@
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         [self drawGrid];
+        
+        QuestionObject *question = [[[QuestionMaster alloc] init] generateQuestion];
+        for (Location *location in question.enemyLocations) {
+            [self addEnemyToCoordinateWithX:location.x Y:location.y];
+        }
+        
         SKSpriteNode *pikachu = [SKSpriteNode spriteNodeWithImageNamed:@"pikachu"];
         pikachu.position = [self convertToRealCoordinatesGameX:0 y:0];
-//        pikachu.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         [self addChild:pikachu];
         
-        [self moveSprite:pikachu ToCoordinateWithX:0 Y:30];
         
-//        [self addChild:myLabel];
-//        qm = [[QuestionMaster alloc] init];
     }
     return self;
+}
+
+#pragma mark - Grid
+- (void)addEnemyToCoordinateWithX:(float)x Y:(float)y
+{
+    SKSpriteNode *shark = [SKSpriteNode spriteNodeWithImageNamed:@"shark"];
+    shark.position = [self convertToRealCoordinatesGameX:x y:y];
+    [self addChild:shark];
 }
 
 - (void)drawGrid {
@@ -133,13 +144,9 @@
         [self addChild:coordLabel];
         //[self addChild:sprite];
     }
-    
-    
-    NSLog(@"%@", [qm generateQuestion]);
-    
 }
 
--(void) moveSprite:(SKSpriteNode *)sprite ToCoordinateWithX:(float)x Y:(float)y
+-(void)moveSprite:(SKSpriteNode *)sprite ToCoordinateWithX:(float)x Y:(float)y
 {
     CGPoint destination = [self convertToRealCoordinatesGameX:x y:y];
     SKAction *actionMove = [SKAction moveTo:destination duration:1];

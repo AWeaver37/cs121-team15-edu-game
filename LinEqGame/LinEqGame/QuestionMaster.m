@@ -14,10 +14,10 @@
     if (self == [super init]){
         srandom(time(NULL));
         _minX = 0;
-        _maxX = 80;
+        _maxX = 50;
         
-        _minY = -30;
-        _maxY = 30;
+        _minY = 0;
+        _maxY = 50;
         
         _maxSlopeNum = 19;
         _maxSlopeDen = 19;
