@@ -6,10 +6,19 @@
 //  Copyright (c) 2013 CS121. All rights reserved.
 //
 
+// UI (View)
+// Reloaded each question (at least)
+
 #import "LevelRecordNode.h"
 
 
 @implementation LevelRecordNode
+
+// Constructor
+- (id)init {
+    return [super init];
+}
+
 
 - (void)createAllBars {
     [self createMessageBar];
@@ -64,6 +73,8 @@
     int healthPosX = 10;
     int healthPosY = 128;
     healthBar.position = CGPointMake(healthPosX, healthPosY);
+    
+    // Update the healthBar
     
     // Add the healthBar to the main parent node
     [self addChild:healthBar];
@@ -125,6 +136,7 @@
     _timeLabel.fontSize = 3;
 
 }
+
 
 
 @end

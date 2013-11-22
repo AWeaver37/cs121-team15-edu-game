@@ -6,7 +6,10 @@
 //  Copyright (c) 2013 CS121. All rights reserved.
 //
 
+// UI (View)
+
 #import <SpriteKit/SpriteKit.h>
+#import "LevelRecordScene.h"
 
 @interface LevelRecordNode : SKNode
 
@@ -37,6 +40,7 @@
 - (void)createMessageLabel;
 - (void)createScoreLabel;
 - (void)createTimeLabel;
+
 
 
 @end
