@@ -12,8 +12,9 @@
 
 -(void)setupWithPresets
 {
-    float selectorXPos = 600.0;
-    float selectorYPos = 30.0*10.24;
+    float selectorXPos = 850.0;
+//    float selectorYPos = 30.0*10.24;
+    float selectorYPos = 280;
     self.name = @"SelectorFrame";
     CGRect selectorRect = CGRectMake(0, 0, 150, 450);
     CGPathRef selectorPath =  CGPathCreateWithRect(selectorRect, NULL);
