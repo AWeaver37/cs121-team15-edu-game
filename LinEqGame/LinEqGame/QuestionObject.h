@@ -12,6 +12,10 @@
 
 @interface QuestionObject : NSObject
 
+-(Fraction*) slopeAt:(int) index;
+
+-(Fraction*) interceptAt:(int) index;
+
 //Slope answer choices
 @property AnswerChoice* slopeAnswer;
 

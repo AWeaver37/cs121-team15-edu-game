@@ -11,6 +11,14 @@
 
 @implementation QuestionObject
 
+-(Fraction*) slopeAt:(int) index{
+    return _slopeAnswer.answerChoices[index];
+}
+
+-(Fraction*) interceptAt:(int) index{
+    return _interceptAnswer.answerChoices[index];
+}
+
 
 - (NSString*) description{
     NSString* string = [NSString stringWithFormat:@"Slope %@\nIntercept %@\nEnemies %@", _slopeAnswer, _interceptAnswer,_enemyLocations];
