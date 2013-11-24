@@ -11,6 +11,7 @@
 @interface PositionSelector : SKShapeNode
 
 @property int currentSelection;
+@property int correctAnswer;
 
 -(void)createButtonsFromDimensions: (CGRect) rect;
 -(void) changeCurrentSelection: (int) newSelection;
