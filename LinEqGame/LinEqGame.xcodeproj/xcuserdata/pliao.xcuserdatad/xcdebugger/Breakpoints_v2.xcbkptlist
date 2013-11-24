@@ -9,14 +9,44 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LinEqGame/Selectors/Selector.m"
-            timestampString = "406841587.298779"
+            filePath = "LinEqGame/MyScene.m"
+            timestampString = "407023586.254673"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-setButtons:"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MyScene touchesBegan:withEvent:]"
+                  moduleName = "LinEqGame"
+                  urlString = "file:///Users/pliao/Documents/cs/cs121/team15/cs121-team15-edu-game/LinEqGame/LinEqGame/MyScene.m"
+                  timestampString = "407022128.287848"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "1458">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MyScene touchesBegan:withEvent:]"
+                  moduleName = "LinEqGame"
+                  urlString = "file:///Users/pliao/Documents/cs/cs121/team15/cs121-team15-edu-game/LinEqGame/LinEqGame/MyScene.m"
+                  timestampString = "407022128.289087"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "1671">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

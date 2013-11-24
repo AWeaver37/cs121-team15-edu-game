@@ -51,6 +51,7 @@
         QuestionObject *currentQuestion = [master generateQuestion];
         
         [selectorFrame setButtons:currentQuestion];
+        NSLog(@"%@", currentQuestion );
         //((SKLabelNode *)[[[[self childNodeWithName:@"SelectorFrame"] childNodeWithName:@"SlopeSelector"] childNodeWithName:@"SlopeButton1"]childNodeWithName:@"Button1Text"]).text = @"ASDF";
 
     }
@@ -73,7 +74,6 @@
             if ( CGPathContainsPoint(button.path, NULL, location, true) )
             {
                 [posSelector changeCurrentSelection:i];
-
             }
         }
 
@@ -82,14 +82,12 @@
             SKShapeNode *button = [[slopeSelector children] objectAtIndex:j];
             CGPoint location = [touch locationInNode:button];
             if ( CGPathContainsPoint(button.path, NULL, location, true) )
-                if ( CGPathContainsPoint(button.path, NULL, location, true) )
-                {
-                    [slopeSelector changeCurrentSelection:j];
+            {
+                [slopeSelector changeCurrentSelection:j];
                     
-                }
+            }
             
         }
-
 
     }
     

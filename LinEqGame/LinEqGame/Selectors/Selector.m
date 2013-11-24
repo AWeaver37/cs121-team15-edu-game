@@ -69,6 +69,7 @@
 
 -(void)setButtons: (QuestionObject *) question
 {
+    self.currentQuestion = question;
     NSArray * slopeChoices = [[NSArray alloc] initWithArray: question.slopeAnswer.answerChoices];
     NSArray * postionChoices = [[NSArray alloc] initWithArray: question.interceptAnswer.answerChoices];
     
@@ -77,14 +78,14 @@
     int correctPos = question.interceptAnswer.answerIndex;
     
     ((SlopeSelector*)[self childNodeWithName:@"SlopeSelector"]).correctAnswer = correctSlope + 1;
-    ((PositionSelector*)[self childNodeWithName:@"PosSelector"]).correctAnswer = correctSlope + 1;
+    
+    ((PositionSelector*)[self childNodeWithName:@"PosSelector"]).correctAnswer = correctPos + 1;
+
     
     for( int i = 0; i<3; i++)
     {
         NSString * currentSlope = [[slopeChoices objectAtIndex:i] description];
         NSString * currentPostion = [[postionChoices objectAtIndex:i] description];
-        NSLog(currentPostion);
-        NSLog(currentSlope);
         
         ((SKLabelNode *)[[[self childNodeWithName:@"SlopeSelector"] childNodeWithName:[NSString stringWithFormat:@"SlopeButton%d", i ]]childNodeWithName:[NSString stringWithFormat:@"Button%dText", i ]]).text = currentSlope;
 
@@ -93,16 +94,26 @@
 
 }
 
+-(int)getCurrentSlopeIndex
+{
+    return ((SlopeSelector*)[self childNodeWithName:@"SlopeSelector"]).currentSelection - 1;
+}
+
+-(int)getCurrentPosIndex
+{
+    return ((PositionSelector*)[self childNodeWithName:@"PositionSelector"]).currentSelection - 1;
+}
+
+
 -(BOOL) isSelectionCorrect
 {
-    if( ((SlopeSelector*)[self childNodeWithName:@"SlopeSelector"]).currentSelection ==
-        ((SlopeSelector*)[self childNodeWithName:@"SlopeSelector"]).correctAnswer
-       &&
-        ((PositionSelector*)[self childNodeWithName:@"PosSelector"]).currentSelection ==
-        ((PositionSelector*)[self childNodeWithName:@"PosSelector"]).correctAnswer)
+    if( [self getCurrentSlopeIndex] == self.currentQuestion.slopeAnswer.answerIndex
+        && [self getCurrentPosIndex] == self.currentQuestion.interceptAnswer.answerIndex )
     {
         return TRUE;
-    } else {
+    }
+    else
+    {
         return FALSE;
     }
 }
