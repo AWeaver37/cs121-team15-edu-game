@@ -16,6 +16,10 @@
 
 - (void) simplify;
 
+- (int) integerPart;
+
+- (Fraction*) fractionPart;
+
 @property int numerator;
 
 @property int denominator;

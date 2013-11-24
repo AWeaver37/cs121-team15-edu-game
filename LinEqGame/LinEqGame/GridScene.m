@@ -8,7 +8,10 @@
 
 #import "GridScene.h"
 #import "QuestionMaster.h"
+#import "VectorUtilities.h"
+
 #define kratio 12
+#define kpikachuMovementTime 1
 
 static const uint32_t projectileCategory     =  0x1 << 0;
 static const uint32_t enemyCategory          =  0x1 << 1;
@@ -18,6 +21,9 @@ static const uint32_t enemyCategory          =  0x1 << 1;
 @property QuestionMaster *qm;
 @property SKShapeNode *fireButton;
 @property NSMutableArray *enemyLocations;
+
+@property QuestionObject *question;
+@property SKSpriteNode *pikachu;
 @end
 
 @implementation GridScene
@@ -40,26 +46,26 @@ float yAxisLength;
         
         [self drawGrid];
         
-        QuestionObject *question = [[[QuestionMaster alloc] init] generateQuestion];
-        for (Location *location in question.enemyLocations) {
+        self.question = [[[QuestionMaster alloc] init] generateQuestion];
+        for (Location *location in self.question.enemyLocations) {
             [self addEnemyToCoordinateWithX:location.x Y:location.y];
         }
         
-        self.enemyLocations = question.enemyLocations;
+        self.enemyLocations = self.question.enemyLocations;
         
-        SKSpriteNode *pikachu = [SKSpriteNode spriteNodeWithImageNamed:@"pikachu"];
-        pikachu.position = [self convertToRealCoordinatesGameX:0 y:0];
-        [self addChild:pikachu];
-        Location *location = [question.enemyLocations objectAtIndex:0];
-//        [self attackCoordinateWithX:location.x Y:location.y];
+        self.pikachu = [SKSpriteNode spriteNodeWithImageNamed:@"pikachu"];
+        self.pikachu.position = [self convertToRealCoordinatesGameX:0 y:0];
+        [self addChild:self.pikachu];
+        
+        
+        //Selector buttons
         
         Selector *selectorFrame = [[Selector alloc] init];
         [selectorFrame setupWithPresets];
         
-        [selectorFrame setButtons:question];
+        [selectorFrame setButtons:self.question];
         
         [self addChild:selectorFrame];
-        
         
         SKLabelNode *fireText = [SKLabelNode labelNodeWithFontNamed:@"Marker"];
         fireText.text = @"FIRE";
@@ -124,8 +130,20 @@ float yAxisLength;
 #pragma mark - Grid
 - (void) fire
 {
-    Location *location = self.enemyLocations[0];
-    [self attackCoordinateWithX:location.x Y:location.y];
+    double slope = [[self.question slopeAt:0] decimalValue];
+    double intercept = [[self.question interceptAt:0] decimalValue];
+    
+    CGPoint destination = [self convertToRealCoordinatesGameX:0 y:intercept];
+    SKAction *actionMove = [SKAction moveTo:destination duration:kpikachuMovementTime];
+
+    [self.pikachu runAction:actionMove completion:^{
+        float gameY = intercept + slope * xAxisGameLength;
+        float gameX = xAxisGameLength;
+        if (gameY > yAxisGameLength) {
+            gameX = (gameY - intercept)/slope;
+        }
+        [self attackCoordinateWithX:gameX Y:gameY];
+    }];
 }
 
 - (void)addEnemyToCoordinateWithX:(float)x Y:(float)y
@@ -152,26 +170,27 @@ float yAxisLength;
 
 - (void)attackCoordinateWithX:(float)x Y:(float)y
 {
+    NSLog(@"Attacking (%f, %f)", x, y);
     SKSpriteNode *lightning = [SKSpriteNode spriteNodeWithImageNamed:@"lightning"];
-    lightning.position = self.origin;
+    lightning.position = self.pikachu.position;
+    NSLog(@"Lighting starts at (%f, %f)", lightning.position.x, lightning.position.y);
     lightning.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:lightning.size.width/2];
     lightning.physicsBody.dynamic = YES;
     lightning.physicsBody.categoryBitMask = projectileCategory;
     lightning.physicsBody.contactTestBitMask = enemyCategory;
     lightning.physicsBody.collisionBitMask = 0;
     lightning.physicsBody.usesPreciseCollisionDetection = YES;
+    
     [self addChild:lightning];
     
     SKAction *move = [SKAction
                       moveTo:[self convertToRealCoordinatesGameX:x y:y]
                       duration:2];
     [lightning runAction:move];
-    
 }
 
 - (void)projectile:(SKSpriteNode *)projectile didCollideWithMonster:(SKSpriteNode *)monster {
     NSLog(@"Hit");
-    [projectile removeFromParent];
     [monster removeFromParent];
 }
 
@@ -273,7 +292,7 @@ float yAxisLength;
     for (; realY <= self.origin.y + yAxisLength; realY += realTickMarkSpacing, gameY += tickMarkSpacing)
     {
         CGPoint currentPosition = CGPointMake(self.origin.x, realY);
-        NSLog(@"Added tick at %@", NSStringFromCGPoint(currentPosition));
+//        NSLog(@"Added tick at %@", NSStringFromCGPoint(currentPosition));
         //tick
         if (gameY != 0) {
             SKShapeNode *tick = [SKShapeNode node];
@@ -297,19 +316,12 @@ float yAxisLength;
     }
 }
 
--(void)moveSprite:(SKSpriteNode *)sprite ToCoordinateWithX:(float)x Y:(float)y
-{
-    CGPoint destination = [self convertToRealCoordinatesGameX:x y:y];
-    SKAction *actionMove = [SKAction moveTo:destination duration:1];
-    
-    [sprite runAction:actionMove];
-}
 
 
 -(CGPoint)convertToRealCoordinatesGameX:(float)x y:(float)y
 {
     CGPoint point = CGPointMake(self.origin.x + x * kratio, self.origin.y + y * kratio);
-    NSLog(@"moved sprite to %@", NSStringFromCGPoint(point));
+//    NSLog(@"moved sprite to %@", NSStringFromCGPoint(point));
     
     return point;
 }

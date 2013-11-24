@@ -78,8 +78,8 @@
     {
         NSString * currentSlope = [[slopeChoices objectAtIndex:i] description];
         NSString * currentPostion = [[postionChoices objectAtIndex:i] description];
-        NSLog(currentPostion);
-        NSLog(currentSlope);
+//        NSLog(currentPostion);
+//        NSLog(currentSlope);
         
         ((SKLabelNode *)[[[self childNodeWithName:@"SlopeSelector"] childNodeWithName:[NSString stringWithFormat:@"SlopeButton%d", i ]]childNodeWithName:[NSString stringWithFormat:@"Button%dText", i ]]).text = currentSlope;
 

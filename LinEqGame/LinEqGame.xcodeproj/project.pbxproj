@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201538121842AC4800102B12 /* VectorUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 201538111842AC4800102B12 /* VectorUtilities.m */; };
 		2027AE36183FE7DE009C48FB /* GridScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2027AE35183FE7DE009C48FB /* GridScene.m */; };
 		20427841183D900900A3BBE9 /* pikachu.png in Resources */ = {isa = PBXBuildFile; fileRef = 20427840183D900900A3BBE9 /* pikachu.png */; };
 		207CD69F1832EAAE007C4228 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD69E1832EAAE007C4228 /* Foundation.framework */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		201538101842AC4800102B12 /* VectorUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorUtilities.h; sourceTree = "<group>"; };
+		201538111842AC4800102B12 /* VectorUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VectorUtilities.m; sourceTree = "<group>"; };
 		2027AE34183FE7DE009C48FB /* GridScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridScene.h; sourceTree = "<group>"; };
 		2027AE35183FE7DE009C48FB /* GridScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridScene.m; sourceTree = "<group>"; };
 		20427840183D900900A3BBE9 /* pikachu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pikachu.png; sourceTree = "<group>"; };
@@ -126,6 +129,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		201538131842AC5000102B12 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				201538101842AC4800102B12 /* VectorUtilities.h */,
+				201538111842AC4800102B12 /* VectorUtilities.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		20427842183D901600A3BBE9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +154,7 @@
 		207CD6921832EAAE007C4228 = {
 			isa = PBXGroup;
 			children = (
+				201538131842AC5000102B12 /* Util */,
 				20CB6FCA183FED7700B72BD6 /* AppDelegate.h */,
 				20CB6FCB183FED7700B72BD6 /* AppDelegate.m */,
 				20CB6FCC183FED7700B72BD6 /* ViewController.h */,
@@ -361,6 +374,7 @@
 				AE460897183FE1CF00DF26E1 /* QuestionMaster.m in Sources */,
 				20CB6FC6183FEC5300B72BD6 /* PositionSelector.m in Sources */,
 				20CB6FC8183FEC5300B72BD6 /* SelectorButton.m in Sources */,
+				201538121842AC4800102B12 /* VectorUtilities.m in Sources */,
 				AE460898183FE1CF00DF26E1 /* QuestionObject.m in Sources */,
 				20CB6FCF183FED7700B72BD6 /* ViewController.m in Sources */,
 				AE460896183FE1CF00DF26E1 /* Location.m in Sources */,

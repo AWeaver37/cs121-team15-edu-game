@@ -8,6 +8,3 @@
 
 #import "VectorUtilities.h"
 
-@implementation VectorUtilities
-
-@end
