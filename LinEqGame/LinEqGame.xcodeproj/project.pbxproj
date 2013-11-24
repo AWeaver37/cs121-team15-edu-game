@@ -15,9 +15,7 @@
 		207CD6A51832EAAF007C4228 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6A41832EAAF007C4228 /* SpriteKit.framework */; };
 		207CD6AB1832EAAF007C4228 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6A91832EAAF007C4228 /* InfoPlist.strings */; };
 		207CD6AD1832EAAF007C4228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6AC1832EAAF007C4228 /* main.m */; };
-		207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6B01832EAAF007C4228 /* AppDelegate.m */; };
 		207CD6B41832EAAF007C4228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6B21832EAAF007C4228 /* Main.storyboard */; };
-		207CD6B71832EAAF007C4228 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CD6B61832EAAF007C4228 /* ViewController.m */; };
 		207CD6BC1832EAAF007C4228 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6BB1832EAAF007C4228 /* Spaceship.png */; };
 		207CD6BE1832EAAF007C4228 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207CD6BD1832EAAF007C4228 /* Images.xcassets */; };
 		207CD6C51832EAAF007C4228 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207CD6C41832EAAF007C4228 /* XCTest.framework */; };
@@ -34,11 +32,8 @@
 		20CB6FC7183FEC5300B72BD6 /* Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FC1183FEC5300B72BD6 /* Selector.m */; };
 		20CB6FC8183FEC5300B72BD6 /* SelectorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FC3183FEC5300B72BD6 /* SelectorButton.m */; };
 		20CB6FC9183FEC5300B72BD6 /* SlopeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FC5183FEC5300B72BD6 /* SlopeSelector.m */; };
-		939425B91836CAD700A411D3 /* QuestionMaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425B81836CAD700A411D3 /* QuestionMaster.m */; };
-		939425BC1836CB0700A411D3 /* QuestionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425BB1836CB0700A411D3 /* QuestionObject.m */; };
-		939425BF1836CDD000A411D3 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425BE1836CDD000A411D3 /* Location.m */; };
-		939425C218396B8F00A411D3 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425C118396B8F00A411D3 /* Fraction.m */; };
-		939425C5183997B600A411D3 /* AnswerChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 939425C4183997B600A411D3 /* AnswerChoice.m */; };
+		20CB6FCE183FED7700B72BD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FCB183FED7700B72BD6 /* AppDelegate.m */; };
+		20CB6FCF183FED7700B72BD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FCD183FED7700B72BD6 /* ViewController.m */; };
 		AE460894183FE1CF00DF26E1 /* AnswerChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088B183FE1CF00DF26E1 /* AnswerChoice.m */; };
 		AE460895183FE1CF00DF26E1 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088D183FE1CF00DF26E1 /* Fraction.m */; };
 		AE460896183FE1CF00DF26E1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088F183FE1CF00DF26E1 /* Location.m */; };
@@ -69,11 +64,7 @@
 		207CD6AA1832EAAF007C4228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		207CD6AC1832EAAF007C4228 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		207CD6AE1832EAAF007C4228 /* LinEqGame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LinEqGame-Prefix.pch"; sourceTree = "<group>"; };
-		207CD6AF1832EAAF007C4228 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		207CD6B01832EAAF007C4228 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		207CD6B31832EAAF007C4228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		207CD6B51832EAAF007C4228 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		207CD6B61832EAAF007C4228 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		207CD6BB1832EAAF007C4228 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		207CD6BD1832EAAF007C4228 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		207CD6C31832EAAF007C4228 /* LinEqGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinEqGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,16 +85,10 @@
 		20CB6FC3183FEC5300B72BD6 /* SelectorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorButton.m; sourceTree = "<group>"; };
 		20CB6FC4183FEC5300B72BD6 /* SlopeSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlopeSelector.h; sourceTree = "<group>"; };
 		20CB6FC5183FEC5300B72BD6 /* SlopeSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlopeSelector.m; sourceTree = "<group>"; };
-		939425B71836CAD700A411D3 /* QuestionMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionMaster.h; sourceTree = "<group>"; };
-		939425B81836CAD700A411D3 /* QuestionMaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionMaster.m; sourceTree = "<group>"; };
-		939425BA1836CB0700A411D3 /* QuestionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionObject.h; sourceTree = "<group>"; };
-		939425BB1836CB0700A411D3 /* QuestionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionObject.m; sourceTree = "<group>"; };
-		939425BD1836CDD000A411D3 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		939425BE1836CDD000A411D3 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		939425C018396B8F00A411D3 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
-		939425C118396B8F00A411D3 /* Fraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fraction.m; sourceTree = "<group>"; };
-		939425C3183997B600A411D3 /* AnswerChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerChoice.h; sourceTree = "<group>"; };
-		939425C4183997B600A411D3 /* AnswerChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerChoice.m; sourceTree = "<group>"; };
+		20CB6FCA183FED7700B72BD6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = LinEqGame/AppDelegate.h; sourceTree = "<group>"; };
+		20CB6FCB183FED7700B72BD6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = LinEqGame/AppDelegate.m; sourceTree = "<group>"; };
+		20CB6FCC183FED7700B72BD6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = LinEqGame/ViewController.h; sourceTree = "<group>"; };
+		20CB6FCD183FED7700B72BD6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = LinEqGame/ViewController.m; sourceTree = "<group>"; };
 		AE46088A183FE1CF00DF26E1 /* AnswerChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerChoice.h; sourceTree = "<group>"; };
 		AE46088B183FE1CF00DF26E1 /* AnswerChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerChoice.m; sourceTree = "<group>"; };
 		AE46088C183FE1CF00DF26E1 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
@@ -154,26 +139,13 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		2042784A183DB65100A3BBE9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				939425B71836CAD700A411D3 /* QuestionMaster.h */,
-				939425B81836CAD700A411D3 /* QuestionMaster.m */,
-				939425BA1836CB0700A411D3 /* QuestionObject.h */,
-				939425BB1836CB0700A411D3 /* QuestionObject.m */,
-				939425C3183997B600A411D3 /* AnswerChoice.h */,
-				939425C4183997B600A411D3 /* AnswerChoice.m */,
-				939425C018396B8F00A411D3 /* Fraction.h */,
-				939425C118396B8F00A411D3 /* Fraction.m */,
-				939425BD1836CDD000A411D3 /* Location.h */,
-				939425BE1836CDD000A411D3 /* Location.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		207CD6921832EAAE007C4228 = {
 			isa = PBXGroup;
 			children = (
+				20CB6FCA183FED7700B72BD6 /* AppDelegate.h */,
+				20CB6FCB183FED7700B72BD6 /* AppDelegate.m */,
+				20CB6FCC183FED7700B72BD6 /* ViewController.h */,
+				20CB6FCD183FED7700B72BD6 /* ViewController.m */,
 				20CB6FBD183FEC5300B72BD6 /* Selectors */,
 				20427842183D901600A3BBE9 /* Assets */,
 				207CD6A61832EAAF007C4228 /* LinEqGame */,
@@ -209,16 +181,11 @@
 			children = (
 				2027AE34183FE7DE009C48FB /* GridScene.h */,
 				2027AE35183FE7DE009C48FB /* GridScene.m */,
-				207CD6AF1832EAAF007C4228 /* AppDelegate.h */,
-				207CD6B01832EAAF007C4228 /* AppDelegate.m */,
 				207CD6B21832EAAF007C4228 /* Main.storyboard */,
-				207CD6B51832EAAF007C4228 /* ViewController.h */,
-				207CD6B61832EAAF007C4228 /* ViewController.m */,
 				AE460889183FE1CF00DF26E1 /* henrys files */,
 				207CD6BB1832EAAF007C4228 /* Spaceship.png */,
 				207CD6BD1832EAAF007C4228 /* Images.xcassets */,
 				207CD6A71832EAAF007C4228 /* Supporting Files */,
-				2042784A183DB65100A3BBE9 /* Model */,
 			);
 			path = LinEqGame;
 			sourceTree = "<group>";
@@ -389,24 +356,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				939425C5183997B600A411D3 /* AnswerChoice.m in Sources */,
-				939425BC1836CB0700A411D3 /* QuestionObject.m in Sources */,
-				939425B91836CAD700A411D3 /* QuestionMaster.m in Sources */,
-				939425C218396B8F00A411D3 /* Fraction.m in Sources */,
 				2027AE36183FE7DE009C48FB /* GridScene.m in Sources */,
-				207CD6B71832EAAF007C4228 /* ViewController.m in Sources */,
-				207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */,
-				939425BF1836CDD000A411D3 /* Location.m in Sources */,
 				AE460894183FE1CF00DF26E1 /* AnswerChoice.m in Sources */,
 				AE460897183FE1CF00DF26E1 /* QuestionMaster.m in Sources */,
 				20CB6FC6183FEC5300B72BD6 /* PositionSelector.m in Sources */,
 				20CB6FC8183FEC5300B72BD6 /* SelectorButton.m in Sources */,
 				AE460898183FE1CF00DF26E1 /* QuestionObject.m in Sources */,
+				20CB6FCF183FED7700B72BD6 /* ViewController.m in Sources */,
 				AE460896183FE1CF00DF26E1 /* Location.m in Sources */,
 				20CB6FC9183FEC5300B72BD6 /* SlopeSelector.m in Sources */,
-				207CD6B71832EAAF007C4228 /* ViewController.m in Sources */,
+				20CB6FCE183FED7700B72BD6 /* AppDelegate.m in Sources */,
 				20CB6FC7183FEC5300B72BD6 /* Selector.m in Sources */,
-				207CD6B11832EAAF007C4228 /* AppDelegate.m in Sources */,
 				207CD6AD1832EAAF007C4228 /* main.m in Sources */,
 				AE460895183FE1CF00DF26E1 /* Fraction.m in Sources */,
 			);

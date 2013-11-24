@@ -16,6 +16,8 @@ static const uint32_t enemyCategory          =  0x1 << 1;
 @interface GridScene ()
 @property CGPoint origin;
 @property QuestionMaster *qm;
+@property SKShapeNode *fireButton;
+@property NSMutableArray *enemyLocations;
 @end
 
 @implementation GridScene
@@ -43,16 +45,89 @@ float yAxisLength;
             [self addEnemyToCoordinateWithX:location.x Y:location.y];
         }
         
+        self.enemyLocations = question.enemyLocations;
+        
         SKSpriteNode *pikachu = [SKSpriteNode spriteNodeWithImageNamed:@"pikachu"];
         pikachu.position = [self convertToRealCoordinatesGameX:0 y:0];
         [self addChild:pikachu];
         Location *location = [question.enemyLocations objectAtIndex:0];
 //        [self attackCoordinateWithX:location.x Y:location.y];
+        
+        Selector *selectorFrame = [[Selector alloc] init];
+        [selectorFrame setupWithPresets];
+        
+        [selectorFrame setButtons:question];
+        
+        [self addChild:selectorFrame];
+        
+        
+        SKLabelNode *fireText = [SKLabelNode labelNodeWithFontNamed:@"Marker"];
+        fireText.text = @"FIRE";
+        fireText.position = CGPointMake(75, 35);
+
+        //Fire Button
+        self.fireButton = [SKShapeNode node];
+        CGRect fireButtonRect = CGRectMake(0, 0, 150, 100);
+        CGPathRef fireButtonPath =  CGPathCreateWithRect(fireButtonRect, NULL);
+        self.fireButton.path = fireButtonPath;
+        self.fireButton.fillColor = [SKColor colorWithRed:1 green:0 blue:0 alpha:1];
+        self.fireButton.position = CGPointMake(850, 100);
+        [self.fireButton addChild:fireText];
+        [self addChild:self.fireButton];
+
+        
     }
     return self;
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    /* Called when a touch begins */
+    
+    
+    for (UITouch *touch in touches) {
+        Selector* selector = [self childNodeWithName:@"SelectorFrame"];
+        PositionSelector* posSelector = [selector childNodeWithName:@"PositionSelector"];
+        SlopeSelector* slopeSelector = [selector childNodeWithName:@"SlopeSelector"];
+        
+        for (int i =1; i <4; i++ )
+        {
+            SKShapeNode *button = [[posSelector children] objectAtIndex:i];
+            CGPoint location = [touch locationInNode:button];
+            if ( CGPathContainsPoint(button.path, NULL, location, true) )
+            {
+                [posSelector changeCurrentSelection:i];
+                
+            }
+        }
+        
+        for (int j =1; j <4; j++ )
+        {
+            SKShapeNode *button = [[slopeSelector children] objectAtIndex:j];
+            CGPoint location = [touch locationInNode:button];
+            if ( CGPathContainsPoint(button.path, NULL, location, true) )
+                if ( CGPathContainsPoint(button.path, NULL, location, true) )
+                {
+                    [slopeSelector changeCurrentSelection:j];
+                    
+                }
+        }
+        
+        CGPoint location = [touch locationInNode:self.fireButton];
+        if (CGPathContainsPoint(self.fireButton.path, NULL, location, true))
+        {
+            [self fire];
+        }
+    }
+    
+}
+
 #pragma mark - Grid
+- (void) fire
+{
+    Location *location = self.enemyLocations[0];
+    [self attackCoordinateWithX:location.x Y:location.y];
+}
+
 - (void)addEnemyToCoordinateWithX:(float)x Y:(float)y
 {
     SKSpriteNode *shark = [SKSpriteNode spriteNodeWithImageNamed:@"shark"];

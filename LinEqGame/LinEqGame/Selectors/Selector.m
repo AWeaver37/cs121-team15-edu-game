@@ -13,7 +13,6 @@
 -(void)setupWithPresets
 {
     float selectorXPos = 850.0;
-//    float selectorYPos = 30.0*10.24;
     float selectorYPos = 280;
     
     self.name = @"SelectorFrame";
