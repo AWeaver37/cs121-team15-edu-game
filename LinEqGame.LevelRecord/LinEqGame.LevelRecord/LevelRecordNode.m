@@ -147,7 +147,32 @@
     _timeLabel.position = CGPointMake(775, 5);
     _timeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight + 50;
     _timeLabel.verticalAlignmentMode = SKLabelVerticalAlignmentModeCenter + 50;
+    
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
 
+
+}
+
+- (void)createTimer {
+    int totalSeconds = 120;
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timer)
+                                                          userInfo:nil repeats:YES];
+    totalSeconds--;
+    _timeLabel.text = [timeFormatted:totalSeconds];
+    if ( totalSeconds == 0 ) {
+        [_timer invalidate];
+    }
+}
+
+- (void)timerTick:(NSTimer *)timer {
+    NSDate *levelTime = [NSDate date];
+    
+    static NSDateFormatter *dateFormatter;
+    if (!dateFormatter) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateFormat = @"h:mm:ss a";  // very simple format  "8:47:22 AM"
+    }
+    _timeLabel.text = [dateFormatter stringFromDate:now];
 }
 
 

@@ -33,6 +33,10 @@
 //@property(retain, nonatomic) SKColor *timeFontColor;
 //@property(nonatomic) CGFloat timeFontSize;
 
+@property NSTimer *timer;
+
+@property 
+
 @property (nonatomic) SKLabelHorizontalAlignmentMode horizAlignMessage;
 @property (nonatomic) SKLabelHorizontalAlignmentMode horizAlignScore;
 @property (nonatomic) SKLabelHorizontalAlignmentMode horizAlignTime;
