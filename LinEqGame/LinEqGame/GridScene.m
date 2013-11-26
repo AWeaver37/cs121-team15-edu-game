@@ -24,6 +24,7 @@ static const uint32_t enemyCategory          =  0x1 << 1;
 
 @property QuestionObject *question;
 @property SKSpriteNode *pikachu;
+@property Selector *selectorFrame;
 @end
 
 @implementation GridScene
@@ -60,12 +61,12 @@ float yAxisLength;
         
         //Selector buttons
         
-        Selector *selectorFrame = [[Selector alloc] init];
-        [selectorFrame setupWithPresets];
+        self.selectorFrame = [[Selector alloc] init];
+        [self.selectorFrame setupWithPresets];
         
-        [selectorFrame setButtons:self.question];
+        [self.selectorFrame setButtons:self.question];
         
-        [self addChild:selectorFrame];
+        [self addChild:self.selectorFrame];
         
         SKLabelNode *fireText = [SKLabelNode labelNodeWithFontNamed:@"Marker"];
         fireText.text = @"FIRE";
@@ -143,6 +144,12 @@ float yAxisLength;
             gameX = (gameY - intercept)/slope;
         }
         [self attackCoordinateWithX:gameX Y:gameY];
+        
+        if ([self.selectorFrame isSelectionCorrect])
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!" message:@"youwin!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+            [alert show];
+        }
     }];
 }
 
