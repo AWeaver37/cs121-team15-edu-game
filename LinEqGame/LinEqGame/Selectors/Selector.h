@@ -23,6 +23,7 @@
 -(BOOL) isSlopeCorrect;
 -(BOOL) isPosCorrect;
 -(BOOL) isSelectionCorrect;
-
+-(int)getCurrentSlopeIndex;
+-(int)getCurrentPosIndex;
 
 @end

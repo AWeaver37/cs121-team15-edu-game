@@ -82,7 +82,10 @@ float yAxisLength;
         [self.fireButton addChild:fireText];
         [self addChild:self.fireButton];
 
-        
+        //Cheating
+//        double correctSlope = [(Fraction *) self.question.slopeAnswer.answerChoices[self.question.slopeAnswer.answerIndex] decimalValue];
+//        double correctIntercept = [(Fraction *)self.question.interceptAnswer.answerChoices[self.question.interceptAnswer.answerIndex] decimalValue];
+        NSLog(@"correct answer: (%d, %d)", self.question.interceptAnswer.answerIndex, self.question.slopeAnswer.answerIndex);
     }
     return self;
 }
@@ -131,8 +134,8 @@ float yAxisLength;
 #pragma mark - Grid
 - (void) fire
 {
-    double slope = [[self.question slopeAt:0] decimalValue];
-    double intercept = [[self.question interceptAt:0] decimalValue];
+    double slope = [[self.question slopeAt:[self.selectorFrame getCurrentSlopeIndex]] decimalValue];
+    double intercept = [[self.question interceptAt:[self.selectorFrame getCurrentPosIndex]] decimalValue];
     
     CGPoint destination = [self convertToRealCoordinatesGameX:0 y:intercept];
     SKAction *actionMove = [SKAction moveTo:destination duration:kpikachuMovementTime];
