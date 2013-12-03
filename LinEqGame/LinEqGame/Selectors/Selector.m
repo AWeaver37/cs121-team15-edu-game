@@ -61,7 +61,6 @@
     [slopeSelector createButtonsFromDimensions:selectorRect];
 
     
-    
     [self addChild:positionSelector];
     [self addChild:slopeSelector];
     

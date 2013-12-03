@@ -134,8 +134,14 @@ float yAxisLength;
 #pragma mark - Grid
 - (void) fire
 {
-    double slope = [[self.question slopeAt:[self.selectorFrame getCurrentSlopeIndex]] decimalValue];
-    double intercept = [[self.question interceptAt:[self.selectorFrame getCurrentPosIndex]] decimalValue];
+    int slopeIndex = [self.selectorFrame getCurrentSlopeIndex];
+    int posIndex = [self.selectorFrame getCurrentPosIndex];
+    if (slopeIndex == -1 || posIndex == -1) {
+        return;
+    }
+    
+    double slope = [[self.question slopeAt:slopeIndex] decimalValue];
+    double intercept = [[self.question interceptAt:posIndex] decimalValue];
     
     CGPoint destination = [self convertToRealCoordinatesGameX:0 y:intercept];
     SKAction *actionMove = [SKAction moveTo:destination duration:kpikachuMovementTime];
