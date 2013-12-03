@@ -21,6 +21,8 @@
         
         _maxSlopeNum = 9;
         _maxSlopeDen = 9;
+        _minSlopeNum = 1;
+        _minSlopeDen = 5;
     }
     return self;
 }
@@ -40,9 +42,10 @@
 - (void) setSlope:(Fraction*) slope boundedBy: (double) maxSlope{
     
     do {
-        slope.numerator = [self randomBetween: -_maxSlopeNum And: _maxSlopeNum];
-        slope.denominator = [self randomBetween: 1 And: _maxSlopeDen];
-    } while (!([self isValue:slope.decimalValue between:-maxSlope and:maxSlope] && slope.numerator!=0));
+        slope.numerator = [self randomBetween: _minSlopeNum And: _maxSlopeNum];
+        slope.denominator = [self randomBetween: _minSlopeDen And: _maxSlopeDen];
+        slope.numerator *= [self randomBetween:0 And: 1] * 2 - 1;
+    } while (!([self isValue:slope.decimalValue between:-maxSlope and:maxSlope] && slope.numerator != 0));
 }
 
 - (void) setIntercept: (Fraction*) intercept
@@ -91,37 +94,45 @@
 - (void) setCorrectIndex: (int*) indexAddress
           setChoiceArray: (NSMutableArray*) choices
                forAnswer: (Fraction*) answer
-         withOffsetLevel: (int) offsetLevel{
+       withOffsetBetween: (int) offsetLowerBound
+                     and: (int) offsetUpperBound
+          boundedBetween: (double) lowerBound
+                     and: (double) upperBound{
     
-    assert(offsetLevel>0);
+    assert(offsetLowerBound>0);
+    assert(offsetUpperBound>0);
     
     NSMutableArray* offsets = [[NSMutableArray alloc] initWithCapacity:3];
+    int offset = 0;
     do {
-        for (int i = 0; i < 2; ++i) {
-            NSNumber* offset = [[NSNumber alloc] initWithInt: [self randomBetween:0 And:1 + offsetLevel]];
-            [offsets setObject:offset atIndexedSubscript: i];
+        for (int i = 0; i < 3; ++i) {
+            offset += [self randomBetween:offsetLowerBound And:offsetUpperBound];
+            offsets[i] =  [[NSNumber alloc] initWithInt:offset];
         }
-    } while ([[offsets objectAtIndex:0] integerValue]==[[offsets objectAtIndex:1] integerValue]);
+    } while ([offsets[0] integerValue]==[[offsets objectAtIndex:1] integerValue]);
     
     NSNumber* centerValue;
-    do {
-        centerValue = [[NSNumber alloc] initWithInt:[self randomBetween:0 And:1 + offsetLevel]];
-    } while (
-             [centerValue integerValue]==[[offsets objectAtIndex:1] integerValue]
-             ||
-             [centerValue integerValue]==[[offsets objectAtIndex:0] integerValue]);
     
-    for (int i = 0; i < 2; ++i) {
-        int totalOffset = [[offsets objectAtIndex:i] integerValue]-[centerValue integerValue];
-        Fraction* wrongChoice = [[Fraction alloc]
-                                 initWithNum:answer.numerator + totalOffset
-                                 AndDen:answer.denominator];
-        [wrongChoice simplify];
-        [choices setObject:wrongChoice atIndexedSubscript:i];
-    }
-    [answer simplify];
-    *indexAddress = [self randomBetween:0 And:2];
-    [choices insertObject: answer atIndex:*indexAddress];
+    do {
+        *indexAddress = [self randomBetween:0 And:2];
+        centerValue = offsets[*indexAddress];
+        for (int i = 0; i < 3; ++i) {
+            int totalOffset = [[offsets objectAtIndex:i] integerValue]-[centerValue integerValue];
+            Fraction* wrongChoice = [[Fraction alloc]
+                                     initWithNum:answer.numerator + totalOffset
+                                     AndDen:answer.denominator];
+            [wrongChoice simplify];
+            wrongChoice.isMixedFormat = answer.isMixedFormat;
+            [choices setObject:wrongChoice atIndexedSubscript:i];
+        }
+    } while (
+             !(
+             [self isValue:[(Fraction*)choices[0] decimalValue] between:lowerBound and:upperBound]
+             &&
+             [self isValue:[(Fraction*)choices[1] decimalValue] between:lowerBound and:upperBound]
+             &&
+             [self isValue:[(Fraction*)choices[2] decimalValue] between:lowerBound and:upperBound]
+              ));
     
     
     
@@ -137,6 +148,7 @@
 
     Fraction* slope = [[Fraction alloc] init];
     Fraction* intercept = [[Fraction alloc] init];
+    //intercept.isMixedFormat = true;
     
     Location* alien1 = [[Location alloc] init];
     Location* alien2 = [[Location alloc] init];
@@ -163,12 +175,18 @@
     [self setCorrectIndex: &slopeIndex
            setChoiceArray: slopeChoices
                 forAnswer: slope
-          withOffsetLevel: 2];
+        withOffsetBetween: 1
+                      and: 1
+           boundedBetween: -maxSlope
+                      and: maxSlope];
     
     [self setCorrectIndex: &interceptIndex
            setChoiceArray: interceptChoices
                 forAnswer: intercept
-          withOffsetLevel: 10];
+        withOffsetBetween: rangeY*intercept.denominator/10
+                      and: rangeY*intercept.denominator/8
+           boundedBetween: _minY
+                      and: _maxY];
 
     
     

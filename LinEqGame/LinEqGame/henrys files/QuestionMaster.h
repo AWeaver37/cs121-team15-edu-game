@@ -25,6 +25,8 @@
 //Bounds on the slope of form numerator/denominator
 //Denominator should be significantly less than maxX-minX
 @property int maxSlopeNum;
+@property int minSlopeNum;
 @property int maxSlopeDen;
+@property int minSlopeDen;
 
 @end

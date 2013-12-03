@@ -20,6 +20,11 @@
     return self;
 }
 
+- (Fraction*) answerAt: (int) index{
+    assert(index>=0&&index<3);
+    return _answerChoices[index];
+}
+
 - (NSString*) description{
     NSString* string = [NSString stringWithFormat:@"%@[%d]", _answerChoices, _answerIndex];
     return [string stringByReplacingOccurrencesOfString:@"\"" withString:@""];

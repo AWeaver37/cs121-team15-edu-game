@@ -13,6 +13,8 @@
 
 - (id)initWithChoices: (NSArray*) choices withAnswerIndex: (int) index;
 
+- (Fraction*) answerAt: (int) index;
+
 // The three answer choices
 @property NSArray* answerChoices;
 

@@ -12,11 +12,11 @@
 @implementation QuestionObject
 
 -(Fraction*) slopeAt:(int) index{
-    return _slopeAnswer.answerChoices[index];
+    return [_slopeAnswer answerAt:index];
 }
 
 -(Fraction*) interceptAt:(int) index{
-    return _interceptAnswer.answerChoices[index];
+    return [_interceptAnswer answerAt:index];
 }
 
 
