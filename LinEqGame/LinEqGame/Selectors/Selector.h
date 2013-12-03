@@ -16,6 +16,7 @@
 @interface Selector : SKShapeNode
 
 @property QuestionObject *currentQuestion;
+@property BOOL isDisabled;
 
 -(void)setupWithPresets;
 -(void)createSelectorsFromDimensions: (CGRect) rect;

@@ -24,6 +24,8 @@
     
     
     [self createSelectorsFromDimensions:selectorRect];
+    _isDisabled = FALSE;
+    //[self disableSelector];
    
 }
 
@@ -117,4 +119,38 @@
         return FALSE;
     }
 }
+
+-(void) disableSelector
+{
+
+    for( int i = 0; i<3; i++)
+    {
+        SKShapeNode * currentSlopeButton = ((SKShapeNode *)[[self childNodeWithName:@"SlopeSelector"] childNodeWithName:[NSString stringWithFormat:@"SlopeButton%d", i ]]);
+        
+        currentSlopeButton.fillColor = [SKColor colorWithRed:245.0/256.0 green:227.0/256.0 blue:207.0/256.0 alpha:0.6];
+        
+        SKShapeNode * currentPosButton = ((SKShapeNode *)[[self childNodeWithName:@"PositionSelector"] childNodeWithName:[NSString stringWithFormat:@"PosButton%d", i ]]);
+    
+        currentPosButton.fillColor = [SKColor colorWithRed:245.0/256.0 green:227.0/256.0 blue:207.0/256.0 alpha:0.6];
+    }
+    
+    _isDisabled = TRUE;
+}
+
+-(void) enableSelector
+{
+    for( int i = 0; i<3; i++)
+    {
+        SKShapeNode * currentSlopeButton = ((SKShapeNode *)[[self childNodeWithName:@"SlopeSelector"] childNodeWithName:[NSString stringWithFormat:@"SlopeButton%d", i ]]);
+        
+        currentSlopeButton.fillColor = [SKColor colorWithRed:245.0/256.0 green:227.0/256.0 blue:207.0/256.0 alpha:1.0];
+        
+        SKShapeNode * currentPosButton = ((SKShapeNode *)[[self childNodeWithName:@"PositionSelector"] childNodeWithName:[NSString stringWithFormat:@"PosButton%d", i ]]);
+        
+        currentPosButton.fillColor = [SKColor colorWithRed:245.0/256.0 green:227.0/256.0 blue:207.0/256.0 alpha:1.0];
+    }
+    
+    _isDisabled = FALSE;
+}
+
 @end

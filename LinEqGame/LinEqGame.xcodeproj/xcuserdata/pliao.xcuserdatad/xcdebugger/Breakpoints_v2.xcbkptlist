@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LinEqGame/MyScene.m"
-            timestampString = "407023586.254673"
+            timestampString = "407806329.882286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "-touchesBegan:withEvent:"
-            landmarkType = "5">
+            startingLineNumber = "117"
+            endingLineNumber = "117">
             <Locations>
                <Location
                   shouldBeEnabled = "No"

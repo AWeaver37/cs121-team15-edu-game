@@ -63,32 +63,38 @@
     
     
     for (UITouch *touch in touches) {
+        
         Selector* selector = [self childNodeWithName:@"SelectorFrame"];
         PositionSelector* posSelector = [selector childNodeWithName:@"PositionSelector"];
         SlopeSelector* slopeSelector = [selector childNodeWithName:@"SlopeSelector"];
         
-        for (int i =1; i <4; i++ )
+        if (selector.isDisabled == FALSE)
         {
-            SKShapeNode *button = [[posSelector children] objectAtIndex:i];
-            CGPoint location = [touch locationInNode:button];
-            if ( CGPathContainsPoint(button.path, NULL, location, true) )
+            
+            for (int i =1; i <4; i++ )
             {
-                [posSelector changeCurrentSelection:i];
-            }
-        }
-
-        for (int j =1; j <4; j++ )
-        {
-            SKShapeNode *button = [[slopeSelector children] objectAtIndex:j];
-            CGPoint location = [touch locationInNode:button];
-            if ( CGPathContainsPoint(button.path, NULL, location, true) )
-            {
-                [slopeSelector changeCurrentSelection:j];
-                    
+                SKShapeNode *button = [[posSelector children] objectAtIndex:i];
+                CGPoint location = [touch locationInNode:button];
+                if ( CGPathContainsPoint(button.path, NULL, location, true) )
+                {
+                    [posSelector changeCurrentSelection:i];
+                }
             }
             
-        }
+            for (int j =1; j <4; j++ )
+            {
+                SKShapeNode *button = [[slopeSelector children] objectAtIndex:j];
+                CGPoint location = [touch locationInNode:button];
+                if ( CGPathContainsPoint(button.path, NULL, location, true) )
+                {
+                    [slopeSelector changeCurrentSelection:j];
+                    
+                }
+                
+            }
 
+        }
+        
     }
     
 }
