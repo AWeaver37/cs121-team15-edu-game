@@ -134,14 +134,15 @@ float yAxisLength;
 #pragma mark - Grid
 - (void) fire
 {
-    int slopeIndex = [self.selectorFrame getCurrentSlopeIndex];
     int posIndex = [self.selectorFrame getCurrentPosIndex];
+    int slopeIndex = [self.selectorFrame getCurrentSlopeIndex];
+
     if (slopeIndex == -1 || posIndex == -1) {
         return;
     }
     
-    double slope = [[self.question slopeAt:slopeIndex] decimalValue];
     double intercept = [[self.question interceptAt:posIndex] decimalValue];
+    double slope = [[self.question slopeAt:slopeIndex] decimalValue];
     
     CGPoint destination = [self convertToRealCoordinatesGameX:0 y:intercept];
     SKAction *actionMove = [SKAction moveTo:destination duration:kpikachuMovementTime];
@@ -166,7 +167,8 @@ float yAxisLength;
 {
     SKSpriteNode *shark = [SKSpriteNode spriteNodeWithImageNamed:@"shark"];
     shark.position = [self convertToRealCoordinatesGameX:x y:y];
-    shark.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:shark.size];
+    CGSize smallBody = CGSizeMake(shark.size.width/2, shark.size.height/20);
+    shark.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:smallBody];
     shark.physicsBody.dynamic = YES;
     shark.physicsBody.categoryBitMask = enemyCategory;
     shark.physicsBody.contactTestBitMask = projectileCategory;

@@ -97,14 +97,12 @@
 -(int)getCurrentSlopeIndex
 {
     int current = ((SlopeSelector*)[self childNodeWithName:@"SlopeSelector"]).currentSelection - 1;
-    NSLog(@"current slope button index: %d", current);
     return current;
 }
 
 -(int)getCurrentPosIndex
 {
     int pos = ((PositionSelector*)[self childNodeWithName:@"PositionSelector"]).currentSelection - 1;
-    NSLog(@"current pos index: %d", pos);
     return pos;
 }
 
