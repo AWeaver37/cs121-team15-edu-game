@@ -14,6 +14,7 @@
     if (self == [super init]){
         _numerator = numerator;
         _denominator = denominator;
+        _isMixedFormat = false;
     }
     return self;
 }
@@ -22,7 +23,11 @@
     if (_denominator == 1) {
         return [NSString stringWithFormat:@"%d",_numerator];
     } else {
-        return [NSString stringWithFormat:@"%d/%d",_numerator,_denominator];
+        if (_isMixedFormat) {
+            return [self mixedFormatString];
+        } else {
+            return [self regularFormatString];
+        }
     }
 }
 
@@ -57,6 +62,14 @@
     fractionPart.numerator = ABS( _numerator%_denominator);
     fractionPart.denominator = _denominator;
     return fractionPart;
+};
+
+- (NSString*) regularFormatString{
+    return [NSString stringWithFormat:@"%d/%d",_numerator,_denominator];
+}
+
+- (NSString*) mixedFormatString{
+    return [NSString stringWithFormat:@"%d %@", [self integerPart], [self fractionPart]];
 };
 
 @end

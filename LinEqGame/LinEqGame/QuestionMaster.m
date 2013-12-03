@@ -14,13 +14,15 @@
     if (self == [super init]){
         srandom(time(NULL));
         _minX = 0;
-        _maxX = 50;
+        _maxX = 100;
         
-        _minY = 0;
-        _maxY = 50;
+        _minY = -40;
+        _maxY = 40;
         
         _maxSlopeNum = 9;
         _maxSlopeDen = 9;
+        _minSlopeNum = 1;
+        _minSlopeDen = 5;
     }
     return self;
 }
@@ -40,8 +42,9 @@
 - (void) setSlope:(Fraction*) slope boundedBy: (double) maxSlope{
     
     do {
-        slope.numerator = [self randomBetween: -_maxSlopeNum And: _maxSlopeNum];
-        slope.denominator = [self randomBetween: 1 And: _maxSlopeDen];
+        slope.numerator = [self randomBetween: _minSlopeNum And: _maxSlopeNum];
+        slope.denominator = [self randomBetween: _minSlopeDen And: _maxSlopeDen];
+        slope.numerator *= [self randomBetween:0 And: 1] * 2 - 1;
     } while (!([self isValue:slope.decimalValue between:-maxSlope and:maxSlope] && slope.numerator != 0));
 }
 
@@ -119,6 +122,7 @@
                                      initWithNum:answer.numerator + totalOffset
                                      AndDen:answer.denominator];
             [wrongChoice simplify];
+            wrongChoice.isMixedFormat = answer.isMixedFormat;
             [choices setObject:wrongChoice atIndexedSubscript:i];
         }
     } while (
@@ -144,6 +148,7 @@
 
     Fraction* slope = [[Fraction alloc] init];
     Fraction* intercept = [[Fraction alloc] init];
+    //intercept.isMixedFormat = true;
     
     Location* alien1 = [[Location alloc] init];
     Location* alien2 = [[Location alloc] init];

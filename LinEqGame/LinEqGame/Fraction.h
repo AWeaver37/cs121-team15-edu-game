@@ -24,6 +24,8 @@
 
 @property int denominator;
 
+@property BOOL isMixedFormat;
+
 
 
 @end

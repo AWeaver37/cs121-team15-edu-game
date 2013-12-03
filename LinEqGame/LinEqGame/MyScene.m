@@ -46,8 +46,8 @@
         
         [sprite runAction:[SKAction repeatActionForever:action]];    }
     
-    
-    NSLog(@"%@", [qm generateQuestion]);
+    QuestionObject* obj = [qm generateQuestion];
+    NSLog(@"%@", obj);
     
 }
 
