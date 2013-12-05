@@ -8,34 +8,21 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface HealthBarNode : SKShapeNode
+#import "BarBoxNodeBase.h"
 
-// The node's background color is represented by the member
-// SKColor fillColor, inherited from SKShapeNode
+@interface HealthBarNode : BarBoxNodeBase
 
-// The node's x position
-@property int positionX;
+// Boolean that keeps track of whether there is any health left
+@property (nonatomic, readonly) bool isDefeated;
 
-// The node's y position
-@property int positionY;
+// Constructor
+- (id)initWithHeight:(int)h Width:(int)w AtX:(int)x Y:(int)y
+       WithLineWidth:(CGFloat)lW AndTotalQuestions:(int)q;
 
-// The node's height
-@property int height;
+- (void)incrementHealth;
+- (void)decrementHealth;
+- (void)changeHealth:(int)amountToChange;
 
-// The node's width
-@property int width;
-
-// The index that corresponds to where the node is in both
-// the healthBarInts and which index it corresponds to in the questions array
-@property int index;
-
-// The node's value
-// 1 means true, the user answered the question correctly, and the background is colored;
-// 0 means false, the user missed that question, and the background is transparent
-@property int value;
-
-// The next node in the healthBar
-@property HealthBarNode *next;
-
+- (void)reset;
 
 @end

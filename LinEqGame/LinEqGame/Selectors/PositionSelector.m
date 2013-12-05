@@ -10,6 +10,8 @@
 
 @implementation PositionSelector
 
+@synthesize posSelectorHeight, posSelectorWidth;
+
 -(void)createButtonsFromDimensions: (CGRect) rect
 {
     
@@ -35,16 +37,16 @@
     [title addChild:titleText];
     [self addChild:title];
     
-    float buttonWidth = rect.size.width*11.0/13.0; //10
-    float buttonHeight = rect.size.height*5.0/22.0; //50
-    CGRect buttonRect = CGRectMake(0, 0, buttonWidth, buttonHeight);
+    posSelectorWidth = rect.size.width*11.0/13.0; //10
+    posSelectorHeight = rect.size.height*5.0/22.0; //50
+    CGRect buttonRect = CGRectMake(0, 0, posSelectorWidth, posSelectorHeight);
     CGPathRef buttonPath =  CGPathCreateWithRect(buttonRect, NULL);
     for(int j = 0; j<3; j++)
     {
         SKShapeNode * button = [[SKShapeNode alloc] init];
         button.name = [[NSString alloc] initWithFormat:@"PosButton%d", j];
-        float buttonXPos = buttonWidth/11.0;
-        float buttonYPos = j*buttonHeight + (j+1)*buttonHeight/10.0;
+        float buttonXPos = posSelectorWidth/11.0;
+        float buttonYPos = j*posSelectorHeight + (j+1)*posSelectorHeight/10.0;
         button.path = buttonPath;
         button.fillColor = [SKColor colorWithRed:245.0/256.0 green:227.0/256.0 blue:207.0/256.0 alpha:1.0];
         button.strokeColor = [SKColor clearColor];

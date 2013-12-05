@@ -14,6 +14,9 @@
 
 @interface Selector : SKShapeNode
 
+@property int frameHeight;
+@property int frameWidth;
+
 
 -(void)setupWithPresets;
 -(void)createSelectorsFromDimensions: (CGRect) rect;
