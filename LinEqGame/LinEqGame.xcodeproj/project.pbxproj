@@ -35,6 +35,7 @@
 		20CB6FC9183FEC5300B72BD6 /* SlopeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FC5183FEC5300B72BD6 /* SlopeSelector.m */; };
 		20CB6FCE183FED7700B72BD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FCB183FED7700B72BD6 /* AppDelegate.m */; };
 		20CB6FCF183FED7700B72BD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FCD183FED7700B72BD6 /* ViewController.m */; };
+		20F19AB518513AC10043D06A /* SharkSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F19AB418513AC10043D06A /* SharkSpriteNode.m */; };
 		AE460894183FE1CF00DF26E1 /* AnswerChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088B183FE1CF00DF26E1 /* AnswerChoice.m */; };
 		AE460895183FE1CF00DF26E1 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088D183FE1CF00DF26E1 /* Fraction.m */; };
 		AE460896183FE1CF00DF26E1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088F183FE1CF00DF26E1 /* Location.m */; };
@@ -92,6 +93,8 @@
 		20CB6FCB183FED7700B72BD6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = LinEqGame/AppDelegate.m; sourceTree = "<group>"; };
 		20CB6FCC183FED7700B72BD6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = LinEqGame/ViewController.h; sourceTree = "<group>"; };
 		20CB6FCD183FED7700B72BD6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = LinEqGame/ViewController.m; sourceTree = "<group>"; };
+		20F19AB318513AC10043D06A /* SharkSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharkSpriteNode.h; sourceTree = "<group>"; };
+		20F19AB418513AC10043D06A /* SharkSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharkSpriteNode.m; sourceTree = "<group>"; };
 		AE46088A183FE1CF00DF26E1 /* AnswerChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerChoice.h; sourceTree = "<group>"; };
 		AE46088B183FE1CF00DF26E1 /* AnswerChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerChoice.m; sourceTree = "<group>"; };
 		AE46088C183FE1CF00DF26E1 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 			children = (
 				2027AE34183FE7DE009C48FB /* GridScene.h */,
 				2027AE35183FE7DE009C48FB /* GridScene.m */,
+				20F19AB318513AC10043D06A /* SharkSpriteNode.h */,
+				20F19AB418513AC10043D06A /* SharkSpriteNode.m */,
 				207CD6B21832EAAF007C4228 /* Main.storyboard */,
 				AE460889183FE1CF00DF26E1 /* henrys files */,
 				207CD6BB1832EAAF007C4228 /* Spaceship.png */,
@@ -379,6 +384,7 @@
 				20CB6FCF183FED7700B72BD6 /* ViewController.m in Sources */,
 				AE460896183FE1CF00DF26E1 /* Location.m in Sources */,
 				20CB6FC9183FEC5300B72BD6 /* SlopeSelector.m in Sources */,
+				20F19AB518513AC10043D06A /* SharkSpriteNode.m in Sources */,
 				20CB6FCE183FED7700B72BD6 /* AppDelegate.m in Sources */,
 				20CB6FC7183FEC5300B72BD6 /* Selector.m in Sources */,
 				207CD6AD1832EAAF007C4228 /* main.m in Sources */,

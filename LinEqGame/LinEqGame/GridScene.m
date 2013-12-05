@@ -9,6 +9,7 @@
 #import "GridScene.h"
 #import "QuestionMaster.h"
 #import "VectorUtilities.h"
+#import "SharkSpriteNode.h"
 
 #define kratio 12
 #define kpikachuMovementTime 1
@@ -48,6 +49,8 @@ float yAxisLength;
         [self drawGrid];
         
         self.question = [[[QuestionMaster alloc] init] generateQuestion];
+        
+        //Add enemies
         for (Location *location in self.question.enemyLocations) {
             [self addEnemyToCoordinateWithX:location.x Y:location.y];
         }
@@ -60,7 +63,6 @@ float yAxisLength;
         
         
         //Selector buttons
-        
         self.selectorFrame = [[Selector alloc] init];
         [self.selectorFrame setupWithPresets];
         
@@ -163,9 +165,14 @@ float yAxisLength;
     }];
 }
 
+- (void) startRound
+{
+    
+}
+
 - (void)addEnemyToCoordinateWithX:(float)x Y:(float)y
 {
-    SKSpriteNode *shark = [SKSpriteNode spriteNodeWithImageNamed:@"shark"];
+    SharkSpriteNode *shark = [SharkSpriteNode spriteNodeWithImageNamed:@"shark"];
     shark.position = [self convertToRealCoordinatesGameX:x y:y];
     CGSize smallBody = CGSizeMake(shark.size.width/2, shark.size.height/20);
     shark.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:smallBody];
@@ -175,12 +182,7 @@ float yAxisLength;
     shark.physicsBody.collisionBitMask = 0;
 
     [self addChild:shark];
-    
-    float below = 75;
-    SKLabelNode *coordinates = [[SKLabelNode alloc] initWithFontNamed:@"Marker"];
-    coordinates.text = [NSString stringWithFormat:@"(%1.0f, %1.0f)", x, y];
-    coordinates.position = CGPointMake(shark.position.x, shark.position.y - below);
-    [self addChild:coordinates];
+    [shark addCoordinateLabel:self x:x y:y];
     
     self.physicsWorld.gravity = CGVectorMake(0, 0);
     self.physicsWorld.contactDelegate = self;
