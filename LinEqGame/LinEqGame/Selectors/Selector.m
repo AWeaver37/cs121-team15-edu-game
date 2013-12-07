@@ -10,13 +10,19 @@
 
 @implementation Selector
 
+@synthesize frameHeight, frameWidth;
+
 -(void)setupWithPresets
 {
     float selectorXPos = 850.0;
-    float selectorYPos = 280;
+    float selectorYPos = 225;
     
     self.name = @"SelectorFrame";
-    CGRect selectorRect = CGRectMake(0, 0, 150, 450);
+    
+    frameWidth = 150;
+    frameHeight = 450;
+    
+    CGRect selectorRect = CGRectMake(0, 0, frameWidth, frameHeight);
     CGPathRef selectorPath =  CGPathCreateWithRect(selectorRect, NULL);
     self.path = selectorPath;
     self.fillColor = [SKColor colorWithRed:129.0/256.0 green:141.0/256.0 blue:163.0/256.0 alpha:1.0];

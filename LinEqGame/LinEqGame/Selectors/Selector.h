@@ -16,6 +16,8 @@
 @interface Selector : SKShapeNode
 
 @property QuestionObject *currentQuestion;
+@property int frameHeight;
+@property int frameWidth;
 
 -(void)setupWithPresets;
 -(void)createSelectorsFromDimensions: (CGRect) rect;

@@ -13,6 +13,9 @@
 @property int currentSelection;
 @property int correctAnswer;
 
+@property float posSelectorHeight;
+@property float posSelectorWidth;
+
 -(void)createButtonsFromDimensions: (CGRect) rect;
 -(void) changeCurrentSelection: (int) newSelection;
 

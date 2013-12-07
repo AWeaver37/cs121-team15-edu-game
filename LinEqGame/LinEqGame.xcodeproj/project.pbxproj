@@ -36,6 +36,20 @@
 		20CB6FCE183FED7700B72BD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FCB183FED7700B72BD6 /* AppDelegate.m */; };
 		20CB6FCF183FED7700B72BD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FCD183FED7700B72BD6 /* ViewController.m */; };
 		20F19AB518513AC10043D06A /* SharkSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F19AB418513AC10043D06A /* SharkSpriteNode.m */; };
+		93328D0A184563F1004BCBD3 /* HealthBarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 93328D03184563F1004BCBD3 /* HealthBarNode.m */; };
+		93328D0B184563F1004BCBD3 /* LevelRecordLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 93328D05184563F1004BCBD3 /* LevelRecordLog.m */; };
+		93328D0F18495167004BCBD3 /* jellyfish2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93328D0E18495167004BCBD3 /* jellyfish2.png */; };
+		937E92F41845601F00D4BA4F /* message_console.png in Resources */ = {isa = PBXBuildFile; fileRef = 937E92F11845601F00D4BA4F /* message_console.png */; };
+		937E92F51845601F00D4BA4F /* score_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 937E92F21845601F00D4BA4F /* score_box.png */; };
+		937E92F61845601F00D4BA4F /* time_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 937E92F31845601F00D4BA4F /* time_box.png */; };
+		93BA8BC21849866400D872C3 /* MessageBarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BA8BC11849866400D872C3 /* MessageBarNode.m */; };
+		93BA8BC818499A0900D872C3 /* BarBoxNodeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BA8BC718499A0900D872C3 /* BarBoxNodeBase.m */; };
+		93BA8BCC184D5A1200D872C3 /* ScoreBoxNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BA8BCB184D5A1200D872C3 /* ScoreBoxNode.m */; };
+		93BA8BCF184D5A2900D872C3 /* TimerBoxNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BA8BCE184D5A2900D872C3 /* TimerBoxNode.m */; };
+		93F0FBE718454925003B784C /* octopus_happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F0FBE418454925003B784C /* octopus_happy.png */; };
+		93F0FBE818454925003B784C /* jellyfish2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F0FBE518454925003B784C /* jellyfish2.png */; };
+		93F0FBE918454925003B784C /* jellyfish1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F0FBE618454925003B784C /* jellyfish1.png */; };
+		93F0FBEB18454931003B784C /* octopus_surprised.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F0FBEA18454931003B784C /* octopus_surprised.png */; };
 		AE460894183FE1CF00DF26E1 /* AnswerChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088B183FE1CF00DF26E1 /* AnswerChoice.m */; };
 		AE460895183FE1CF00DF26E1 /* Fraction.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088D183FE1CF00DF26E1 /* Fraction.m */; };
 		AE460896183FE1CF00DF26E1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = AE46088F183FE1CF00DF26E1 /* Location.m */; };
@@ -95,6 +109,27 @@
 		20CB6FCD183FED7700B72BD6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = LinEqGame/ViewController.m; sourceTree = "<group>"; };
 		20F19AB318513AC10043D06A /* SharkSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharkSpriteNode.h; sourceTree = "<group>"; };
 		20F19AB418513AC10043D06A /* SharkSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharkSpriteNode.m; sourceTree = "<group>"; };
+		93328D02184563F1004BCBD3 /* HealthBarNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthBarNode.h; sourceTree = "<group>"; };
+		93328D03184563F1004BCBD3 /* HealthBarNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthBarNode.m; sourceTree = "<group>"; };
+		93328D04184563F1004BCBD3 /* LevelRecordLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelRecordLog.h; sourceTree = "<group>"; };
+		93328D05184563F1004BCBD3 /* LevelRecordLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelRecordLog.m; sourceTree = "<group>"; };
+		93328D0E18495167004BCBD3 /* jellyfish2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jellyfish2.png; sourceTree = "<group>"; };
+		937E92F11845601F00D4BA4F /* message_console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message_console.png; sourceTree = "<group>"; };
+		937E92F21845601F00D4BA4F /* score_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = score_box.png; sourceTree = "<group>"; };
+		937E92F31845601F00D4BA4F /* time_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time_box.png; sourceTree = "<group>"; };
+		93BA8BC01849866400D872C3 /* MessageBarNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBarNode.h; sourceTree = "<group>"; };
+		93BA8BC11849866400D872C3 /* MessageBarNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBarNode.m; sourceTree = "<group>"; tabWidth = 5; };
+		93BA8BC618499A0900D872C3 /* BarBoxNodeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarBoxNodeBase.h; sourceTree = "<group>"; };
+		93BA8BC718499A0900D872C3 /* BarBoxNodeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarBoxNodeBase.m; sourceTree = "<group>"; };
+		93BA8BC9184BED1D00D872C3 /* ResetProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResetProtocol.h; sourceTree = "<group>"; };
+		93BA8BCA184D5A1200D872C3 /* ScoreBoxNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoxNode.h; sourceTree = "<group>"; };
+		93BA8BCB184D5A1200D872C3 /* ScoreBoxNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreBoxNode.m; sourceTree = "<group>"; };
+		93BA8BCD184D5A2900D872C3 /* TimerBoxNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerBoxNode.h; sourceTree = "<group>"; };
+		93BA8BCE184D5A2900D872C3 /* TimerBoxNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerBoxNode.m; sourceTree = "<group>"; };
+		93F0FBE418454925003B784C /* octopus_happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octopus_happy.png; sourceTree = "<group>"; };
+		93F0FBE518454925003B784C /* jellyfish2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jellyfish2.png; sourceTree = "<group>"; };
+		93F0FBE618454925003B784C /* jellyfish1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jellyfish1.png; sourceTree = "<group>"; };
+		93F0FBEA18454931003B784C /* octopus_surprised.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = octopus_surprised.png; sourceTree = "<group>"; };
 		AE46088A183FE1CF00DF26E1 /* AnswerChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerChoice.h; sourceTree = "<group>"; };
 		AE46088B183FE1CF00DF26E1 /* AnswerChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerChoice.m; sourceTree = "<group>"; };
 		AE46088C183FE1CF00DF26E1 /* Fraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fraction.h; sourceTree = "<group>"; };
@@ -144,6 +179,14 @@
 		20427842183D901600A3BBE9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				93328D0E18495167004BCBD3 /* jellyfish2.png */,
+				937E92F11845601F00D4BA4F /* message_console.png */,
+				937E92F21845601F00D4BA4F /* score_box.png */,
+				937E92F31845601F00D4BA4F /* time_box.png */,
+				93F0FBEA18454931003B784C /* octopus_surprised.png */,
+				93F0FBE418454925003B784C /* octopus_happy.png */,
+				93F0FBE518454925003B784C /* jellyfish2.png */,
+				93F0FBE618454925003B784C /* jellyfish1.png */,
 				20B4BCE8183FC97E008976B6 /* lightning.png */,
 				20B4BCE6183FC4A5008976B6 /* underwater-background.jpg */,
 				20B4BCE4183FC45E008976B6 /* shark-background.jpg */,
@@ -158,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				201538131842AC5000102B12 /* Util */,
+				93328D01184563F1004BCBD3 /* LevelRecordFiles */,
 				20CB6FCA183FED7700B72BD6 /* AppDelegate.h */,
 				20CB6FCB183FED7700B72BD6 /* AppDelegate.m */,
 				20CB6FCC183FED7700B72BD6 /* ViewController.h */,
@@ -251,6 +295,27 @@
 			);
 			name = Selectors;
 			path = LinEqGame/Selectors;
+			sourceTree = "<group>";
+		};
+		93328D01184563F1004BCBD3 /* LevelRecordFiles */ = {
+			isa = PBXGroup;
+			children = (
+				93BA8BC618499A0900D872C3 /* BarBoxNodeBase.h */,
+				93BA8BC718499A0900D872C3 /* BarBoxNodeBase.m */,
+				93328D02184563F1004BCBD3 /* HealthBarNode.h */,
+				93328D03184563F1004BCBD3 /* HealthBarNode.m */,
+				93BA8BC01849866400D872C3 /* MessageBarNode.h */,
+				93BA8BC11849866400D872C3 /* MessageBarNode.m */,
+				93BA8BCA184D5A1200D872C3 /* ScoreBoxNode.h */,
+				93BA8BCB184D5A1200D872C3 /* ScoreBoxNode.m */,
+				93BA8BCD184D5A2900D872C3 /* TimerBoxNode.h */,
+				93BA8BCE184D5A2900D872C3 /* TimerBoxNode.m */,
+				93328D04184563F1004BCBD3 /* LevelRecordLog.h */,
+				93328D05184563F1004BCBD3 /* LevelRecordLog.m */,
+				93BA8BC9184BED1D00D872C3 /* ResetProtocol.h */,
+			);
+			name = LevelRecordFiles;
+			path = LinEqGame/LevelRecordFiles;
 			sourceTree = "<group>";
 		};
 		AE460889183FE1CF00DF26E1 /* henrys files */ = {
@@ -348,14 +413,22 @@
 			files = (
 				20B4BCE1183FBCAD008976B6 /* shark.png in Resources */,
 				207CD6AB1832EAAF007C4228 /* InfoPlist.strings in Resources */,
+				93F0FBE718454925003B784C /* octopus_happy.png in Resources */,
+				93328D0F18495167004BCBD3 /* jellyfish2.png in Resources */,
+				937E92F51845601F00D4BA4F /* score_box.png in Resources */,
+				937E92F61845601F00D4BA4F /* time_box.png in Resources */,
 				20B4BCE9183FC97E008976B6 /* lightning.png in Resources */,
 				20B4BCE7183FC4A5008976B6 /* underwater-background.jpg in Resources */,
+				93F0FBE918454925003B784C /* jellyfish1.png in Resources */,
 				207CD6BE1832EAAF007C4228 /* Images.xcassets in Resources */,
 				207CD6BC1832EAAF007C4228 /* Spaceship.png in Resources */,
 				20B4BCE3183FC347008976B6 /* underwater.jpg in Resources */,
 				20B4BCE5183FC45E008976B6 /* shark-background.jpg in Resources */,
+				93F0FBE818454925003B784C /* jellyfish2.png in Resources */,
+				937E92F41845601F00D4BA4F /* message_console.png in Resources */,
 				207CD6B41832EAAF007C4228 /* Main.storyboard in Resources */,
 				20427841183D900900A3BBE9 /* pikachu.png in Resources */,
+				93F0FBEB18454931003B784C /* octopus_surprised.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,13 +448,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2027AE36183FE7DE009C48FB /* GridScene.m in Sources */,
+				93BA8BCC184D5A1200D872C3 /* ScoreBoxNode.m in Sources */,
 				AE460894183FE1CF00DF26E1 /* AnswerChoice.m in Sources */,
 				AE460897183FE1CF00DF26E1 /* QuestionMaster.m in Sources */,
+				93328D0B184563F1004BCBD3 /* LevelRecordLog.m in Sources */,
 				20CB6FC6183FEC5300B72BD6 /* PositionSelector.m in Sources */,
+				93BA8BC21849866400D872C3 /* MessageBarNode.m in Sources */,
+				93BA8BC818499A0900D872C3 /* BarBoxNodeBase.m in Sources */,
 				20CB6FC8183FEC5300B72BD6 /* SelectorButton.m in Sources */,
 				201538121842AC4800102B12 /* VectorUtilities.m in Sources */,
+				93BA8BCF184D5A2900D872C3 /* TimerBoxNode.m in Sources */,
 				AE460898183FE1CF00DF26E1 /* QuestionObject.m in Sources */,
 				20CB6FCF183FED7700B72BD6 /* ViewController.m in Sources */,
+				93328D0A184563F1004BCBD3 /* HealthBarNode.m in Sources */,
 				AE460896183FE1CF00DF26E1 /* Location.m in Sources */,
 				20CB6FC9183FEC5300B72BD6 /* SlopeSelector.m in Sources */,
 				20F19AB518513AC10043D06A /* SharkSpriteNode.m in Sources */,
