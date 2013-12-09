@@ -7,15 +7,37 @@
 //
 
 #import "EnemySpriteNode.h"
+@interface EnemySpriteNode ()
+    @property CGPoint gameCoord;
+@end
 
 @implementation EnemySpriteNode
-- (void)addCoordinateLabel:(SKScene *)scene x:(float)x y:(float)y
+
+- (id)initWithGameCoordinates:(CGPoint)gameCoord;
+{
+    if (self = [super initWithImageNamed:@"jellyfish2"])
+    {
+        self.gameCoord = gameCoord;
+        [self addCoordinateLabel];
+    }
+    
+    return self;
+}
+
+- (void)removeFromParent
+{
+    NSLog(@"remove");
+    [super removeFromParent];
+    [self removeCoordinateLabel];
+}
+
+- (void)addCoordinateLabel
 {
     float below = 75;
     self.coordinates = [[SKLabelNode alloc] initWithFontNamed:@"Marker"];
-    self.coordinates.text = [NSString stringWithFormat:@"(%1.0f, %1.0f)", x, y];
+    self.coordinates.text = [NSString stringWithFormat:@"(%1.0f, %1.0f)", self.gameCoord.x, self.gameCoord.y];
     self.coordinates.position = CGPointMake(self.position.x, self.position.y - below);
-    [scene addChild:self.coordinates];
+    [self addChild:self.coordinates];
 }
 
 - (void)removeCoordinateLabel

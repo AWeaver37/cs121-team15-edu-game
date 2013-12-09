@@ -45,8 +45,8 @@ static const uint32_t enemyCategory          =  0x1 << 1;
 @property SKSpriteNode *ink;
 
 // Enemy and Weapon
-@property SKSpriteNode *jellyfish;
 @property SKSpriteNode *lightning;
+@property NSMutableArray *enemies;
 
 // Enemy Locations
 @property NSMutableArray *enemyLocations;
@@ -85,6 +85,9 @@ float yAxisLength;
 // Initialize the GridScene
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        // Set the rules for the physicsWorld
+        self.physicsWorld.gravity = CGVectorMake(0, 0);
+        self.physicsWorld.contactDelegate = self;
         
         // Set up the scene
         xAxisLength = xAxisGameLength * kratio;
@@ -111,6 +114,9 @@ float yAxisLength;
         self.enemyLocations = self.question.enemyLocations;
         
         //Enemy
+        self.enemies = [@[] mutableCopy];
+        
+        //Hero
         self.octopus = [SKSpriteNode spriteNodeWithImageNamed:@"octopus_surprised"];
         self.octopus.position = [self convertToRealCoordinatesGameX:0 y:0];
         [self addChild:self.octopus];
@@ -133,7 +139,9 @@ float yAxisLength;
 
 - (void) startRound
 {
-    
+    for (EnemySpriteNode *enemy in self.enemies) {
+        [enemy removeFromParent];
+    }
 }
 
 
@@ -163,7 +171,10 @@ float yAxisLength;
         
         if ([self.selector isSelectionCorrect])
         {
+            //TODO correct answer
         }
+        
+        [self startRound];
     }];
 }
 
@@ -171,7 +182,8 @@ float yAxisLength;
 
 - (void)addEnemyToCoordinateWithX:(float)x Y:(float)y
 {
-    EnemySpriteNode *enemy = [EnemySpriteNode spriteNodeWithImageNamed:@"jellyfish2"];
+//    EnemySpriteNode *enemy = [EnemySpriteNode spriteNodeWithImageNamed:@"jellyfish2"];
+    EnemySpriteNode *enemy = [[EnemySpriteNode alloc] initWithGameCoordinates:CGPointMake(x, y)];
     enemy.position = [self convertToRealCoordinatesGameX:x y:y];
     CGSize smallBody = CGSizeMake(enemy.size.width/2, enemy.size.height/20);
     enemy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:smallBody];
@@ -181,11 +193,8 @@ float yAxisLength;
     enemy.physicsBody.collisionBitMask = 0;
 
     [self addChild:enemy];
-    [enemy addCoordinateLabel:self x:x y:y];
-    
-    // Set the rules for the physicsWorld
-    self.physicsWorld.gravity = CGVectorMake(0, 0);
-    self.physicsWorld.contactDelegate = self;
+    [self.enemies addObject:enemy];
+
 }
 
 - (void) createInkAtX:(float)x Y:(float)y {
@@ -232,8 +241,7 @@ float yAxisLength;
     
 }
 
-- (void)projectile:(SKSpriteNode *)projectile didCollideWitEnemy:(EnemySpriteNode *)enemy {
-    [enemy removeCoordinateLabel];
+- (void)projectile:(SKSpriteNode *)projectile didCollideWithEnemy:(EnemySpriteNode *)enemy {
     [enemy removeFromParent];
 }
 
@@ -257,7 +265,7 @@ float yAxisLength;
     if ((firstBody.categoryBitMask & projectileCategory) != 0 &&
         (secondBody.categoryBitMask & enemyCategory) != 0)
     {
-        [self projectile:(SKSpriteNode *) firstBody.node didCollideWitEnemy:(EnemySpriteNode *) secondBody.node];
+        [self projectile:(SKSpriteNode *) firstBody.node didCollideWithEnemy:(EnemySpriteNode *) secondBody.node];
     }
 }
 

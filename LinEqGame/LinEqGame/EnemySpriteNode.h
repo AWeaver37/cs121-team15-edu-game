@@ -11,6 +11,5 @@
 @interface EnemySpriteNode : SKSpriteNode
 @property SKLabelNode *coordinates;
 
-- (void)addCoordinateLabel:(SKScene *)scene x:(float)x y:(float)y;
-- (void)removeCoordinateLabel;
+- (id)initWithGameCoordinates:(CGPoint)gameCoord;
 @end
