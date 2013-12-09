@@ -35,7 +35,7 @@
 		20CB6FC9183FEC5300B72BD6 /* SlopeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FC5183FEC5300B72BD6 /* SlopeSelector.m */; };
 		20CB6FCE183FED7700B72BD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FCB183FED7700B72BD6 /* AppDelegate.m */; };
 		20CB6FCF183FED7700B72BD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CB6FCD183FED7700B72BD6 /* ViewController.m */; };
-		20F19AB518513AC10043D06A /* SharkSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F19AB418513AC10043D06A /* SharkSpriteNode.m */; };
+		20F19AB518513AC10043D06A /* EnemySpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F19AB418513AC10043D06A /* EnemySpriteNode.m */; };
 		93328D0A184563F1004BCBD3 /* HealthBarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 93328D03184563F1004BCBD3 /* HealthBarNode.m */; };
 		93328D0B184563F1004BCBD3 /* LevelRecordLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 93328D05184563F1004BCBD3 /* LevelRecordLog.m */; };
 		93328D0F18495167004BCBD3 /* jellyfish2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93328D0E18495167004BCBD3 /* jellyfish2.png */; };
@@ -107,8 +107,8 @@
 		20CB6FCB183FED7700B72BD6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = LinEqGame/AppDelegate.m; sourceTree = "<group>"; };
 		20CB6FCC183FED7700B72BD6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = LinEqGame/ViewController.h; sourceTree = "<group>"; };
 		20CB6FCD183FED7700B72BD6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = LinEqGame/ViewController.m; sourceTree = "<group>"; };
-		20F19AB318513AC10043D06A /* SharkSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharkSpriteNode.h; sourceTree = "<group>"; };
-		20F19AB418513AC10043D06A /* SharkSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharkSpriteNode.m; sourceTree = "<group>"; };
+		20F19AB318513AC10043D06A /* EnemySpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemySpriteNode.h; sourceTree = "<group>"; };
+		20F19AB418513AC10043D06A /* EnemySpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemySpriteNode.m; sourceTree = "<group>"; };
 		93328D02184563F1004BCBD3 /* HealthBarNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthBarNode.h; sourceTree = "<group>"; };
 		93328D03184563F1004BCBD3 /* HealthBarNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthBarNode.m; sourceTree = "<group>"; };
 		93328D04184563F1004BCBD3 /* LevelRecordLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelRecordLog.h; sourceTree = "<group>"; };
@@ -241,8 +241,8 @@
 			children = (
 				2027AE34183FE7DE009C48FB /* GridScene.h */,
 				2027AE35183FE7DE009C48FB /* GridScene.m */,
-				20F19AB318513AC10043D06A /* SharkSpriteNode.h */,
-				20F19AB418513AC10043D06A /* SharkSpriteNode.m */,
+				20F19AB318513AC10043D06A /* EnemySpriteNode.h */,
+				20F19AB418513AC10043D06A /* EnemySpriteNode.m */,
 				207CD6B21832EAAF007C4228 /* Main.storyboard */,
 				AE460889183FE1CF00DF26E1 /* henrys files */,
 				207CD6BB1832EAAF007C4228 /* Spaceship.png */,
@@ -463,7 +463,7 @@
 				93328D0A184563F1004BCBD3 /* HealthBarNode.m in Sources */,
 				AE460896183FE1CF00DF26E1 /* Location.m in Sources */,
 				20CB6FC9183FEC5300B72BD6 /* SlopeSelector.m in Sources */,
-				20F19AB518513AC10043D06A /* SharkSpriteNode.m in Sources */,
+				20F19AB518513AC10043D06A /* EnemySpriteNode.m in Sources */,
 				20CB6FCE183FED7700B72BD6 /* AppDelegate.m in Sources */,
 				20CB6FC7183FEC5300B72BD6 /* Selector.m in Sources */,
 				207CD6AD1832EAAF007C4228 /* main.m in Sources */,

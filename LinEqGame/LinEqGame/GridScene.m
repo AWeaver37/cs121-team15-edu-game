@@ -8,7 +8,7 @@
 
 #import "GridScene.h"
 #import "QuestionMaster.h"
-#import "SharkSpriteNode.h"
+#import "EnemySpriteNode.h"
 
 #import "HealthBarNode.h"
 #import "MessageBarNode.h"
@@ -16,7 +16,7 @@
 #import "TimerBoxNode.h"
 
 #define kratio 12
-#define kpikachuMovementTime 1
+#define kHeroMovementTime 1
 
 static const uint32_t projectileCategory     =  0x1 << 0;
 static const uint32_t enemyCategory          =  0x1 << 1;
@@ -52,12 +52,10 @@ static const uint32_t enemyCategory          =  0x1 << 1;
 @property NSMutableArray *enemyLocations;
 
 @property QuestionObject *question;
-@property SKSpriteNode *pikachu;
-@property Selector *selectorFrame;
 
 // Actions
 @property SKAction *moveToTarget;
-@property SKAction *fire;
+//@property SKAction *fire;
 @property SKAction *enemyAttack;
 @property SKAction *enemyRetreat;
 
@@ -105,21 +103,21 @@ float yAxisLength;
         //[_messageBar setMessage:@"Hi Kidz"];
         //[_messageBar reset];
         
-        QuestionObject *question = [[[QuestionMaster alloc] init] generateQuestion];
-        for (Location *location in question.enemyLocations) {
+        self.question = [[[QuestionMaster alloc] init] generateQuestion];
+        for (Location *location in self.question.enemyLocations) {
             [self addEnemyToCoordinateWithX:location.x Y:location.y];
         }
         
-        self.enemyLocations = question.enemyLocations;
+        self.enemyLocations = self.question.enemyLocations;
         
         //Enemy
-        SKSpriteNode *octopus = [SKSpriteNode spriteNodeWithImageNamed:@"octopus_surprised"];
-        octopus.position = [self convertToRealCoordinatesGameX:0 y:0];
-        [self addChild:octopus];
+        self.octopus = [SKSpriteNode spriteNodeWithImageNamed:@"octopus_surprised"];
+        self.octopus.position = [self convertToRealCoordinatesGameX:0 y:0];
+        [self addChild:self.octopus];
         
         self.selector = [[Selector alloc] init];
         [self.selector setupWithPresets];
-        [self.selector setButtons:question];
+        [self.selector setButtons:self.question];
         self.posSelector = (PositionSelector *) [self.selector childNodeWithName:@"PositionSelector"];
         self.slopeSelector = (SlopeSelector *) [self.selector childNodeWithName:@"SlopeSelector"];
         [self addChild:self.selector];
@@ -155,8 +153,8 @@ float yAxisLength;
 #pragma mark - Grid
 - (void) fire
 {
-    int posIndex = [self.selectorFrame getCurrentPosIndex];
-    int slopeIndex = [self.selectorFrame getCurrentSlopeIndex];
+    int posIndex = [self.selector getCurrentPosIndex];
+    int slopeIndex = [self.selector getCurrentSlopeIndex];
 
     if (slopeIndex == -1 || posIndex == -1) {
         return;
@@ -166,9 +164,9 @@ float yAxisLength;
     double slope = [[self.question slopeAt:slopeIndex] decimalValue];
     
     CGPoint destination = [self convertToRealCoordinatesGameX:0 y:intercept];
-    SKAction *actionMove = [SKAction moveTo:destination duration:kpikachuMovementTime];
+    SKAction *actionMove = [SKAction moveTo:destination duration:1];
 
-    [self.pikachu runAction:actionMove completion:^{
+    [self.octopus runAction:actionMove completion:^{
         float gameY = intercept + slope * xAxisGameLength;
         float gameX = xAxisGameLength;
         if (gameY > yAxisGameLength) {
@@ -176,10 +174,8 @@ float yAxisLength;
         }
         [self attackCoordinateWithX:gameX Y:gameY];
         
-        if ([self.selectorFrame isSelectionCorrect])
+        if ([self.selector isSelectionCorrect])
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!" message:@"youwin!" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
-            [alert show];
         }
     }];
 }
@@ -191,17 +187,17 @@ float yAxisLength;
 
 - (void)addEnemyToCoordinateWithX:(float)x Y:(float)y
 {
-    SharkSpriteNode *shark = [SharkSpriteNode spriteNodeWithImageNamed:@"jellyfish2"];
-    shark.position = [self convertToRealCoordinatesGameX:x y:y];
-    CGSize smallBody = CGSizeMake(shark.size.width/2, shark.size.height/20);
-    shark.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:smallBody];
-    shark.physicsBody.dynamic = YES;
-    shark.physicsBody.categoryBitMask = enemyCategory;
-    shark.physicsBody.contactTestBitMask = projectileCategory;
-    shark.physicsBody.collisionBitMask = 0;
+    EnemySpriteNode *enemy = [EnemySpriteNode spriteNodeWithImageNamed:@"jellyfish2"];
+    enemy.position = [self convertToRealCoordinatesGameX:x y:y];
+    CGSize smallBody = CGSizeMake(enemy.size.width/2, enemy.size.height/20);
+    enemy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:smallBody];
+    enemy.physicsBody.dynamic = YES;
+    enemy.physicsBody.categoryBitMask = enemyCategory;
+    enemy.physicsBody.contactTestBitMask = projectileCategory;
+    enemy.physicsBody.collisionBitMask = 0;
 
-    [self addChild:shark];
-    [shark addCoordinateLabel:self x:x y:y];
+    [self addChild:enemy];
+    [enemy addCoordinateLabel:self x:x y:y];
     
     // Set the rules for the physicsWorld
     self.physicsWorld.gravity = CGVectorMake(0, 0);
@@ -232,7 +228,7 @@ float yAxisLength;
     _ink = [SKSpriteNode spriteNodeWithImageNamed:@"lightning"];
     
     // Give the ink a position
-    _ink.position = self.origin;
+    _ink.position = CGPointMake(x, y);
     
     // Make the ink a physics body and set properties
     _ink.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_ink.size.width/2];
@@ -261,7 +257,7 @@ float yAxisLength;
 
 - (void)attackCoordinateWithX:(float)x Y:(float)y
 {
-    [self createInkAtX:(float)x Y:(float)y];
+    [self createInkAtX:(float)self.octopus.position.x Y:(float)self.octopus.position.y];
     
     SKAction *move = [SKAction
                       moveTo:[self convertToRealCoordinatesGameX:x y:y]
@@ -271,9 +267,10 @@ float yAxisLength;
     
 }
 
-- (void)projectile:(SKSpriteNode *)projectile didCollideWithMonster:(SKSpriteNode *)monster {
+- (void)projectile:(SKSpriteNode *)projectile didCollideWitEnemy:(EnemySpriteNode *)enemy {
     NSLog(@"Hit");
-    [monster removeFromParent];
+    [enemy removeCoordinateLabel];
+    [enemy removeFromParent];
 }
 
 - (void)didBeginContact:(SKPhysicsContact *)contact
@@ -296,7 +293,7 @@ float yAxisLength;
     if ((firstBody.categoryBitMask & projectileCategory) != 0 &&
         (secondBody.categoryBitMask & enemyCategory) != 0)
     {
-        [self projectile:(SKSpriteNode *) firstBody.node didCollideWithMonster:(SKSpriteNode *) secondBody.node];
+        [self projectile:(SKSpriteNode *) firstBody.node didCollideWitEnemy:(EnemySpriteNode *) secondBody.node];
     }
 }
 
@@ -517,8 +514,6 @@ float yAxisLength;
             [self fire];
         }
     }
-    
-    
 }
 
 - (void) createBackground {

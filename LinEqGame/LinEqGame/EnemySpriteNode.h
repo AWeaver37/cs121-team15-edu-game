@@ -8,9 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SharkSpriteNode : SKSpriteNode
-@property float labelX;
-@property float labelY;
+@interface EnemySpriteNode : SKSpriteNode
+@property SKLabelNode *coordinates;
 
 - (void)addCoordinateLabel:(SKScene *)scene x:(float)x y:(float)y;
 - (void)removeCoordinateLabel;
