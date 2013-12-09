@@ -26,7 +26,6 @@
 
 - (void)removeFromParent
 {
-    NSLog(@"remove");
     [super removeFromParent];
     [self removeCoordinateLabel];
 }

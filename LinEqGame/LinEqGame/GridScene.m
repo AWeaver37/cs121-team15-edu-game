@@ -51,6 +51,7 @@ static const uint32_t enemyCategory          =  0x1 << 1;
 // Enemy Locations
 @property NSMutableArray *enemyLocations;
 
+@property QuestionMaster *questionMaster;
 @property QuestionObject *question;
 
 // Actions
@@ -101,47 +102,64 @@ float yAxisLength;
         
         // Initialize the LevelRecordNode to display message console, score, and time
         [self createAllBars];
+        self.enemies = [@[] mutableCopy];
         
         // Tests set message and reset
         //[_messageBar setMessage:@"Hi Kidz"];
         //[_messageBar reset];
         
-        self.question = [[[QuestionMaster alloc] init] generateQuestion];
-        for (Location *location in self.question.enemyLocations) {
-            [self addEnemyToCoordinateWithX:location.x Y:location.y];
-        }
-        
-        self.enemyLocations = self.question.enemyLocations;
-        
-        //Enemy
-        self.enemies = [@[] mutableCopy];
-        
-        //Hero
-        self.octopus = [SKSpriteNode spriteNodeWithImageNamed:@"octopus_surprised"];
-        self.octopus.position = [self convertToRealCoordinatesGameX:0 y:0];
-        [self addChild:self.octopus];
-        
-        self.selector = [[Selector alloc] init];
-        [self.selector setupWithPresets];
-        [self.selector setButtons:self.question];
-        self.posSelector = (PositionSelector *) [self.selector childNodeWithName:@"PositionSelector"];
-        self.slopeSelector = (SlopeSelector *) [self.selector childNodeWithName:@"SlopeSelector"];
-        [self addChild:self.selector];
-        
-        [self createFireButton];
-        
-        //Cheating
-        NSLog(@"correct answer: (%d, %d)", self.question.interceptAnswer.answerIndex, self.question.slopeAnswer.answerIndex);
+        self.questionMaster = [[QuestionMaster alloc] init];
+        self.question = [self.questionMaster generateQuestion];
+        [self setUpGameUI];
 
     }
     return self;
 }
 
+#pragma mark - Game Logic
 - (void) startRound
 {
+    //Remove existing sprites
+    //TODO: better remove animation
     for (EnemySpriteNode *enemy in self.enemies) {
         [enemy removeFromParent];
     }
+    self.enemies = [@[] mutableCopy];
+    
+    [self.octopus removeFromParent];
+    [self.ink removeFromParent];
+    [self.selector removeFromParent];
+    [self.fireButton removeFromParent];
+    
+    //Setup game with new question
+    self.question = [self.questionMaster generateQuestion];
+    [self setUpGameUI];
+}
+
+- (void)setUpGameUI
+{
+    for (Location *location in self.question.enemyLocations) {
+        [self addEnemyToCoordinateWithX:location.x Y:location.y];
+    }
+    
+    self.enemyLocations = self.question.enemyLocations;
+    
+    //Hero
+    self.octopus = [SKSpriteNode spriteNodeWithImageNamed:@"octopus_surprised"];
+    self.octopus.position = [self convertToRealCoordinatesGameX:0 y:0];
+    [self addChild:self.octopus];
+    
+    self.selector = [[Selector alloc] init];
+    [self.selector setupWithPresets];
+    [self.selector setButtons:self.question];
+    self.posSelector = (PositionSelector *) [self.selector childNodeWithName:@"PositionSelector"];
+    self.slopeSelector = (SlopeSelector *) [self.selector childNodeWithName:@"SlopeSelector"];
+    [self addChild:self.selector];
+    
+    [self createFireButton];
+    
+    //Cheating
+    NSLog(@"correct answer: (%d, %d)", self.question.interceptAnswer.answerIndex, self.question.slopeAnswer.answerIndex);
 }
 
 
@@ -168,13 +186,6 @@ float yAxisLength;
             gameX = (gameY - intercept)/slope;
         }
         [self attackCoordinateWithX:gameX Y:gameY];
-        
-        if ([self.selector isSelectionCorrect])
-        {
-            //TODO correct answer
-        }
-        
-        [self startRound];
     }];
 }
 
@@ -237,8 +248,26 @@ float yAxisLength;
                       moveTo:[self convertToRealCoordinatesGameX:x y:y]
                       duration:2];
 
-    [_ink runAction:move];
+    [_ink runAction:move completion:^{
+        if ([self.selector isSelectionCorrect])
+        {
+            //TODO correct answer
+            UIAlertView *win = [[UIAlertView alloc] initWithTitle:@"Correct!" message:@"You've won!" delegate:self cancelButtonTitle:@"Next Round!" otherButtonTitles:nil];
+            [win show];
+        } else {
+            UIAlertView *loss = [[UIAlertView alloc] initWithTitle:@"Nope!" message:@"Sorry, not the right answer. Better luck next time!" delegate:self cancelButtonTitle:@"Next Round!" otherButtonTitles:nil];
+            [loss show];
+        }
+    }];
     
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //A win or loss alert view shows after tapping the fire button. No matter
+    //which case is reached, a new round is started.
+    [self startRound];
 }
 
 - (void)projectile:(SKSpriteNode *)projectile didCollideWithEnemy:(EnemySpriteNode *)enemy {
@@ -438,14 +467,6 @@ float yAxisLength;
 }
 
 #pragma mark - UI components
-// Creates button bar
-- (void) createButtonBar {
-    _selector = [self childNodeWithName:@"SelectorFrame"];
-    _posSelector = [_selector childNodeWithName:@"PositionSelector"];
-    _slopeSelector = [_selector childNodeWithName:@"SlopeSelector"];
-}
-
-/* SCENE FUNCTIONALITY */
 
 // Called before each frame is rendered
 -(void)update:(CFTimeInterval)currentTime {
