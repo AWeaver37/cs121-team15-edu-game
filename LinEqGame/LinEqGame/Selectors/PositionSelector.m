@@ -66,7 +66,7 @@
 
 -(void) changeCurrentSelection: (int) newSelection
 {
-//    NSLog(@"New Selection, %d", newSelection);
+    NSLog(@"New Selection, %d", newSelection);
     self.currentSelection = newSelection;
     for (int i = 1; i < 4; i ++)
     {

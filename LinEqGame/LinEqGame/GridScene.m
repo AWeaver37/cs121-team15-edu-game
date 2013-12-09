@@ -8,7 +8,6 @@
 
 #import "GridScene.h"
 #import "QuestionMaster.h"
-#import "VectorUtilities.h"
 #import "SharkSpriteNode.h"
 
 #import "HealthBarNode.h"
@@ -113,18 +112,17 @@ float yAxisLength;
         
         self.enemyLocations = question.enemyLocations;
         
+        //Enemy
         SKSpriteNode *octopus = [SKSpriteNode spriteNodeWithImageNamed:@"octopus_surprised"];
         octopus.position = [self convertToRealCoordinatesGameX:0 y:0];
         [self addChild:octopus];
-        Location *location = [question.enemyLocations objectAtIndex:0];
-        //        [self attackCoordinateWithX:location.x Y:location.y];
         
-        Selector *selectorFrame = [[Selector alloc] init];
-        [selectorFrame setupWithPresets];
-        
-        [selectorFrame setButtons:question];
-        
-        [self addChild:selectorFrame];
+        self.selector = [[Selector alloc] init];
+        [self.selector setupWithPresets];
+        [self.selector setButtons:question];
+        self.posSelector = (PositionSelector *) [self.selector childNodeWithName:@"PositionSelector"];
+        self.slopeSelector = (SlopeSelector *) [self.selector childNodeWithName:@"SlopeSelector"];
+        [self addChild:self.selector];
         
         [self createFireButton];
         
@@ -134,7 +132,6 @@ float yAxisLength;
     }
     return self;
 }
-/* CREATE GRID ENTITIES */
 
 // Initializes the jellyfish and makes it a physics body
 - (void) createJellyfishAtX:(float)x Y:(float)y {
@@ -194,7 +191,7 @@ float yAxisLength;
 
 - (void)addEnemyToCoordinateWithX:(float)x Y:(float)y
 {
-    SharkSpriteNode *shark = [SharkSpriteNode spriteNodeWithImageNamed:@"shark"];
+    SharkSpriteNode *shark = [SharkSpriteNode spriteNodeWithImageNamed:@"jellyfish2"];
     shark.position = [self convertToRealCoordinatesGameX:x y:y];
     CGSize smallBody = CGSizeMake(shark.size.width/2, shark.size.height/20);
     shark.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:smallBody];
@@ -251,23 +248,7 @@ float yAxisLength;
 
 /* CREATE SCENE ENTITIES */
 
-// Creates the fire button
-- (void)createFireButton {
-    // Fire Label
-    SKLabelNode *fireText = [SKLabelNode labelNodeWithFontNamed:@"Marker"];
-    fireText.text = @"FIRE!";
-    fireText.position = CGPointMake(75, 35);
-    
-    // Fire Button
-    _fireButton = [SKShapeNode node];
-    CGRect fireButtonRect = CGRectMake(0, 0, 150, 100);
-    CGPathRef fireButtonPath =  CGPathCreateWithRect(fireButtonRect, NULL);
-    _fireButton.path = fireButtonPath;
-    _fireButton.fillColor = [SKColor colorWithRed:1 green:0 blue:0 alpha:1];
-    _fireButton.position = CGPointMake(850, 100);
-    [_fireButton addChild:fireText];
-    [self addChild:_fireButton];
-}
+
 
 
 /* ACTION METHODS */
@@ -288,23 +269,6 @@ float yAxisLength;
 
     [_ink runAction:move];
     
-}
-
--(void)moveSprite:(SKSpriteNode *)sprite ToCoordinateWithX:(float)x Y:(float)y
-{
-    CGPoint destination = [self convertToRealCoordinatesGameX:x y:y];
-    SKAction *actionMove = [SKAction moveTo:destination duration:1];
-    
-    [sprite runAction:actionMove];
-}
-
-
--(CGPoint)convertToRealCoordinatesGameX:(float)x y:(float)y
-{
-    CGPoint point = CGPointMake(self.origin.x + x * kratio, self.origin.y + y * kratio);
-    NSLog(@"moved sprite to %@", NSStringFromCGPoint(point));
-    
-    return point;
 }
 
 - (void)projectile:(SKSpriteNode *)projectile didCollideWithMonster:(SKSpriteNode *)monster {
@@ -336,6 +300,26 @@ float yAxisLength;
     }
 }
 
+-(void)moveSprite:(SKSpriteNode *)sprite ToCoordinateWithX:(float)x Y:(float)y
+{
+    CGPoint destination = [self convertToRealCoordinatesGameX:x y:y];
+    SKAction *actionMove = [SKAction moveTo:destination duration:1];
+    
+    [sprite runAction:actionMove];
+}
+
+#pragma mark - Util
+
+-(CGPoint)convertToRealCoordinatesGameX:(float)x y:(float)y
+{
+    CGPoint point = CGPointMake(self.origin.x + x * kratio, self.origin.y + y * kratio);
+    NSLog(@"moved sprite to %@", NSStringFromCGPoint(point));
+    
+    return point;
+}
+
+
+
 // Creates the movement for when the enemy attacks
 //- (void)enemyAttack {
 //    _enemyAttack = SKActionTimingEaseIn;
@@ -366,7 +350,7 @@ float yAxisLength;
 
 
 
-/* GRID CREATION */
+#pragma mark - Grid
 
 // Initializes and draws the xAxis
 - (void)createXAxis {
@@ -447,9 +431,6 @@ float yAxisLength;
     for (; realY <= self.origin.y + yAxisLength; realY += realTickMarkSpacing, gameY += tickMarkSpacing)
     {
         CGPoint currentPosition = CGPointMake(self.origin.x, realY);
-
-//        NSLog(@"Added tick at %@", NSStringFromCGPoint(currentPosition));
-        //tick
         
         if (gameY != 0) {
             SKShapeNode *tick = [SKShapeNode node];
@@ -487,6 +468,7 @@ float yAxisLength;
     
 }
 
+#pragma mark - UI components
 // Creates button bar
 - (void) createButtonBar {
     _selector = [self childNodeWithName:@"SelectorFrame"];
@@ -614,8 +596,22 @@ float yAxisLength;
     [self addChild:_timerBox];
 }
 
-
-
-
+// Creates the fire button
+- (void)createFireButton {
+    // Fire Label
+    SKLabelNode *fireText = [SKLabelNode labelNodeWithFontNamed:@"Marker"];
+    fireText.text = @"FIRE!";
+    fireText.position = CGPointMake(75, 35);
+    
+    // Fire Button
+    _fireButton = [SKShapeNode node];
+    CGRect fireButtonRect = CGRectMake(0, 0, 150, 100);
+    CGPathRef fireButtonPath =  CGPathCreateWithRect(fireButtonRect, NULL);
+    _fireButton.path = fireButtonPath;
+    _fireButton.fillColor = [SKColor colorWithRed:1 green:0 blue:0 alpha:1];
+    _fireButton.position = CGPointMake(850, 100);
+    [_fireButton addChild:fireText];
+    [self addChild:_fireButton];
+}
 
 @end
