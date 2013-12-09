@@ -98,8 +98,6 @@ float yAxisLength;
         
         [self drawGrid];
         
-        [self createButtonBar];
-        
         // Initialize the LevelRecordNode to display message console, score, and time
         [self createAllBars];
         self.enemies = [@[] mutableCopy];
@@ -249,17 +247,27 @@ float yAxisLength;
                       duration:2];
 
     [_ink runAction:move completion:^{
-        if ([self.selector isSelectionCorrect])
-        {
-            //TODO correct answer
-            UIAlertView *win = [[UIAlertView alloc] initWithTitle:@"Correct!" message:@"You've won!" delegate:self cancelButtonTitle:@"Next Round!" otherButtonTitles:nil];
-            [win show];
-        } else {
-            UIAlertView *loss = [[UIAlertView alloc] initWithTitle:@"Nope!" message:@"Sorry, not the right answer. Better luck next time!" delegate:self cancelButtonTitle:@"Next Round!" otherButtonTitles:nil];
-            [loss show];
-        }
+        [self afterAttack];
     }];
     
+}
+
+- (void)afterAttack
+{
+    if ([self.selector isSelectionCorrect])
+    {
+        //TODO correct answer
+        UIAlertView *win = [[UIAlertView alloc] initWithTitle:@"Correct!" message:@"You've won!" delegate:self cancelButtonTitle:@"Next Round!" otherButtonTitles:nil];
+        [win show];
+    } else {
+        UIAlertView *loss = [[UIAlertView alloc] initWithTitle:@"Nope!" message:@"Sorry, not the right answer. Better luck next time!" delegate:self cancelButtonTitle:@"Next Round!" otherButtonTitles:nil];
+        [loss show];
+        [self.healthBar decrementHealth];
+        
+        if (self.healthBar.isDefeated) {
+            //TODO run out of health
+        }
+    }
 }
 
 
