@@ -204,25 +204,6 @@ float yAxisLength;
     self.physicsWorld.contactDelegate = self;
 }
 
-- (void) createLightningAtX:(float)x Y:(float)y {
-    // Initialize the jelyfishes' lightning weapon
-    _lightning = [SKSpriteNode spriteNodeWithImageNamed:@"lightning"];
-    
-    // Give the lightning a position
-    _lightning.position = self.origin;
-    
-    // Make the lightning a physics body and set properties
-    _lightning.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:_lightning.size.width/2];
-    _lightning.physicsBody.dynamic = YES;
-    _lightning.physicsBody.categoryBitMask = projectileCategory;
-    _lightning.physicsBody.contactTestBitMask = enemyCategory;
-    _lightning.physicsBody.collisionBitMask = 0;
-    _lightning.physicsBody.usesPreciseCollisionDetection = YES;
-    
-    // Add the lightning to the scene
-    [self addChild:_lightning];
-}
-
 - (void) createInkAtX:(float)x Y:(float)y {
     // Initialize the octopus's ink weapon
     _ink = [SKSpriteNode spriteNodeWithImageNamed:@"lightning"];
@@ -268,7 +249,6 @@ float yAxisLength;
 }
 
 - (void)projectile:(SKSpriteNode *)projectile didCollideWitEnemy:(EnemySpriteNode *)enemy {
-    NSLog(@"Hit");
     [enemy removeCoordinateLabel];
     [enemy removeFromParent];
 }
